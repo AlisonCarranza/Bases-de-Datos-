@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="amazon" id="2FE06D16-2054-95FF-146B-052648547263" version="3.5">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 00:32:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>2FE06D16-2054-95FF-146B-052648547263</designId>
+</OSDM_Design>

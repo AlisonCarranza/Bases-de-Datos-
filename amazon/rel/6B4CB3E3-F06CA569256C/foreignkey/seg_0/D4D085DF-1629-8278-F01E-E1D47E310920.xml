@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D4D085DF-1629-8278-F01E-E1D47E310920" containerWithKeyObject="80F8BA98-D70B-89EA-DB02-DF0B7BF28700" localFKIndex="F670D095-93DD-1404-F86B-B26074CE18FA" name="TBL_ARTICULOS_X_CARRITOS_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:33:40 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_USUARIOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E11F44CC-3B07-A03B-0BE7-0FD527F6A1CB</referredTableID>
+<keyObject>9C3F9460-3A56-56CB-355D-F6002D2F72E1</keyObject>
+<referredKeyID>9C3F9460-3A56-56CB-355D-F6002D2F72E1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_USUARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

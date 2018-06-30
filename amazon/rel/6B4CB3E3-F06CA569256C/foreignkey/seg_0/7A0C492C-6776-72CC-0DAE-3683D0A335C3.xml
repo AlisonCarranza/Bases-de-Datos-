@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7A0C492C-6776-72CC-0DAE-3683D0A335C3" containerWithKeyObject="AE855C49-82E9-818F-F5B2-DC278F65F280" localFKIndex="27AE6273-3AB5-F391-C947-2724ABE45A81" name="TBL_CALIFICACIONES_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:59:26 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_USUARIOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E11F44CC-3B07-A03B-0BE7-0FD527F6A1CB</referredTableID>
+<keyObject>9C3F9460-3A56-56CB-355D-F6002D2F72E1</keyObject>
+<referredKeyID>9C3F9460-3A56-56CB-355D-F6002D2F72E1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_USUARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

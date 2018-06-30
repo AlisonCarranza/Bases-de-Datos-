@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="90B6ED88-2257-D22B-57B8-D734F246238F" containerWithKeyObject="85CD92AC-5FAB-7A9C-5594-409175BD6FAE" localFKIndex="9178ACF6-FB6F-4AD5-86AB-E5C1DA067048" name="TBL_ARTICULOS_TBL_TIPO_ENVIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:28:38 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_TIPO_ENVIOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FF266A82-D851-4A13-1518-D8FCB4B5E17F</referredTableID>
+<keyObject>C7005FCD-795B-00CF-9B75-9A3DB2A4653D</keyObject>
+<referredKeyID>C7005FCD-795B-00CF-9B75-9A3DB2A4653D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_TIPO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

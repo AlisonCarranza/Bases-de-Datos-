@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="525E8FA6-E0FB-30F1-1B9E-5A8EE7C2838D" name="ARTICULOS_DE_LISTAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:58:11 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_29</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_ARTICULO" id="A0DEABEF-5A11-F504-75A9-5EB03951CD1A">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:02:22 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54101E30-5049-AB26-AE7E-CC56AE3D534E" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
+</associations>
+</Column>
+<Column name="CODIGO_LISTA" id="6617621B-D452-5CA8-5BC6-4AA5FF0A1FAA">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:02:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6866C4C8-E432-6570-F1AB-D1BFD1357996" referredColumn="CCD78B20-EC5D-89E9-4AC7-AC15FE98C4D3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE41DFED-A470-AB68-4E63-D77707DB2174" name="ARTICULOS_DE_LISTAS_TBL_ARTICULOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:02:22 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0DEABEF-5A11-F504-75A9-5EB03951CD1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E10CDA46-4564-B0A1-C6FD-A5A508707302" name="ARTICULOS_DE_LISTAS_TBL_LISTAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:02:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6617621B-D452-5CA8-5BC6-4AA5FF0A1FAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

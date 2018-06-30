@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="66F4B38B-4A92-65FE-22F6-8C679CCF7F70" containerWithKeyObject="ABB0E445-3BF9-1821-B3EB-593ADECECD7F" localFKIndex="E44373D1-85D1-A08B-FB86-8D3CBC9E2C61" name="TBL_PEDIDOS_TBL_METODO_DE_ENVIO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:25:11 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_METODO_DE_ENVIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D9116B82-8EDB-541D-F5ED-0D4485B4E01C</referredTableID>
+<keyObject>62F726B5-B218-CA6E-06CB-A37BFCBDC2AB</keyObject>
+<referredKeyID>62F726B5-B218-CA6E-06CB-A37BFCBDC2AB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_METODO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

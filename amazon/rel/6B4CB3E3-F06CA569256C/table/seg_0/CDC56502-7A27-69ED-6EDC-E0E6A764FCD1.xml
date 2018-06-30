@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDC56502-7A27-69ED-6EDC-E0E6A764FCD1" name="TBL_HISTORIAL_DE_BUSQUEDAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_ARTICULO" id="0392FFA7-81B8-A5FF-1B0A-3FF73266CD69">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7512492-1589-189C-0321-493B87D8AD71" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
+</associations>
+</Column>
+<Column name="FECHA_DE_BUSQUEDA" id="3A8B05BD-1E1D-1F62-267C-29EDA0529756">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_USUARIO" id="02D7B9FB-8E84-3432-D6D8-FC11146F266D">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="489D85D2-782A-AA63-2398-81CEB1126C46" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7E10A3B0-E825-EC59-6C75-460860469AF0" name="TBL_HISTORIAL_DE_VENTASv1_TBL_ARTICULOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0392FFA7-81B8-A5FF-1B0A-3FF73266CD69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1AE663B1-9DE4-F1A3-FB87-5E87BCA1BA86" name="TBL_HISTORIAL_DE_VENTASv1_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:22:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02D7B9FB-8E84-3432-D6D8-FC11146F266D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

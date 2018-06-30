@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="DC5D2DB0-9AFC-4DEF-98A0-49AFE8DD2992" mainViewID="2E56B26D-EB0E-E5CB-A3C5-AE462514D7ED">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 00:32:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

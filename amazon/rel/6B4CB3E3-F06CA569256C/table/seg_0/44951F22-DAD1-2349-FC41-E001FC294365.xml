@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="44951F22-DAD1-2349-FC41-E001FC294365" name="TBL_TARJETAS_DE_REGALO">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:15:22 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_36</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_TARJETA" id="4BF11860-0C66-73AE-BF17-412496775DB7">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:06 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_CREACION" id="D128EA95-DD18-5DFA-540E-AFB8F3AB8E8B">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:06 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_VENCIMIENTO" id="0A0BC418-FF66-EB3E-26BF-D18982C7734F">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:06 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIO_SOLICITO" id="94A6C732-1079-B818-A083-D99A479E1B42">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="118E812A-5448-2856-2EEB-A15E0F45E750" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EF61BD93-949A-1C72-58B6-D1CB47CAC79E" name="TBL_TARJETAS_DE_REGALO_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:06 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BF11860-0C66-73AE-BF17-412496775DB7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C1FDAA4D-2190-70A5-35DF-CABE8015744F" name="TBL_TARJETAS_DE_REGALO_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94A6C732-1079-B818-A083-D99A479E1B42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

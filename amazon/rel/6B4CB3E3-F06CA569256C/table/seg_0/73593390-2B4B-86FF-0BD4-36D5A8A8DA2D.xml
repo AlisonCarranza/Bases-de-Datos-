@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="73593390-2B4B-86FF-0BD4-36D5A8A8DA2D" name="TBL_SERVICIOS_PRIME">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:49:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_44</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_SERVICIO" id="C356236A-0DA6-6991-1150-94105BECB4A5">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:50:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_SERVICIO" id="D1D109E4-33DB-6800-0AE5-CF6BCC1BFB73">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:50:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_USUARIO" id="00552C29-76BB-442B-2B2F-35E7A41A485C">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:50:41 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B07113B-0C68-2851-8EC2-927882BC60C1" referredColumn="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CF999D6F-53EB-DE8F-B27D-208F26E2CAF3" name="TBL_SERVICIOS_PRIME_TBL_USUARIOS_PRIME_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:50:41 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00552C29-76BB-442B-2B2F-35E7A41A485C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

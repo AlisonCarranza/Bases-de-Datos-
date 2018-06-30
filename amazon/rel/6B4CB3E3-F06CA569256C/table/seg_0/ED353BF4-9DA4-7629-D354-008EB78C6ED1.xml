@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED353BF4-9DA4-7629-D354-008EB78C6ED1" name="TBL_CATEGORIAS_X_DEPARTAMENTOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:21:54 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_CATEGORIA " id="D657AD90-CDC2-220C-7BBF-64A9C30D91EA">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:23:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D508671-0B3D-26A7-A593-F049891E81C3" referredColumn="745C99D0-DBE0-79C7-538D-50CA2A1B77A7"/>
+</associations>
+</Column>
+<Column name="CODIGO_DEPARTAMENTO" id="AEE9B6E9-9CFE-4F89-FB9C-B674B37F2AA9">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:07:08 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7909A44-298E-D7BB-6B39-D69294B7D8EB" referredColumn="BE675B95-95DE-9C4B-9088-377CFB4FDB81"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D24106F5-61C0-2443-EA80-5CAF8B0147DA" name="TBL_CATEGORIAS_DE_ARTICULOS_TBL_CATEGORIAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:23:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D657AD90-CDC2-220C-7BBF-64A9C30D91EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD5C8110-01CF-7173-4BEA-4EC60F1394CC" name="TBL_CATEGORIAS_DE_ARTICULOS_TBL_DEPARTAMENTOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:07:08 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEE9B6E9-9CFE-4F89-FB9C-B674B37F2AA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

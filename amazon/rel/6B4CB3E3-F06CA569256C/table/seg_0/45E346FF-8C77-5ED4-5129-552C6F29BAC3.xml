@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45E346FF-8C77-5ED4-5129-552C6F29BAC3" name="TBL_DESTINOS_DE_TAJETAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:18:05 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_37</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="023470B8-B477-DAB9-BF39-04CDD45481AC">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:21:00 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24801114-1579-C702-023B-716F739E77C2" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+<Column name="CODIGO_TARJETA" id="00FA06A2-6343-DEDB-5F33-C38C03EBC34C">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:21:47 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3748C196-F018-07FE-6FF3-49CE348D59CD" referredColumn="4BF11860-0C66-73AE-BF17-412496775DB7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="189E3B87-14B8-BB17-D693-AC9E79BB2AAE" name="TBL_DESTINOS_DE_TAJETAS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:22:22 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="023470B8-B477-DAB9-BF39-04CDD45481AC"/>
+<colUsage columnID="00FA06A2-6343-DEDB-5F33-C38C03EBC34C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65F3FABF-2E43-9CCC-98B2-B517720492A6" name="TBL_DESTINOS_DE_TAJETAS__IDX">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:22:53 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00FA06A2-6343-DEDB-5F33-C38C03EBC34C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A762EA80-3B2A-AE14-86D8-6B034AC934D4" name="TBL_DESTINOS_DE_TAJETAS_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:21:00 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="023470B8-B477-DAB9-BF39-04CDD45481AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90CD1AA2-E804-3D62-80C7-22E49C0EDCDA" name="TBL_DESTINOS_DE_TAJETAS_TBL_TARJETAS_DE_REGALO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:21:47 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00FA06A2-6343-DEDB-5F33-C38C03EBC34C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

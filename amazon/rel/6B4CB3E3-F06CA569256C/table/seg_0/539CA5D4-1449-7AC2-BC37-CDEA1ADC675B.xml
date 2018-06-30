@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="539CA5D4-1449-7AC2-BC37-CDEA1ADC675B" name="TBL_METODOS_PAGO_USUARIOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:06:40 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="9FC0D520-57A2-8D42-9306-4FB7D9D774B6">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:07:35 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28F01045-8EFE-34CD-5014-6AAC21F3F4B4" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+<Column name="CODIGO_METODO" id="37B05A63-1C03-F949-4637-A8ED17BBDFE9">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:08:12 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62DE092A-F27A-C60C-8359-BD89D316108B" referredColumn="D1940027-3EE2-6337-E318-1F3FFD9C543F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E4A1E55-42C8-619B-C7D9-334A40C90F34" name="USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:07:35 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FC0D520-57A2-8D42-9306-4FB7D9D774B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E46EE08-A45B-4648-3366-BF6C91B1C4D8" name="METODO_PAGO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:08:12 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37B05A63-1C03-F949-4637-A8ED17BBDFE9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

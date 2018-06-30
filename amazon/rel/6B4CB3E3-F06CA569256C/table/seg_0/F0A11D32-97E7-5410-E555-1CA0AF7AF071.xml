@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F0A11D32-97E7-5410-E555-1CA0AF7AF071" name="TBL_USUARIOS_PRIME">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:46:04 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:48:57 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4AC7DDA-BE10-2840-CB27-CBDAE1CE3C81" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8016182B-A01F-B2A6-8F25-4F776132E26C" name="TBL_USUARIOS_PRIME_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:49:04 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F777C2D-15C5-C922-6F1B-2BB7585DAC20" name="TBL_USUARIOS_PRIME_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:48:57 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

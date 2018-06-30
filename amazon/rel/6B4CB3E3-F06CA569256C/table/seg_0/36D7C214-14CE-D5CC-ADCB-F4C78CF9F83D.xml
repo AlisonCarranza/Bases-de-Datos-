@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="36D7C214-14CE-D5CC-ADCB-F4C78CF9F83D" name="TBL_METODO_PAGO">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:08:35 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_METODO" id="D1940027-3EE2-6337-E318-1F3FFD9C543F">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:09:19 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_METODO" id="0E143927-407C-552B-0E91-D4AC0B65D2F9">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:09:47 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7EB8A1EE-BD40-904D-3A5F-B81423B3049C" name="TBL_METODO_PAGO_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:09:19 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1940027-3EE2-6337-E318-1F3FFD9C543F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

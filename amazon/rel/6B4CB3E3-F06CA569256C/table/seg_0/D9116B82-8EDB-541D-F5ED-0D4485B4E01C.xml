@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D9116B82-8EDB-541D-F5ED-0D4485B4E01C" name="TBL_METODO_DE_ENVIO">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:24:21 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_38</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_METODO" id="5E0EA1DF-E7DB-2E65-CEBB-FD5400DEB5DA">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:24:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="EE8F1988-59C9-B8E0-1ECF-B671532301C4">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:24:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DURACION_PROMEDIO" id="A7326475-9BF2-4F3B-FD4C-29EE6B75F63E">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:26:33 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="62F726B5-B218-CA6E-06CB-A37BFCBDC2AB" name="TBL_METODO_DE_ENVIO_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:24:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E0EA1DF-E7DB-2E65-CEBB-FD5400DEB5DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

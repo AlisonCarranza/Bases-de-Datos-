@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE855C49-82E9-818F-F5B2-DC278F65F280" name="TBL_CALIFICACIONES_DE_USUARIOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:57:08 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="BD04B728-EA2F-79D6-363C-5B932641E570">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:59:26 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A0C492C-6776-72CC-0DAE-3683D0A335C3" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+<Column name="CODIGO_ARTICULO" id="41C67AC1-C442-AAEE-7303-60292C8F596E">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:00:09 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEF2F294-9AEF-266B-5AB4-B3AA26BB5922" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
+</associations>
+</Column>
+<Column name="CALIFICACION" id="E738AC96-D046-B8EE-6F6F-5401134B210E">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-23 21:50:02 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8C9B7CD6-48DA-B9BB-03A8-63E86BD24A2E" name="TBL_CALIFICACIONES_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:01:22 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD04B728-EA2F-79D6-363C-5B932641E570"/>
+<colUsage columnID="41C67AC1-C442-AAEE-7303-60292C8F596E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27AE6273-3AB5-F391-C947-2724ABE45A81" name="TBL_CALIFICACIONES_TBL_USUARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:59:26 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD04B728-EA2F-79D6-363C-5B932641E570"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16B652A9-2CD6-FAA2-08A5-A91CBBD28451" name="TBL_CALIFICACIONES_TBL_ARTICULOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:00:09 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41C67AC1-C442-AAEE-7303-60292C8F596E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3748C196-F018-07FE-6FF3-49CE348D59CD" containerWithKeyObject="45E346FF-8C77-5ED4-5129-552C6F29BAC3" localFKIndex="90CD1AA2-E804-3D62-80C7-22E49C0EDCDA" name="TBL_DESTINOS_DE_TAJETAS_TBL_TARJETAS_DE_REGALO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:21:47 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_TARJETAS_DE_REGALO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>44951F22-DAD1-2349-FC41-E001FC294365</referredTableID>
+<keyObject>EF61BD93-949A-1C72-58B6-D1CB47CAC79E</keyObject>
+<referredKeyID>EF61BD93-949A-1C72-58B6-D1CB47CAC79E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_TARJETA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FF266A82-D851-4A13-1518-D8FCB4B5E17F" name="TBL_TIPO_ENVIOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:04:05 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_TIPO" id="11365FED-D44F-C230-4359-7F94F2AF4BFF">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:15:49 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="9D3E6075-3F5C-A92D-87F1-F84DD4CC2DD8">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:25:02 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7005FCD-795B-00CF-9B75-9A3DB2A4653D" name="TBL_TIPO_ENVIOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 04:28:27 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11365FED-D44F-C230-4359-7F94F2AF4BFF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

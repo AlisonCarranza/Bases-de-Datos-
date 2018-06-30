@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="62DE092A-F27A-C60C-8359-BD89D316108B" containerWithKeyObject="539CA5D4-1449-7AC2-BC37-CDEA1ADC675B" localFKIndex="8E46EE08-A45B-4648-3366-BF6C91B1C4D8" name="METODO_PAGO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 03:08:12 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_METODO_PAGO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>36D7C214-14CE-D5CC-ADCB-F4C78CF9F83D</referredTableID>
+<keyObject>7EB8A1EE-BD40-904D-3A5F-B81423B3049C</keyObject>
+<referredKeyID>7EB8A1EE-BD40-904D-3A5F-B81423B3049C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_METODO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

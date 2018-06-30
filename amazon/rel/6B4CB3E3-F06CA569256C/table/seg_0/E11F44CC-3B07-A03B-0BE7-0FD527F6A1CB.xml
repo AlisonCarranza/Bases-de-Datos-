@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E11F44CC-3B07-A03B-0BE7-0FD527F6A1CB" name="TBL_USUARIOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 00:34:58 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="17C01908-4559-A417-C93D-21EEDB6BF604">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:01:19 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO" id="6BD3A542-6420-28C0-DE0A-DDF5FDECF4FC">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:01:54 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTRASENA" id="E6F0F8BF-6823-CF68-6584-6AFF9F6A2BBA">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:02:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_USUARIO" id="74546A83-916E-9A8D-B611-61825963FB99">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:02:53 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO_MOVIL" id="C1F0D792-91D3-F49D-3818-CE6F7E8D16C9">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:07:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_PAIS" id="48215563-0DD7-E393-1135-3AD9F1C7475B">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-23 22:00:42 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AF8132B2-35BA-A400-8B60-CC872DD85529" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
+<Column name="CODIGO_GENERO" id="13D2A188-1C35-7FAE-024C-DE7A5EE5EBB6">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:48:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74358418-5336-2F4D-E973-1F07C63B1C7D" referredColumn="B5AA4262-3EDC-08A4-E814-F67A6C424E7F"/>
+</associations>
+</Column>
+<Column name="FECHA_INSCRIPCION" id="4AE97CFB-ECD7-D76A-7F2C-5CC68F86D3B1">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:49:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_NACIMIENTO" id="3DF0D75B-39AA-55B3-F34A-6017941E7FAD">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:49:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9C3F9460-3A56-56CB-355D-F6002D2F72E1" name="TBL_USUARIOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-13 01:01:19 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="807EA84F-4CD7-57B9-CE9B-F1D5736266C4" name="TBL_USUARIOS_TBL_PAIS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-23 22:00:42 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48215563-0DD7-E393-1135-3AD9F1C7475B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ABF0F650-C4B1-994A-22F8-BBEA5381328F" name="TBL_USUARIOS_TBL_GENEROS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:48:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13D2A188-1C35-7FAE-024C-DE7A5EE5EBB6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
