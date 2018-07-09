@@ -1,0 +1,16 @@
+lista de tablas
+1-Proveedores
+2.Tipo de empresa
+3.Servicios
+4.Promociones
+5.Localizacion de pedidos
+6.Compañias de transporte
+7.Reembolsos:causa,usuario,articulo,etc
+8.Ofertas
+
+Sugerencias:
+**Unificar los historiales mediante una sola tabla y agrgar una tabla nueva de tipos de historiales
+
+Terminos relacionados a amazon:
+
+http://ecommaster.es/marketplaces-y-como-funciona-amazon
