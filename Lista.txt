@@ -12,5 +12,4 @@ Sugerencias:
 **Unificar los historiales mediante una sola tabla y agrgar una tabla nueva de tipos de historiales
 
 Terminos relacionados a amazon:
-
-http://ecommaster.es/marketplaces-y-como-funciona-amazon
+*http://ecommaster.es/marketplaces-y-como-funciona-amazon
