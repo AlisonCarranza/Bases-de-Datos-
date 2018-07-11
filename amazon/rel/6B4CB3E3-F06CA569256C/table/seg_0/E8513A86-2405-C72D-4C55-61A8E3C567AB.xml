@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8513A86-2405-C72D-4C55-61A8E3C567AB" name="TBL_REPORTES">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:38:47 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_61</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_CONTENIDO" id="A5F83EB9-404C-F1EF-E747-986CC3F866AC">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:30:36 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7817B4E-3A76-4549-D45A-2142E6372B2E" referredColumn="59B598BC-0C38-A3B3-6C3A-C6D664A91B3D"/>
+</associations>
+</Column>
+<Column name="CONTENIDO" id="C193D448-8659-B23F-45B0-F4432301880A">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:42:52 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E335B33-B944-66BB-5F19-E3E6169F0998" name="TBL_REPORTES_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:40:58 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5F83EB9-404C-F1EF-E747-986CC3F866AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1872CF0E-210B-26A1-AABB-0F839DD5E24F" name="TBL_REPORTES_TBL_CONTENIDOS_DE_TEXTO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:30:36 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5F83EB9-404C-F1EF-E747-986CC3F866AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -8,6 +8,20 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="00552C29-76BB-442B-2B2F-35E7A41A485C">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:50:41 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B07113B-0C68-2851-8EC2-927882BC60C1" referredColumn="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE"/>
+</associations>
+</Column>
 <Column name="CODIGO_SERVICIO" id="C356236A-0DA6-6991-1150-94105BECB4A5">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-26 02:50:27 UTC</createdTime>
@@ -29,20 +43,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CODIGO_USUARIO" id="00552C29-76BB-442B-2B2F-35E7A41A485C">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 02:50:41 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0B07113B-0C68-2851-8EC2-927882BC60C1" referredColumn="D4540BFA-AFD1-4FFE-95D4-FC4AE687D3AE"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -18,6 +18,34 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_PAIS" id="48215563-0DD7-E393-1135-3AD9F1C7475B">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-23 22:00:42 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AF8132B2-35BA-A400-8B60-CC872DD85529" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
+<Column name="CODIGO_GENERO" id="13D2A188-1C35-7FAE-024C-DE7A5EE5EBB6">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:48:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74358418-5336-2F4D-E973-1F07C63B1C7D" referredColumn="B5AA4262-3EDC-08A4-E814-F67A6C424E7F"/>
+</associations>
+</Column>
 <Column name="CORREO" id="6BD3A542-6420-28C0-DE0A-DDF5FDECF4FC">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-13 01:01:54 UTC</createdTime>
@@ -61,34 +89,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CODIGO_PAIS" id="48215563-0DD7-E393-1135-3AD9F1C7475B">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-23 22:00:42 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="AF8132B2-35BA-A400-8B60-CC872DD85529" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
-</associations>
-</Column>
-<Column name="CODIGO_GENERO" id="13D2A188-1C35-7FAE-024C-DE7A5EE5EBB6">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:48:01 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="74358418-5336-2F4D-E973-1F07C63B1C7D" referredColumn="B5AA4262-3EDC-08A4-E814-F67A6C424E7F"/>
-</associations>
 </Column>
 <Column name="FECHA_INSCRIPCION" id="4AE97CFB-ECD7-D76A-7F2C-5CC68F86D3B1">
 <createdBy>USR</createdBy>

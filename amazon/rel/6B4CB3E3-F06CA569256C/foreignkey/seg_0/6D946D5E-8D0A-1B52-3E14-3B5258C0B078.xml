@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6D946D5E-8D0A-1B52-3E14-3B5258C0B078" containerWithKeyObject="DE86C946-219D-327C-B36A-A9EFC42A3AAC" localFKIndex="E0F5B825-DAB0-4F50-5E84-D17B1D30CD94" name="TBL_PROMOCIONES_TBL_OFERTAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 02:53:34 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_OFERTAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E8D3F7E5-5FB8-9939-DE7E-DD9161BFBEEF</referredTableID>
+<keyObject>C43DD6C7-420D-56F1-5CA4-CAC2F6F2EDE6</keyObject>
+<referredKeyID>C43DD6C7-420D-56F1-5CA4-CAC2F6F2EDE6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_OFERTA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

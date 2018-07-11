@@ -18,6 +18,35 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_TIPO" id="B8758C7A-9CAC-3735-435C-ED2649916123">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-23 22:50:36 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A155F17-FE30-BC5E-0401-B11AEBF38EC8" referredColumn="D3559C6D-4DED-F3F8-990A-EF295B4C9AA4"/>
+</associations>
+</Column>
+<Column name="CODIGO_PAIS_PADRE" id="8D5A5031-B29F-17DF-232D-18DBFBD07F39">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 00:55:21 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34109FDB-9C7A-BFEA-2F98-72268BC565F4" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
 <Column name="NOMBRE_UBICACION" id="A16230AF-C0F3-A5A3-1EB9-9954BBB41C5F">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-23 22:00:20 UTC</createdTime>
@@ -61,35 +90,6 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CODIGO_TIPO" id="B8758C7A-9CAC-3735-435C-ED2649916123">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-23 22:50:36 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="7A155F17-FE30-BC5E-0401-B11AEBF38EC8" referredColumn="D3559C6D-4DED-F3F8-990A-EF295B4C9AA4"/>
-</associations>
-</Column>
-<Column name="CODIGO_PAIS_PADRE" id="8D5A5031-B29F-17DF-232D-18DBFBD07F39">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 00:55:21 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="34109FDB-9C7A-BFEA-2F98-72268BC565F4" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B077742-05D5-2244-FA20-130091B5070A" name="TBL_CANTIDAD_DE_ESTRELLAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:57:45 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_57</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_CANTIDAD" id="613454ED-F7EE-91DE-91E4-F32745A724E7">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:58:31 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CANTIDAD_DE_ESTRELLAS" id="1B11418A-B3F3-303D-4D4B-DD633CE4BA0B">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:58:31 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F42487D3-6074-F16E-FA94-C738063F30E2" name="TBL_CANTIDAD_DE_ESTRELLAS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:58:43 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="613454ED-F7EE-91DE-91E4-F32745A724E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

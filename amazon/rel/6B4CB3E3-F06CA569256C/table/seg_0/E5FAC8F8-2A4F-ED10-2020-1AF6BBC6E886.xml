@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E5FAC8F8-2A4F-ED10-2020-1AF6BBC6E886" name="TBL_EMPRESAS_DE_ENVIO">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:05:05 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_64</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_EMPRESA_ENVIO" id="1AE99ACE-5E9C-C6ED-3C49-08C93994526C">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:14 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LUGAR_DE_TRABAJO" id="EB9D424D-F136-D95D-2BE1-73A8A821C6EB">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:41 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D72B41E4-3777-7716-B42C-5011C00E7545" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
+<Column name="NOMBRE_EMPRESA_ENVIO" id="D0C25A51-BECC-01A7-D79B-DC14E0AD9ED1">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:14 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_DE_CONTRATACION" id="5C520017-707A-5DAD-5F87-3DA72AFA3AFC">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:14 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CFD7E888-3DE6-E076-9340-FDC7704D8D8B" name="TBL_EMPRESAS_DE_ENVIO_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:14 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AE99ACE-5E9C-C6ED-3C49-08C93994526C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8334AA99-0790-670F-5B9C-374073BF0BF8" name="TBL_EMPRESAS_DE_ENVIO_TBL_UBICACION_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:41 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB9D424D-F136-D95D-2BE1-73A8A821C6EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -18,17 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FECHA_DE_CREACION" id="2AE1EA1F-7B6F-EA2F-C451-78D8E17A42C7">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:55:08 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="USUARIO_CREADOR" id="DF25E5F9-1248-8EF3-37B1-034997D0E482">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-26 01:57:06 UTC</createdTime>
@@ -42,17 +31,6 @@
 <associations>
 <colAssociation fkAssociation="8C52708C-51C8-71BF-17D0-FEA7C459D84F" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
 </associations>
-</Column>
-<Column name="NOMBRE_LISTA" id="11E4A8FC-291A-8E25-0BCF-65DC1D982C39">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:59:24 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="CODIGO_TIPO" id="A336E88E-11E4-16AF-DB17-726A7207A2D5">
 <createdBy>USR</createdBy>
@@ -81,6 +59,28 @@
 <associations>
 <colAssociation fkAssociation="E04D07BF-3B41-4C79-34D6-F5CFB8F3C4AD" referredColumn="3A2CF3A0-1A62-E168-E5AC-E88CB24A2846"/>
 </associations>
+</Column>
+<Column name="FECHA_DE_CREACION" id="2AE1EA1F-7B6F-EA2F-C451-78D8E17A42C7">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:55:08 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_LISTA" id="11E4A8FC-291A-8E25-0BCF-65DC1D982C39">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 01:59:24 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

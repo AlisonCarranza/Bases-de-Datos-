@@ -18,17 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DESCRIPCION" id="77C26516-9F29-49B8-30C6-65788B6BEF38">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-15 02:55:01 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="CODIGO_USUARIO_PUBLICO" id="BFDE55D8-8581-1468-22E1-23B6BDC0E4C3">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-15 03:46:06 UTC</createdTime>
@@ -72,6 +61,45 @@
 <colAssociation fkAssociation="33550511-67F6-13FB-A7ED-2286BFFDA502" referredColumn="D2C25E1B-55AE-E703-3AD1-AB9AADDBE5F7"/>
 </associations>
 </Column>
+<Column name="REGION_DE_VENTA" id="37265C1A-FB11-78CA-A921-C01678D66718">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:29 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="170A671D-0A46-49F3-ECB7-232F34881DC2" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
+<Column name="CODIGO_AGRUPACION" id="CB49D969-9832-7639-5151-CF7050DF5430">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:57:38 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E7153ED-7B5E-70A5-BE32-8367EBC19305" referredColumn="1A031BDD-138D-ADA2-73DC-EEA57EB4453E"/>
+</associations>
+</Column>
+<Column name="DESCRIPCION" id="77C26516-9F29-49B8-30C6-65788B6BEF38">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-15 02:55:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="CANTIDAD" id="03556126-7DA8-7845-D1D4-440B14FD0629">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-26 02:47:07 UTC</createdTime>
@@ -80,6 +108,17 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_DE_PUBLICACION" id="983D8AE8-3733-D463-3913-76A202A79774">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:44:33 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -124,6 +163,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CE407D18-2985-1293-1D8F-DB9087AA0E57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CCC10EE9-ED4C-3BAA-6349-469F12C33CC5" name="TBL_ARTICULOS_TBL_UBICACION_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:29 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37265C1A-FB11-78CA-A921-C01678D66718"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8E41467-854E-C3F9-E632-A52636520AE3" name="TBL_ARTICULOS_TBL_AGRUPACIONES_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:57:38 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB49D969-9832-7639-5151-CF7050DF5430"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

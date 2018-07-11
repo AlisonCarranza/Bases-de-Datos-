@@ -18,6 +18,34 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="USUARIO_SOLICITO" id="94A6C732-1079-B818-A083-D99A479E1B42">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:17:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="118E812A-5448-2856-2EEB-A15E0F45E750" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
+<Column name="USUARIO_DESTINATARIO" id="4BAEC082-371F-6B63-8D46-2EA5984B41B6">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:33:31 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B2CEBDB2-9B44-AEC9-4420-DB2C12551236" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
+</associations>
+</Column>
 <Column name="FECHA_CREACION" id="D128EA95-DD18-5DFA-540E-AFB8F3AB8E8B">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-26 02:17:06 UTC</createdTime>
@@ -40,20 +68,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="USUARIO_SOLICITO" id="94A6C732-1079-B818-A083-D99A479E1B42">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 02:17:25 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="118E812A-5448-2856-2EEB-A15E0F45E750" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="EF61BD93-949A-1C72-58B6-D1CB47CAC79E" name="TBL_TARJETAS_DE_REGALO_PK">
@@ -75,6 +89,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="94A6C732-1079-B818-A083-D99A479E1B42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FEAFADA6-B765-6FEB-CDD0-8C16700189BA" name="TBL_TARJETAS_DE_REGALO_TBL_USUARIOS_FKv2">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:33:31 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BAEC082-371F-6B63-8D46-2EA5984B41B6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

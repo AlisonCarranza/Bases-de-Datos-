@@ -1,0 +1,35 @@
+articulos: objetos en venta###
+calificaciones: numero de estrellas que un usario le da a un articulo###
+envios: tipos de envios de articulos a partir de la informacion del usuario###
+historial de compras: todas las compras realizadas por el usuario###
+historial de busquedas: todas las busquedas de un usuario###
+pedidos: articulos que el usuario compró###
+listas: listas que los usuarios pueden crear para si mismos o para otros### 
+tipos de listas: universales, deseos, de compras###
+departamentos: articulos para un fin especifico###
+categorias: las secciones en las que se divide un departamento especifico###
+usuarios: compra y venta de articulos###
+generos: generos###
+ubicacion: tipo de ubicacion, latitud, longitud, ubicacion padre, codigo postal###
+opciones de pago: tipos de pago de los usuarios y de amazon para reembolsos###
+tarjetas de regalo: son creadas por un usuario hacia otro###
+carrito (compras): los articulos que el usuario ha seleccionado para comprarlos### 
+marca: empresa que hizo el articulo###
+condicion: estado del articulo, nuevo, usado 
+servicio ayuda: opciones de ayuda de amazon
+ofertas: tipos de ofertas de amazon 
+preguntas de usuarios sobre articulos: los usuarios pueden hacer preguntas sobre un articulo especifico
+respuestas a las preguntas: alguien que responda a la pregunta de otro usuario, una pregunta puede llevar varias respuestas
+pedidos en curso (pueden ser los mismos)
+pedidos digitales (pueden ser los mismos)
+pedidos cancelados (pueden ser los mismos)
+plataformas de compartir: redes sociales para compartir la informacion de un articulo
+articulos compartidos: articulos que han sido compartidos en redes sociales
+reportes sobre informacion erronea de articulos: un usuario hace un reporte sobre ambiguedades en la informacion de los articulos
+opiniones de los articulos: comentarios de los usuarios hacia los articulos
+comparaciones con otros articulos: articulos similares 
+opciones de agrupar los articulos, (fecha, ultimos 7 dias, etc)
+pie de pagina: se divide en dos partes, dos tablas mas, o bien tres.
+
+
+

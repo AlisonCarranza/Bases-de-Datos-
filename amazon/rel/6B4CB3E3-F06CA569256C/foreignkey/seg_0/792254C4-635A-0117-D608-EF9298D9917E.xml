@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CA27579C-4A3D-C13E-F42D-75675B3E99FF" containerWithKeyObject="99F611EB-7451-46EE-45AA-76FD27AFF036" localFKIndex="39133D13-3208-8C05-08D7-927238CD74A5" name="TBL_HISTORIAL_DE_VENTASv2_TBL_USUARIOS_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="792254C4-635A-0117-D608-EF9298D9917E" containerWithKeyObject="196AB3B5-C121-C762-0062-212B52D12FC0" localFKIndex="E3C2900F-D486-157C-5CC0-4FDC20FAE54E" name="TBL_SUSCRIPCIONES_X_ARTICULOS_TBL_USUARIOS_FK">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:22:33 UTC</createdTime>
+<createdTime>2018-07-11 03:16:14 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
 <referredTableLongName>TBL_USUARIOS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

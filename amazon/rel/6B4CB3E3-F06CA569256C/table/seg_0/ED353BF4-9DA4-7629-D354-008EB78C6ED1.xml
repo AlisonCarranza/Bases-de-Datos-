@@ -38,6 +38,18 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2382754-0C36-74F0-E482-E3B880B0B22E" name="TBL_CATEGORIAS_X_DEPARTAMENTOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:18:36 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D657AD90-CDC2-220C-7BBF-64A9C30D91EA"/>
+<colUsage columnID="AEE9B6E9-9CFE-4F89-FB9C-B674B37F2AA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="D24106F5-61C0-2443-EA80-5CAF8B0147DA" name="TBL_CATEGORIAS_DE_ARTICULOS_TBL_CATEGORIAS_FK">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-15 03:23:34 UTC</createdTime>

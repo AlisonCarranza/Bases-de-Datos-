@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_1" id="0DD84D20-19B8-5356-CAC6-EA6C30C4BC54" containerWithKeyObject="09D46596-8B49-E089-EE4D-B9AE3EFC057D" localFKIndex="07FF98B3-268B-9906-0902-1387BD3381C7" name="TBL_COMENTARIOS_TBL_COMENTARIOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 18:10:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_COMENTARIOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>09D46596-8B49-E089-EE4D-B9AE3EFC057D</referredTableID>
+<keyObject>288D5238-C6D8-B919-9A8F-D049D125990C</keyObject>
+<referredKeyID>288D5238-C6D8-B919-9A8F-D049D125990C</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CODIGO_COMENTARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A1107FC0-EBC0-D277-579C-C1F0D9CF50E6" containerWithKeyObject="0F1FB523-C5F2-9587-465E-8C1EEFD5EC0C" localFKIndex="2DB6FE6E-1FBE-ED2C-F1F9-09E0C0B4BBFB" name="CONDICIONES_X_ARTICULO_TBL_CONDICIONES_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:42:10 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_CONDICIONES_DE_ARTICULOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D8DC99B3-B7F6-46F3-5DF8-7CFDB71FD8B3</referredTableID>
+<keyObject>4592ACBD-4875-B3E9-FB7E-F2216E678944</keyObject>
+<referredKeyID>4592ACBD-4875-B3E9-FB7E-F2216E678944</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_CONDICION</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

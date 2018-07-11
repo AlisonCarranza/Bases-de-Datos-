@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C118FE82-1681-987F-1B93-8A8BF9FA83CC" name="TBL_PLATAFORMAS_DE_DIFUSION">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:33:50 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_57</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_PALTAFORMA" id="FAF9EA15-6C0B-9CBC-7E77-70DEEE47FD3D">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:34:50 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_PLATAFORMA" id="8433B2E2-99F1-5C08-14C8-72043DC4DB3F">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:34:50 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_INSCRIPCION" id="97802C55-39EB-B685-C95C-78C6D91A7633">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:34:50 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ICONO_PLATAFORMA" id="44BE7144-9289-AB77-D15D-2D1E6E7612FA">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:37:40 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6EC33DE8-F26F-36F6-89EA-AAA4824BE938" name="TBL_PLATAFORMAS_DE_DIFUSION_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:36:11 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAF9EA15-6C0B-9CBC-7E77-70DEEE47FD3D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

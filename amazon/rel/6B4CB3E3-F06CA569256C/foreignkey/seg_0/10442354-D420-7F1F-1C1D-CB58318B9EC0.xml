@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="10442354-D420-7F1F-1C1D-CB58318B9EC0" containerWithKeyObject="9E6CBB79-AD46-DF4E-17BB-FDF7C7442603" localFKIndex="292C1A02-0CA8-4F1C-A053-870F0E7E6BD1" name="TBL_SUBCONJUNTOS_1_TBL_PIES_DE_PAGINAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:15:42 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_PIES_DE_PAGINAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>22F69E32-243F-89AD-8B74-150F1F8DEC25</referredTableID>
+<keyObject>A7602912-754E-270C-3899-4FABFADB699B</keyObject>
+<referredKeyID>A7602912-754E-270C-3899-4FABFADB699B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_TEMA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8D3F7E5-5FB8-9939-DE7E-DD9161BFBEEF" name="TBL_OFERTAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:20:25 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_39</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_OFERTA" id="094DDBF0-5395-3EC5-F4CA-4F2FC9F873AD">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 02:52:48 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_ARTICULO" id="87F5937E-36AD-B147-2D7C-8C4C3CC28DB9">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:27:48 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BE4DDD8E-7344-E8EB-0C9F-399B4610F935" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
+</associations>
+</Column>
+<Column name="CODIGO_DESCUENTO" id="64EA320E-E47D-28E8-783D-2A6A92CC4F45">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:30:44 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5658648E-F159-683B-A9F7-22C3E9D51EFF" referredColumn="1C6E7D1E-919A-6F28-417D-81DF41E8BD16"/>
+</associations>
+</Column>
+<Column name="CODIGO_TIPO_OFERTA" id="C363C140-75A4-4847-EE8D-6DB7816E0B46">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:01:09 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD2D7B35-9838-724F-C480-DF96CCB58BA8" referredColumn="2D00672A-BC29-1C8A-A0D4-9063F14FAA00"/>
+</associations>
+</Column>
+<Column name="INICIO_DE_OFERTA" id="A669877C-5935-D496-A7C6-BD06675ACDEF">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:27:32 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FIN_DE_OFERTA" id="C475D34F-C018-C051-2CC5-99FC645AA0F2">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:27:32 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C43DD6C7-420D-56F1-5CA4-CAC2F6F2EDE6" name="TBL_OFERTAS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 02:53:11 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="094DDBF0-5395-3EC5-F4CA-4F2FC9F873AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8431332F-1907-BCC4-407E-56C7AAE20416" name="TBL_OFERTAS_TBL_ARTICULOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:27:48 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87F5937E-36AD-B147-2D7C-8C4C3CC28DB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C430B581-D775-AC50-9338-6D54D3C8610D" name="TBL_OFERTAS_TBL_DESCUENTOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:30:44 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64EA320E-E47D-28E8-783D-2A6A92CC4F45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D09B72C7-A903-4C06-AC46-16C929A04C29" name="TBL_OFERTAS_TBL_TIPOS_DE_OFERTAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:01:09 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C363C140-75A4-4847-EE8D-6DB7816E0B46"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

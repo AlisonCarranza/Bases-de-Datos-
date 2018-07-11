@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="ACB63DC6-4609-BE6B-F70F-E419B41381E4" containerWithKeyObject="DC96641B-B794-AAE3-B29C-405DF5E5E6B6" localFKIndex="43D00F4E-1E7E-CC9F-80CE-D7791DB1053B" name="TBL_PEDIDOS_CANCELADOS_TBL_PEDIDOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_PEDIDOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>ABB0E445-3BF9-1821-B3EB-593ADECECD7F</referredTableID>
+<keyObject>D838FA2C-C34A-2598-0CD0-B2718BEE3521</keyObject>
+<referredKeyID>D838FA2C-C34A-2598-0CD0-B2718BEE3521</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_PEDIDO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

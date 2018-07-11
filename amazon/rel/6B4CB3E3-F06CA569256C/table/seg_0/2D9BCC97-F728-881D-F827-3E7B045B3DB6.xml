@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D9BCC97-F728-881D-F827-3E7B045B3DB6" name="TBL_LOCALIZACION_DE_PRODUCTOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:03:53 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_63</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_PEDIDO" id="2EDBA39B-70C3-3781-F3AC-019DC90FA084">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:13:49 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9D66A217-BEF4-08E7-BE4F-CF186738C1DC" referredColumn="E8194F22-10CB-6160-06C4-0961F0F3EBA8"/>
+</associations>
+</Column>
+<Column name="CODIGO_UBICACION" id="94BD5B6D-FD88-DB7E-87EE-37DCEEC194EA">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:46 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51F65C76-0E5F-3AB0-523F-D1FDC05A70AB" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
+</associations>
+</Column>
+<Column name="CODIGO_EMPRESA_ENVIO" id="5883CC09-851E-FA2C-D7BA-68D275BC9116">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:13:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5340A148-3533-6F20-EFC7-D8181AEFA583" referredColumn="1AE99ACE-5E9C-C6ED-3C49-08C93994526C"/>
+</associations>
+</Column>
+<Column name="LATITUD" id="1D5ED7EC-46A5-3A9D-38B9-4CEDE3EDF0A5">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:04:39 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LONGITUD" id="65788FBA-0E4A-9C10-12AE-9CB73224138A">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:04:39 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26F22227-CCF6-9933-675D-7460228EF0E8" name="TBL_LOCALIZACION_DE_PRODUCTOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:14:21 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EDBA39B-70C3-3781-F3AC-019DC90FA084"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="550CAB9A-F816-D88F-1127-701E5B0B8F87" name="TBL_LOCALIZACION_DE_PRODUCTOS_TBL_UBICACION_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:11:46 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94BD5B6D-FD88-DB7E-87EE-37DCEEC194EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B61D36A2-91EE-7A22-4568-9D6DB4AD64EE" name="TBL_LOCALIZACION_DE_PRODUCTOS_TBL_PEDIDOS_EN_CURSO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:13:49 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EDBA39B-70C3-3781-F3AC-019DC90FA084"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="882D54CB-8305-B46D-DA65-383899E91B28" name="TBL_LOCALIZACION_DE_PRODUCTOS_TBL_EMPRESAS_DE_ENVIO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:13:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5883CC09-851E-FA2C-D7BA-68D275BC9116"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

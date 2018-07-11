@@ -22,17 +22,6 @@
 <colAssociation fkAssociation="FEBC6C3B-9F1D-9986-F7B5-52E3188BB0C4" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
 </associations>
 </Column>
-<Column name="FECHA_AGREGO" id="C8BB5CE5-02F1-4A61-56AC-47380543A977">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 02:33:05 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="CODIGO_USUARIO" id="80ABD31D-17D8-CF77-C458-DB08A8E39E23">
 <createdBy>USR</createdBy>
 <createdTime>2018-06-26 02:33:40 UTC</createdTime>
@@ -46,6 +35,17 @@
 <associations>
 <colAssociation fkAssociation="D4D085DF-1629-8278-F01E-E1D47E310920" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
 </associations>
+</Column>
+<Column name="FECHA_AGREGO" id="C8BB5CE5-02F1-4A61-56AC-47380543A977">
+<createdBy>USR</createdBy>
+<createdTime>2018-06-26 02:33:05 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="CANTIDAD_DEL_ARTICULO" id="98955E08-FABF-8016-BC86-BDBEBE9F13B7">
 <createdBy>USR</createdBy>

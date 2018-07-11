@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="94A0EDD6-74D7-24AA-4A98-ED1F329AF553" containerWithKeyObject="0C69F794-3447-E1FA-9930-1DB488BF8B48" localFKIndex="F4397B44-939D-FE64-0A1E-AA4DB4658E99" name="TBL_ARTICULOS_HISTORIAL_TBL_ARTICULOS_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_1" id="1534A766-0AEC-B8D2-B4CB-5574247B6D82" containerWithKeyObject="1891F52E-5414-11F1-32C3-E5FF347799DE" localFKIndex="F8A842A1-DB39-DC21-7188-73B9E4C11E8F" name="TBL_PROVEEDORES_X_ARTICULOS_TBL_ARTICULOS_FK">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-15 05:08:08 UTC</createdTime>
+<createdTime>2018-07-10 19:36:08 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
 <referredTableLongName>TBL_ARTICULOS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

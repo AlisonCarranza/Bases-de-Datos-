@@ -1,14 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DEF2F294-9AEF-266B-5AB4-B3AA26BB5922" containerWithKeyObject="AE855C49-82E9-818F-F5B2-DC278F65F280" localFKIndex="16B652A9-2CD6-FAA2-08A5-A91CBBD28451" name="TBL_CALIFICACIONES_TBL_ARTICULOS_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_1" id="3009DCD6-70C2-1573-64D8-33B3087197E5" containerWithKeyObject="52A41900-E3E4-AB94-C4DF-BB0FEF36C60A" localFKIndex="3266D6A2-D635-4BE4-E9D6-36F468EB9D42" name="TBL_PREGUNTASv1_TBL_ARTICULOS_FK">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-15 04:00:09 UTC</createdTime>
+<createdTime>2018-07-10 17:24:06 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
 <referredTableLongName>TBL_ARTICULOS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>85CD92AC-5FAB-7A9C-5594-409175BD6FAE</referredTableID>
 <keyObject>2BD504BE-850B-5F57-CF29-6EBC2AEAA6D5</keyObject>
 <referredKeyID>2BD504BE-850B-5F57-CF29-6EBC2AEAA6D5</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>CODIGO_ARTICULO</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

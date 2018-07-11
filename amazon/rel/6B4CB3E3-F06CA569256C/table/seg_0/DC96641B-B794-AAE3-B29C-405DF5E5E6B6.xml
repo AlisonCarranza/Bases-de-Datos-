@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DC96641B-B794-AAE3-B29C-405DF5E5E6B6" name="TBL_PEDIDOS_CANCELADOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:25:39 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_54</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_PEDIDO" id="CE39C977-A58A-EA12-78CB-4ABBDD60654B">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACB63DC6-4609-BE6B-F70F-E419B41381E4" referredColumn="AAEE0F68-EF71-AACA-F2D1-D036267A9485"/>
+</associations>
+</Column>
+<Column name="FECHA_DE_CANCELACION" id="E0D2469C-D74F-41AC-FEAF-068FDD87B3C3">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:26:10 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="03B62C74-6DB9-0308-F94F-35A33E4B23EE" name="TBL_PEDIDOS_CANCELADOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:13 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE39C977-A58A-EA12-78CB-4ABBDD60654B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43D00F4E-1E7E-CC9F-80CE-D7791DB1053B" name="TBL_PEDIDOS_CANCELADOS_TBL_PEDIDOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:28:01 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE39C977-A58A-EA12-78CB-4ABBDD60654B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

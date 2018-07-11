@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C8790D2F-1DFB-4E24-A4E3-3CDC96F6E91F" containerWithKeyObject="CDC56502-7A27-69ED-6EDC-E0E6A764FCD1" localFKIndex="3A66E8C7-61C6-353B-5B8E-614703D5C84A" name="TBL_HISTORIAL_DE_BUSQUEDAS_TBL_HISTORIALES_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:18:56 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_HISTORIALES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4B6EFED0-F04F-136A-E075-0B9E10E97964</referredTableID>
+<keyObject>A7993A45-3A47-E548-B474-CFDC74B305AF</keyObject>
+<referredKeyID>A7993A45-3A47-E548-B474-CFDC74B305AF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_HISTORIAL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

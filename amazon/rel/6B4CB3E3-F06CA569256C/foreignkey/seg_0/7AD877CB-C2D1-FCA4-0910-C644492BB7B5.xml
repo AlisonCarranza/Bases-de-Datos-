@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7AD877CB-C2D1-FCA4-0910-C644492BB7B5" containerWithKeyObject="E897F789-CBA2-1958-1743-53B995CEA9AE" localFKIndex="BE7CCA23-37F6-D0D8-D9C2-5FD6792557E5" name="TBL_RESPUESTAS_TBL_PREGUNTAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:07:18 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_PREGUNTAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>75EDA77C-B76C-591C-BCBC-E777766F9ACE</referredTableID>
+<keyObject>0D5C25F2-9C03-AEEB-2DF8-634565887A7E</keyObject>
+<referredKeyID>0D5C25F2-9C03-AEEB-2DF8-634565887A7E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_PREGUNTA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

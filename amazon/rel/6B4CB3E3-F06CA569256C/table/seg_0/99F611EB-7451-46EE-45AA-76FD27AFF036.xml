@@ -8,9 +8,9 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_ARTICULO" id="C408BF38-68C4-2D80-1EA5-6C112FAE94C2">
+<Column name="CODIGO_HISTORIAL" id="0834225C-7228-E649-8A1B-DE3E3634ADDF">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:22:33 UTC</createdTime>
+<createdTime>2018-07-10 17:14:17 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -19,7 +19,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="55644F65-859A-F5B6-6925-CFC2FA25DB5F" referredColumn="AA67AB09-86C6-3C19-5358-D5C97C1A737C"/>
+<colAssociation fkAssociation="C97A4DDE-51B6-8408-F41E-CBCCC1A30C48" referredColumn="AA40731E-584B-EAC2-A07B-7AD0A22CD097"/>
 </associations>
 </Column>
 <Column name="FECHA_DE_COMPRA" id="A25E6353-7182-804D-644E-8F6AF1FAD1C8">
@@ -33,40 +33,27 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CODIGO_USUARIO" id="5ED4B8FF-274F-A920-C9C9-2C9B5D9BE2E8">
-<createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:22:33 UTC</createdTime>
-<ownerDesignName>amazon</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="CA27579C-4A3D-C13E-F42D-75675B3E99FF" referredColumn="17C01908-4559-A417-C93D-21EEDB6BF604"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="81628879-6715-C635-D339-27BCACB564EF" name="TBL_HISTORIAL_DE_VENTASv2_TBL_ARTICULOS_FK">
+<ind_PK_UK id="ED4E333E-6D3B-636C-35C4-9888579D17FD" name="TBL_HISTORIAL_DE_COMPRAS_PK">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:22:33 UTC</createdTime>
+<createdTime>2018-07-10 17:14:50 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
-<indexState>Foreign Key</indexState>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C408BF38-68C4-2D80-1EA5-6C112FAE94C2"/>
+<colUsage columnID="0834225C-7228-E649-8A1B-DE3E3634ADDF"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="39133D13-3208-8C05-08D7-927238CD74A5" name="TBL_HISTORIAL_DE_VENTASv2_TBL_USUARIOS_FK">
+<ind_PK_UK id="A0925BFD-6E7F-98F2-E821-1DB5E9D7CCDE" name="TBL_HISTORIAL_DE_COMPRAS_TBL_HISTORIALES_FK">
 <createdBy>USR</createdBy>
-<createdTime>2018-06-26 01:22:33 UTC</createdTime>
+<createdTime>2018-07-10 17:14:17 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5ED4B8FF-274F-A920-C9C9-2C9B5D9BE2E8"/>
+<colUsage columnID="0834225C-7228-E649-8A1B-DE3E3634ADDF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

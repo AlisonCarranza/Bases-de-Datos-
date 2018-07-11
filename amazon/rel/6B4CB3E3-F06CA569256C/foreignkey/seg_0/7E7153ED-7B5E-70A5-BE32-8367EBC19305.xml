@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7E7153ED-7B5E-70A5-BE32-8367EBC19305" containerWithKeyObject="85CD92AC-5FAB-7A9C-5594-409175BD6FAE" localFKIndex="B8E41467-854E-C3F9-E632-A52636520AE3" name="TBL_ARTICULOS_TBL_AGRUPACIONES_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:57:38 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_AGRUPACIONES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>04D6AD78-D740-7180-B92F-43FD47EC3D10</referredTableID>
+<keyObject>40050D68-3191-E652-3B16-666CE03DF3C7</keyObject>
+<referredKeyID>40050D68-3191-E652-3B16-666CE03DF3C7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_AGRUPACION</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

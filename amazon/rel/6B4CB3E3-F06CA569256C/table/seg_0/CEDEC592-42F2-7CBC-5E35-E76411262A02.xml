@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEDEC592-42F2-7CBC-5E35-E76411262A02" name="TBL_SUBTEMAS_DE_SERVICIOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:58:59 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_34</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_SUBTEMA" id="47DA0C66-CD58-F8AA-2DAE-CA4482E21273">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:59:43 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_SERVICIO" id="E6231886-5CCA-C815-89D5-B08C2E50C16F">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:00:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78B98979-1A20-94E0-F133-03385728DA55" referredColumn="1A8FA3FE-535E-5A1E-F82C-B6259F7AF119"/>
+</associations>
+</Column>
+<Column name="DESCRIPCION" id="0DDBCE66-105F-E5E7-9B2E-1DFC38CC9216">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:59:43 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A58043CB-F18C-DDBB-F4D3-0DE8D5A1EAB6" name="TBL_SUBTEMAS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:01:04 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6231886-5CCA-C815-89D5-B08C2E50C16F"/>
+<colUsage columnID="47DA0C66-CD58-F8AA-2DAE-CA4482E21273"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E7090C87-7918-93E6-681B-8300C2C7AE44" name="TBL_SUBTEMAS_TBL_SERVICIOS_DE_AYUDAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 03:00:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6231886-5CCA-C815-89D5-B08C2E50C16F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

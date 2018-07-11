@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_1" id="84F7A3C8-EA26-A943-4D67-9FCD6D0ED722" containerWithKeyObject="D419A80D-3D53-CEE9-BE06-3D053C527A51" localFKIndex="387523F5-35AB-AA1F-6FF8-21F17EBAA2FE" name="TBL_OPINIONES_TBL_CANTIDAD_DE_ESTRELLAS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-10 17:58:49 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_CANTIDAD_DE_ESTRELLAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5B077742-05D5-2244-FA20-130091B5070A</referredTableID>
+<keyObject>F42487D3-6074-F16E-FA94-C738063F30E2</keyObject>
+<referredKeyID>F42487D3-6074-F16E-FA94-C738063F30E2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_CANTIDAD</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

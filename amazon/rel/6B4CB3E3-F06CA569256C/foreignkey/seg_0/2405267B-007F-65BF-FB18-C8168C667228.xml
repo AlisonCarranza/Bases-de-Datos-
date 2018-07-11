@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2405267B-007F-65BF-FB18-C8168C667228" containerWithKeyObject="62F779B9-B91F-7A5F-B22D-BA740B2E2AF2" localFKIndex="29F08E59-2B4B-03B2-F222-B6A0BFB15885" name="TBL_ARTICULOS_X_PLATAFORMA_TBL_PLATAFORMAS_DE_DIFUSION_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-03 02:36:14 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_PLATAFORMAS_DE_DIFUSION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C118FE82-1681-987F-1B93-8A8BF9FA83CC</referredTableID>
+<keyObject>6EC33DE8-F26F-36F6-89EA-AAA4824BE938</keyObject>
+<referredKeyID>6EC33DE8-F26F-36F6-89EA-AAA4824BE938</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_PALTAFORMA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

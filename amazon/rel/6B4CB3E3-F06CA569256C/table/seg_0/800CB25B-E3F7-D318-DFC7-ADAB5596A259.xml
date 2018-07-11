@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="800CB25B-E3F7-D318-DFC7-ADAB5596A259" name="TBL_REEMBOLSOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:44:28 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<ordsAlias>table_71</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_PEDIDO" id="15DD6200-7E83-88CE-920F-42CC32D79837">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:21 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2567CA2F-6BB4-69F1-A7DB-FC99FDCEA81F" referredColumn="AAEE0F68-EF71-AACA-F2D1-D036267A9485"/>
+</associations>
+</Column>
+<Column name="CODIGO_EMPRESA_ENVIO" id="8C385ACF-7F9C-6552-989C-E99DB2E2C9D1">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:44 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB091718-5553-B507-FBBB-DDF899504F17" referredColumn="1AE99ACE-5E9C-C6ED-3C49-08C93994526C"/>
+</associations>
+</Column>
+<Column name="CAUSA_DE_REEMBOLSO" id="E666C637-356A-052C-2132-468ED239FA4A">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_DE_REEMBOLSO" id="EA2CFDA2-99CB-3C61-7D2B-98C14FA66500">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:07 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8CDEE886-B4E4-2327-9813-6EADCA55E786" name="TBL_REEMBOLSOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:46:36 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15DD6200-7E83-88CE-920F-42CC32D79837"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE1924C7-1158-2F7D-A2A2-62083480615F" name="TBL_REEMBOLSOS_TBL_PEDIDOS_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:21 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15DD6200-7E83-88CE-920F-42CC32D79837"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A60CC3F-DCCA-3EF3-28C1-42E2D80B41CA" name="TBL_REEMBOLSOS_TBL_EMPRESAS_DE_ENVIO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-07-11 03:45:44 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C385ACF-7F9C-6552-989C-E99DB2E2C9D1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
