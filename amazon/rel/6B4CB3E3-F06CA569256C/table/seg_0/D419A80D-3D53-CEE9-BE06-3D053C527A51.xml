@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D419A80D-3D53-CEE9-BE06-3D053C527A51" name="TBL_OPINIONES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D419A80D-3D53-CEE9-BE06-3D053C527A51" name="TBL_CALIFICACIONES">
 <createdBy>USR</createdBy>
 <createdTime>2018-07-03 02:49:21 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_OPINION" id="15EBB205-2969-D1AF-77BD-2C98C620CA17">
+<Column name="CODIGO_CALIFICACION" id="15EBB205-2969-D1AF-77BD-2C98C620CA17">
 <createdBy>USR</createdBy>
 <createdTime>2018-07-10 18:06:58 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
@@ -69,7 +69,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="F6F57D65-DAAB-3157-6D76-C4BC8E63D16C" name="TBL_OPINIONES_PK">
+<ind_PK_UK id="F6F57D65-DAAB-3157-6D76-C4BC8E63D16C" name="TBL_CALIFICACIONES_PK">
 <createdBy>USR</createdBy>
 <createdTime>2018-07-03 02:50:46 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
