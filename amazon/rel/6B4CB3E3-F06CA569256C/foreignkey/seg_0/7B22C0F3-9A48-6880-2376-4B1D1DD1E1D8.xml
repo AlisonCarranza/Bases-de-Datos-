@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7B22C0F3-9A48-6880-2376-4B1D1DD1E1D8" containerWithKeyObject="4B6EFED0-F04F-136A-E075-0B9E10E97964" localFKIndex="DAF86216-47A9-C2E0-D05B-ACC7A716854A" name="TBL_HISTORIALES_TBL_TIPOS_DE_HISTORIAL_FK">
+<createdBy>Carranza</createdBy>
+<createdTime>2018-07-15 01:35:11 UTC</createdTime>
+<ownerDesignName>amazon</ownerDesignName>
+<referredTableLongName>TBL_TIPOS_DE_HISTORIAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>99F611EB-7451-46EE-45AA-76FD27AFF036</referredTableID>
+<keyObject>ED4E333E-6D3B-636C-35C4-9888579D17FD</keyObject>
+<referredKeyID>ED4E333E-6D3B-636C-35C4-9888579D17FD</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_TIPO_DE_HISTORIAL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
