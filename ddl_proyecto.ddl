@@ -66,12 +66,8 @@ CREATE TABLE tbl_articulos_de_carritos (
     cantidad_del_articulo   INTEGER
 );
 
-CREATE UNIQUE INDEX tbl_articulos_x_carritos__idx ON
-    tbl_articulos_de_carritos (
-        codigo_usuario
-    ASC );
 
-ALTER TABLE tbl_articulos_de_carritos ADD CONSTRAINT tbl_articulos_x_carritos_pk PRIMARY KEY ( codigo_articulo );
+ALTER TABLE tbl_articulos_de_carritos ADD CONSTRAINT tbl_articulos_x_carritos_pk PRIMARY KEY ( codigo_articulo ,codigo_usuario );
 
 CREATE TABLE tbl_articulos_x_plataforma (
     codigo_articulo     INTEGER NOT NULL,
