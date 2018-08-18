@@ -329,20 +329,361 @@ VALUES (1,3);
 INSERT INTO ARTICULOS_DE_LISTAS
 VALUES (8,3);
 
+---------------------------------------------Articulos X plataforma--------------------------------
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (1,1);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (2,1);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (3,2);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (1,4);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (5,2);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (3,3);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (4,3);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (4,1);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (9,4);
+
+INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
+VALUES (8,2);
+--------------------------------------Idiomas-------------------------------------------------
+INSERT INTO TBL_IDIOMAS
+VALUES (1,'Español');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (2,'Polaco');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (3,'Ingles');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (4,'Catalan');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (5,'Aleman');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (6,'Frances');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (7,'Holandes');
+
+INSERT INTO TBL_IDIOMAS
+VALUES (8,'Flamenco');
+
+---------------------------------Empresas de Envio----------------------------------------------
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (1,1,'Celeritas/SGEL',TO_DATE('15-09-2009','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (2,1,'Correos Express',TO_DATE('15-09-2009','DD-MM-YYYY'));
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (3,1,'MRW',TO_DATE('21-11-2009','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (4,1,'SEUR',TO_DATE('07-09-2010','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (5,1,'City Spring',TO_DATE('11-08-2011','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (6,1,'An Post',TO_DATE('18-04-2008','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (7,1,'Aramex',TO_DATE('30-07-2007','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (8,1,'DHL Express International',TO_DATE('22-09-2008','DD-MM-YYYY'));
+
+INSERT INTO TBL_EMPRESAS_DE_ENVIO
+VALUES (9,1,'UPS',TO_DATE('02-01-2005','DD-MM-YYYY'));
 
 
+----------------------------------------Telefonos----------------------------------------------
+INSERT INTO TBL_TELEFONOS
+VALUES (1,'+31 880 183 300','Asistencia solo desde fuera de belgica',1);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (2,'+44 845 266 8778','Gratis unicamente en Polonia',3);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (3,'+33 969 391 391','Asistencia en ingles y holandes',3);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (4,'+48 438 220 689','Gratis desde luxenburgo',5);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (5, '+34 902 122 424','Gratis desde españa',4);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (6,'+34 902 122 424','asistencia fuera de españa',4);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (7,'+31 880 183 300','Solo pedidos en Portugal',6);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (8,'+44 844 824 0505','Asistencia de lunes a sabado',7);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (9,'+44 844 556 0560','Linea en Catalan e Ingles',7);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (10,'800 262 966',null,8);
+
+INSERT INTO TBL_TELEFONOS
+VALUES (11,'+48 409 420 600',null,9);
+
+---------------------------------DEPARTAMENTOS------------------------------------------
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (1,'Bebe y Juguetes');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (2,'Appstore para Android');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (3,'Moda');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (4,'Amazon dash bottom');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (5,'Electronica ');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (6,'Informatica y Oficina');
+
+INSERT INTO TBL_DEPARTAMENTOS
+VALUES (7,'Belleza y Salud');
+
+----------------------------------------Categorias---------------------------------------------
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (1,'Belleza');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (2,'Moviles y telefonia');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (3,'Maquillaje');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (4,'Zapatos');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (5,'Alamcenamiento');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (6,'Ropa');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (7,'Bebes');
+
+INSERT INTO TBL_CATEGORIAS
+VALUES (8,'Portatiles');
+
+-----------------------------------Categorias X Departamento------------------------------
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (1,7);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (3,7);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (6,3);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (4,3);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (5,5);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (5,6);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (2,5);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (8,6);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (7,3);
+
+INSERT INTO CATEGORIAS_X_DEPARTAMENTOS
+VALUES (7,1);
+
+------------------------------- Departamentos X Articulos----------------------------------------
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (1,3);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (2,3);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (3,7);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (5,5);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (6,5);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (6,6);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (4,7);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (8,7);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (9,7);
+
+---------------------------------Cantidad de estrellas ---------------------------------------------
+INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
+VALUES (1,1);
+
+INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
+VALUES (2,2);
+
+INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
+VALUES (3,3);
+
+INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
+VALUES (4,4);
+
+INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
+VALUES (5,5);
+
+-----------------------------Contenido de Texto-------------------------------------
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (1,2,2,1,TO_DATE('12-04-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (2,4,3,2,TO_DATE('08-05-2017','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (3,2,7,3,TO_DATE('08-06-2108','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (4,8,6,2,TO_DATE('11-07-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (5,9,9,1,TO_DATE('23-09-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (6,5,9,3,TO_DATE('23-02-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (7,2,2,1,TO_DATE('24-06-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (8,1,6,4,TO_DATE('10-03-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (9,3,3,3,TO_DATE('04-05-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (10,2,7,3,TO_DATE('08-06-2108','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (11,8,6,2,TO_DATE('11-07-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (12,9,9,1,TO_DATE('23-09-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (13,5,9,3,TO_DATE('23-02-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (14,9,9,1,TO_DATE('23-09-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (15,5,9,3,TO_DATE('23-02-2018','DD-MM-YYYY'));
+
+INSERT INTO TBL_CONTENIDOS_DE_TEXTO
+VALUES (16,1,6,4,TO_DATE('10-03-2018','DD-MM-YYYY'));
+
+---------------------------------------Opiniones-----------------------------------------------
+INSERT INTO TBL_OPINIONES
+VALUES (1,1,2,'El color de los zapatos se diferencia al mostrado en la pagina','Color Diferente');
+
+INSERT INTO TBL_OPINIONES
+VALUES (2,3,5,'Muy buen producto  ','Excelente ');
+
+INSERT INTO TBL_OPINIONES
+VALUES (3,2,3,'La plancha tiene problemas al indicar de temperatura','Temperatura');
+
+----------------------------------------Comentarios---------------------------------------------
+INSERT INTO TBL_COMENTARIOS
+VALUES (1,4,1,NULL,'El color si se parece');
+
+INSERT INTO TBL_COMENTARIOS
+VALUES (2,5,2,NULL,'Si ademas esta super barato');
+
+INSERT INTO TBL_COMENTARIOS
+VALUES (3,6,2,2,'This phone is perfect.');
+
+INSERT INTO TBL_COMENTARIOS
+VALUES (4,7,3,NULL,'Si pero aun asi funciona');
+
+----------------------------------Preguntas-----------------------------------------------------
+INSERT INTO TBL_PREGUNTAS
+VALUES (1,8,NULL,'Tienen memorias usb de 32Gb');
+
+INSERT INTO TBL_PREGUNTAS
+VALUES (2,16,1,'Cuanto tarda el envio hacia españa sevilla');
 
 
+---------------------------------Reportes------------------------------------------------------
+INSERT INTO TBL_REPORTES
+VALUES (9,'La imagen no corresponde con el producto');
 
+INSERT INTO TBL_REPORTES
+VALUES (13,'No aparece el precio');
 
+INSERT INTO TBL_REPORTES
+VALUES (14,'Los productos llegan vencidos');
 
+---------------------------------Respuestas-----------------------------------------------------
+INSERT INTO TBL_RESPUESTAS
+VALUES (1,10,1,'Si hay disponibles');
 
+INSERT INTO TBL_RESPUESTAS
+VALUES (2,11,2,'solo tres dias dado hay un store de entregas en la quinta avenida calle Cervantes');
 
+INSERT INTO TBL_RESPUESTAS
+VALUES (3,12,2,'Podria especificar la marca para mayor informacion');
 
+----------------------------------------------------------------------------------
 
+------------------------------ Servicios Prime-----------------------------------------------
 
+INSERT INTO TBL_SERVICIOS_PRIME
+VALUES (7,1,'Amazon Prime Video');
 
+INSERT INTO TBL_SERVICIOS_PRIME
+VALUES (9,1,'Envio Prioritario');
 
+INSERT INTO TBL_SERVICIOS_PRIME
+VALUES (4,1,'Amazon Music unlimited');
 
 
 

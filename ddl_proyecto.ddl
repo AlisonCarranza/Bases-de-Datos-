@@ -3,7 +3,50 @@
 --   site:      Oracle Database 11g
 --   type:      Oracle Database 11g
 
+-------------------------------------------Nuevas Tablas-----------------------------------
 
+--------------idiomas-----------------------------
+CREATE TABLE TBL_IDIOMAS (
+    codigo_idioma   INTEGER NOT NULL,
+    idioma      VARCHAR2(100) NOT NULL
+);
+ALTER TABLE TBL_IDIOMAS ADD CONSTRAINT TBL_IDIOMAS_pk PRIMARY KEY ( codigo_idioma);
+        
+---------------------Telefonos----------------------------------------
+CREATE TABLE TBL_TELEFONOS (
+    codigo_telefono   INTEGER NOT NULL,
+    telefono      VARCHAR2(100) NOT NULL,
+    descripcion   VARCHAR2(200),
+    codigo_empresa_envio integer NOT NULL
+    
+);
+ALTER TABLE TBL_TELEFONOS ADD CONSTRAINT TBL_TELEFONOS_pk PRIMARY KEY ( codigo_telefono);
+
+ALTER TABLE TBL_TELEFONOS
+    ADD CONSTRAINT EMPRESAS_DE_ENVIO_fk FOREIGN KEY ( codigo_empresa_envio )
+        REFERENCES TBL_EMPRESAS_DE_ENVIO ( codigo_empresa_envio );
+        
+--------------------------Telefono_x_idioma-------------------------------------------
+CREATE TABLE TELEFONOS_X_IDIOMAS(
+    codigo_telefono   INTEGER NOT NULL,
+    codigo_idioma   INTEGER NOT NULL   
+);
+ALTER TABLE TELEFONOS_X_IDIOMAS ADD CONSTRAINT telefono_x_idioma_pk PRIMARY KEY ( codigo_telefono,codigo_idioma);
+
+ALTER TABLE TELEFONOS_X_IDIOMAS
+    ADD CONSTRAINT telefonos_fk FOREIGN KEY ( codigo_telefono )
+        REFERENCES TBL_TELEFONOS ( codigo_telefono );
+
+ALTER TABLE TELEFONOS_X_IDIOMAS
+    ADD CONSTRAINT idiomas_fk FOREIGN KEY ( codigo_idioma )
+        REFERENCES TBL_IDIOMAS ( codigo_idioma );
+        
+
+--------------------------------------------------------------------------------------------        
+
+-------------------------
+        
+-----------------------------------------------------------------------------------------
 
 CREATE TABLE articulos_de_listas (
     codigo_articulo   INTEGER NOT NULL,
