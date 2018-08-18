@@ -32,7 +32,7 @@ INSERT INTO TBL_UBICACION
 VALUES(2,1,NULL,'NICARAGUA',302,21,104);
 
 INSERT INTO TBL_UBICACION
-VALUES(3,1,NULL,'España',1003,50,120);
+VALUES(3,1,NULL,'Espania',1003,50,120);
 
 INSERT INTO TBL_UBICACION
 VALUES(4,1,Null,'Inglaterra',44,51,0);
@@ -246,31 +246,31 @@ INSERT INTO TBL_ARTICULOS
 VALUES (2,1,2,4,2,4,'Tennis Nike color blanco talla 6',37,TO_DATE('12-03-2017','DD-MM-YYYY'),'zapato deportivo');
 
 INSERT INTO TBL_ARTICULOS 
-VALUES (3,2,1,6,4,3,'Color rosado,Pantalla LCD 150-235ºC,Placas con revestimiento de cerámica',6,
+VALUES (3,2,1,6,4,3,'Color rosado,Pantalla LCD 150-235CC,Placas con revestimiento de ceramica',6,
 TO_DATE('02-04-2018','DD-MM-YYYY'),'Plancha para el cabello');
 
 INSERT INTO TBL_ARTICULOS
-VALUES (4,2,1,6,4,3,'Cuenta con ajuste de temperatura ThermoProtect,Chorro de aire frío que fija el peinado',5,
+VALUES (4,2,1,6,4,3,'Cuenta con ajuste de temperatura ThermoProtect,Chorro de aire frio que fija el peinado',5,
 TO_DATE('11-04-2017','DD-MM-YYYY'),'Secadora de Cabello');
 
 INSERT INTO TBL_ARTICULOS
 VALUES (5,8,2,1,3,3,'Procesador de 1.9 GHz Octa-Core;
-memoria RAM 3 GB,Pantalla Super AMOLED táctil capacitiva de 5.2 pulgadas con una resolución de 1920 x 1080 píxeles',10,
+memoria RAM 3 GB,Pantalla Super AMOLED tactil capacitiva de 5.2 pulgadas con una resolucion de 1920 x 1080 pixeles',10,
 TO_DATE('7-08-2018','DD-MM-YYYY'),'Telefono Movil');
 
 INSERT INTO TBL_ARTICULOS
-VALUES (6,3,1,2,3,1,'Velocidades de transferencia de hasta 98 MB/s,tamaño 32 gb',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD');
+VALUES (6,3,1,2,3,1,'Velocidades de transferencia de hasta 98 MB/s,tamanio 32 gb',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD');
 
 INSERT INTO TBL_ARTICULOS
 VALUES (7,9,2,1,3,3,'3 GB de RAM y con almacenamiento de 32 GB + ranura MicroSD (hasta 256 GB)
-,Dimensiones 149,3x70,2x8,2 mm ,Batería de 3.000 mAh',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil');
+,Dimensiones 149,3x70,2x8,2 mm ,Bateria de 3.000 mAh',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil');
 
 INSERT INTO TBL_ARTICULOS
-VALUES (8,2,1,5,4,2,'La Palette Gold consta de una selección de 10 tonos Shimmer, de rosa sutil a oro brillante y púrpura,Peso:9 g',
+VALUES (8,2,1,5,4,2,'La Palette Gold consta de una seleccion de 10 tonos Shimmer, de rosa sutil a oro brillante y purpura,Peso:9 g',
 12,TO_DATE('24-12-2017','DD-MM-YYYY'),'Sombra de Ojos');
 
 INSERT INTO TBL_ARTICULOS
-VALUES (9,10,2,5,2,2,'Labial mate fijo tinta liquida, sella el mate con el color ink más saturado',12,
+VALUES (9,10,2,5,2,2,'Labial mate fijo tinta liquida, sella el mate con el color ink mas saturado',12,
 TO_DATE('24-12-2017','DD-MM-YYYY'),'Labial');
 
 ------------------------------------Articulos DE Carrito(Deberia tener un funcionamiento similar al de las listas)---------------------------------------------------------------------
@@ -362,7 +362,7 @@ INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
 VALUES (8,2);
 --------------------------------------Idiomas-------------------------------------------------
 INSERT INTO TBL_IDIOMAS
-VALUES (1,'Español');
+VALUES (1,'Latino');
 
 INSERT INTO TBL_IDIOMAS
 VALUES (2,'Polaco');
@@ -416,22 +416,22 @@ VALUES (9,1,'UPS',TO_DATE('02-01-2005','DD-MM-YYYY'));
 
 ----------------------------------------Telefonos----------------------------------------------
 INSERT INTO TBL_TELEFONOS
-VALUES (1,'+31 880 183 300','Asistencia solo desde fuera de belgica',1);
+VALUES (1,'+31 880 183 300','Asistencia solo desde fuera de Belgica',1);
 
 INSERT INTO TBL_TELEFONOS
-VALUES (2,'+44 845 266 8778','Gratis unicamente en Polonia',3);
+VALUES (2,'+44 845w 266 8778','Gratis unicamente en Polonia',3);
 
 INSERT INTO TBL_TELEFONOS
 VALUES (3,'+33 969 391 391','Asistencia en ingles y holandes',3);
 
 INSERT INTO TBL_TELEFONOS
-VALUES (4,'+48 438 220 689','Gratis desde luxenburgo',5);
+VALUES (4,'+48 438 220 689','Gratis desde Luxemburgo',5);
 
 INSERT INTO TBL_TELEFONOS
-VALUES (5, '+34 902 122 424','Gratis desde españa',4);
+VALUES (5, '+34 902 122 424','Gratis desde Espania',4);
 
 INSERT INTO TBL_TELEFONOS
-VALUES (6,'+34 902 122 424','asistencia fuera de españa',4);
+VALUES (6,'+34 902 122 424','asistencia fuera de Espania',4);
 
 INSERT INTO TBL_TELEFONOS
 VALUES (7,'+31 880 183 300','Solo pedidos en Portugal',6);
@@ -649,7 +649,7 @@ INSERT INTO TBL_PREGUNTAS
 VALUES (1,8,NULL,'Tienen memorias usb de 32Gb');
 
 INSERT INTO TBL_PREGUNTAS
-VALUES (2,16,1,'Cuanto tarda el envio hacia españa sevilla');
+VALUES (2,16,1,'Cuanto tarda el envio hacia espania sevilla');
 
 
 ---------------------------------Reportes------------------------------------------------------
