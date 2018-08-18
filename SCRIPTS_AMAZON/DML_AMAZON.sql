@@ -240,38 +240,38 @@ VALUES (4,'Color');
 
 -------------------------------------------Articulos---------------------------------
 INSERT INTO TBL_ARTICULOS
-VALUES (1,4,2,3,2,4,'Tennis Converse color negro talla 8',2,TO_DATE('12-03-2017','DD-MM-YYYY'),'Zapato');
+VALUES (1,4,2,3,2,4,'Tennis Converse color negro talla 8',2,TO_DATE('12-03-2017','DD-MM-YYYY'),'Zapato',70.00);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (2,1,2,4,2,4,'Tennis Nike color blanco talla 6',37,TO_DATE('12-03-2017','DD-MM-YYYY'),'zapato deportivo');
+VALUES (2,1,2,4,2,4,'Tennis Nike color blanco talla 6',37,TO_DATE('12-03-2017','DD-MM-YYYY'),'zapato deportivo',100.00);
 
 INSERT INTO TBL_ARTICULOS 
 VALUES (3,2,1,6,4,3,'Color rosado,Pantalla LCD 150-235CC,Placas con revestimiento de ceramica',6,
-TO_DATE('02-04-2018','DD-MM-YYYY'),'Plancha para el cabello');
+TO_DATE('02-04-2018','DD-MM-YYYY'),'Plancha para el cabello',40.00);
 
 INSERT INTO TBL_ARTICULOS
 VALUES (4,2,1,6,4,3,'Cuenta con ajuste de temperatura ThermoProtect,Chorro de aire frio que fija el peinado',5,
-TO_DATE('11-04-2017','DD-MM-YYYY'),'Secadora de Cabello');
+TO_DATE('11-04-2017','DD-MM-YYYY'),'Secadora de Cabello',60.00);
 
 INSERT INTO TBL_ARTICULOS
 VALUES (5,8,2,1,3,3,'Procesador de 1.9 GHz Octa-Core;
 memoria RAM 3 GB,Pantalla Super AMOLED tactil capacitiva de 5.2 pulgadas con una resolucion de 1920 x 1080 pixeles',10,
-TO_DATE('7-08-2018','DD-MM-YYYY'),'Telefono Movil');
+TO_DATE('7-08-2018','DD-MM-YYYY'),'Telefono Movil',600.00);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (6,3,1,2,3,1,'Velocidades de transferencia de hasta 98 MB/s,tamanio 32 gb',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD');
+VALUES (6,3,1,2,3,1,'Velocidades de transferencia de hasta 98 MB/s,tamanio 32 gb',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD',600.00);
 
 INSERT INTO TBL_ARTICULOS
 VALUES (7,9,2,1,3,3,'3 GB de RAM y con almacenamiento de 32 GB + ranura MicroSD (hasta 256 GB)
-,Dimensiones 149,3x70,2x8,2 mm ,Bateria de 3.000 mAh',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil');
+,Dimensiones 149,3x70,2x8,2 mm ,Bateria de 3.000 mAh',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil',600.00);
 
 INSERT INTO TBL_ARTICULOS
 VALUES (8,2,1,5,4,2,'La Palette Gold consta de una seleccion de 10 tonos Shimmer, de rosa sutil a oro brillante y purpura,Peso:9 g',
-12,TO_DATE('24-12-2017','DD-MM-YYYY'),'Sombra de Ojos');
+12,TO_DATE('24-12-2017','DD-MM-YYYY'),'Sombra de Ojos',10.00);
 
 INSERT INTO TBL_ARTICULOS
 VALUES (9,10,2,5,2,2,'Labial mate fijo tinta liquida, sella el mate con el color ink mas saturado',12,
-TO_DATE('24-12-2017','DD-MM-YYYY'),'Labial');
+TO_DATE('24-12-2017','DD-MM-YYYY'),'Labial',10.00);
 
 ------------------------------------Articulos DE Carrito(Deberia tener un funcionamiento similar al de las listas)---------------------------------------------------------------------
 ----------------------------------- CONCLUSION=> Articulos DE Carrito = ARTICULOS_X_USUARIOS
