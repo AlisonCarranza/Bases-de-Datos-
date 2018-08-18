@@ -69,6 +69,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CA421FB2-EE06-21E9-2AC9-B62532BFE0D0"/>
+<colUsage columnID="80ABD31D-17D8-CF77-C458-DB08A8E39E23"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BDBCF2C3-1BC5-9EE5-06A0-605F804B8031" name="TBL_ARTICULOS_X_CARRITOS__IDX">
