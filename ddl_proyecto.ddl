@@ -97,7 +97,8 @@ CREATE TABLE tbl_articulos (
     descripcion              VARCHAR2(300),
     cantidad                 INTEGER,
     fecha_de_publicacion     DATE,
-    nombre_articulo          VARCHAR2(200)
+    nombre_articulo          VARCHAR2(200),
+    precio                   NUMBER
 );
 
 ALTER TABLE tbl_articulos ADD CONSTRAINT tbl_articulos_pk PRIMARY KEY ( codigo_articulo );
