@@ -23,7 +23,7 @@
 	<div class="Contenedor">
 		<div class="encabezado">
 			<a class="Icono_link" tabindex="-1" href="recursos/amazon1.jpg">
-				 <img src="recursos/amazon1.jpg" alt="Logo Amazon">
+				 <img class="img" src="recursos/amazon1.jpg" alt="Logo Amazon">
             </a>
 		</div>
 		<div class="Cuerpo">
