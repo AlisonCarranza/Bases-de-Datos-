@@ -45,12 +45,15 @@
                         <br><label for="contrasena2">Confirma tu contraseña</label>
                         <input class="Texto" type="password" name="contrasena2" maxlength="128">
                         <br><label>Pais:</label>
-                        <label><select class="form-control" id="slc-pais">
-                        </select></label><br>
+                        <label><select class="form-control" id="slc-pais" name="slc-pais">
+                        </select></label><br><br>
+                        <label>Telefono:</label>
+                        <input class="Texto" type="text" name="telefono" maxlength="128">
+                        <br><br>
+                        <label>Fecha de nacimiento:</label>
+                        <input class="Texto" type="date" name="fechaN" maxlength="128">
+                        <br><br>
                         <input type="submit" value= "Continuar" name="Continuar3" class="boton_naranja">
-                        <a  class="Icono_link" href=" ">
-                            <span>¿Necesitas Ayuda?</span>
-                        </a>
                     </form>
 	    	    </div>
             </div>
@@ -88,7 +91,7 @@
                 console.log(respuesta);
                 for(var i=0; i<respuesta.length; i++){
                     //<option value="1">Honduras</option>
-                    $('#slc-pais').append('<option value="'+respuesta[i].NOMBRE_UBICACION+'">'+respuesta[i].NOMBRE_UBICACION+'</option>');
+                    $('#slc-pais').append('<option value="'+(i+1)+'">'+respuesta[i].NOMBRE_UBICACION+'</option>');
                 }
             },
             error: function(error){

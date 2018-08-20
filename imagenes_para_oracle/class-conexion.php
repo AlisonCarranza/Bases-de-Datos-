@@ -20,10 +20,6 @@
         public function obtenerFila($resultado){
             return oci_fetch_assoc($resultado);
         }
-        
-        public function obtenerFila2($resultado){
-            return oci_fetch_array($resultado);
-        }
 
         public function cerrarConexion(){
             oci_close($this->conexion);

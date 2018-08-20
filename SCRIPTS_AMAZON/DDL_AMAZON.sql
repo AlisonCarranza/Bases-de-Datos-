@@ -14,11 +14,11 @@ ALTER TABLE articulos_de_listas ADD CONSTRAINT articulos_de_listas_pk PRIMARY KE
                                                                                     codigo_lista );
 
 CREATE TABLE categorias_x_departamentos (
-    "CODIGO_CATEGORIA "   INTEGER NOT NULL,
+    codigo_categoria   INTEGER NOT NULL,
     codigo_departamento   INTEGER NOT NULL
 );
 
-ALTER TABLE categorias_x_departamentos ADD CONSTRAINT categorias_x_departamentos_pk PRIMARY KEY ( "CODIGO_CATEGORIA ",
+ALTER TABLE categorias_x_departamentos ADD CONSTRAINT categorias_x_departamentos_pk PRIMARY KEY ( codigo_categoria,
                                                                                                   codigo_departamento );
 
 CREATE TABLE condiciones_x_articulo (
@@ -51,10 +51,10 @@ CREATE TABLE tbl_articulos (
     codigo_marca             INTEGER,
     region_de_venta          INTEGER NOT NULL,
     codigo_agrupacion        INTEGER NOT NULL,
-    descripcion              VARCHAR2(300),
+    nombre_articulo          VARCHAR2(200),
     cantidad                 INTEGER,
     fecha_de_publicacion     DATE,
-    nombre_articulo          VARCHAR2(200),
+    descripcion              VARCHAR2(300),
     precio                   NUMBER
 );
 
@@ -91,11 +91,11 @@ CREATE TABLE tbl_caracteristicas (
 );
 
 CREATE TABLE tbl_categorias (
-    "CODIGO_CATEGORIA "   INTEGER NOT NULL,
+    codigo_categoria      INTEGER NOT NULL,
     descripcion           VARCHAR2(100)
 );
 
-ALTER TABLE tbl_categorias ADD CONSTRAINT tbl_categorias_pk PRIMARY KEY ( "CODIGO_CATEGORIA " );
+ALTER TABLE tbl_categorias ADD CONSTRAINT tbl_categorias_pk PRIMARY KEY ( codigo_categoria );
 
 CREATE TABLE tbl_comentarios (
     codigo_comentario         INTEGER NOT NULL,
@@ -131,7 +131,7 @@ ALTER TABLE tbl_contenidos_de_texto ADD CONSTRAINT tbl_contenidos_de_texto_pk PR
 
 CREATE TABLE tbl_departamentos (
     codigo_departamento   INTEGER NOT NULL,
-    "DESCRIPCION "        VARCHAR2(100)
+    DESCRIPCION           VARCHAR2(100)
 );
 
 ALTER TABLE tbl_departamentos ADD CONSTRAINT tbl_departamentos_pk PRIMARY KEY ( codigo_departamento );
@@ -205,6 +205,13 @@ CREATE TABLE tbl_imagenes_de_articulos (
     codigo_articulo   INTEGER NOT NULL,
     imagen            BLOB
 );
+
+CREATE TABLE tbl_idiomas (
+    codigo_idioma   NUMERIC NOT NULL,
+    nombre_idioma   VARCHAR2(50)
+);
+
+ALTER TABLE tbl_idiomas ADD CONSTRAINT tbl_idiomas_pk PRIMARY KEY ( codigo_idioma );
 
 CREATE TABLE tbl_informacion_de_productos (
     codigo_articulo   INTEGER NOT NULL,
@@ -344,13 +351,13 @@ CREATE TABLE tbl_plataformas_de_difusion (
 
 ALTER TABLE tbl_plataformas_de_difusion ADD CONSTRAINT tbl_plataformas_de_difusion_pk PRIMARY KEY ( codigo_paltaforma );
 
-CREATE TABLE tbl_porveedores (
+CREATE TABLE tbl_proveedores (
     codigo_proveedor   INTEGER NOT NULL,
     codigo_tipo        INTEGER NOT NULL,
     nombre_proveedor   VARCHAR2(100)
 );
 
-ALTER TABLE tbl_porveedores ADD CONSTRAINT tbl_porveedores_pk PRIMARY KEY ( codigo_proveedor );
+ALTER TABLE tbl_proveedores ADD CONSTRAINT tbl_proveedores_pk PRIMARY KEY ( codigo_proveedor );
 
 CREATE TABLE tbl_preguntas (
     codigo_pregunta      INTEGER NOT NULL,
@@ -467,6 +474,15 @@ CREATE TABLE tbl_temas_de_ayuda (
     descripcion      VARCHAR2(100)
 );
 
+CREATE TABLE tbl_telefonos (
+    codigo_telefono        INTEGER NOT NULL,
+    telefono               VARCHAR2(30),
+    descripcion            VARCHAR2(150),
+    codigo_empresa   INTEGER NOT NULL
+);
+
+ALTER TABLE tbl_telefonos ADD CONSTRAINT tbl_telefonos_pk PRIMARY KEY ( codigo_telefono );
+
 ALTER TABLE tbl_temas_de_ayuda ADD CONSTRAINT tbl_temas_de_ayuda_pk PRIMARY KEY ( codigo_tema );
 
 CREATE TABLE tbl_tipo_de_privacidad (
@@ -543,6 +559,10 @@ CREATE TABLE tbl_usuarios_prime (
 
 ALTER TABLE tbl_usuarios_prime ADD CONSTRAINT tbl_usuarios_prime_pk PRIMARY KEY ( codigo_usuario );
 
+ALTER TABLE tbl_telefonos
+    ADD CONSTRAINT tbl_empresas_de_envio_fk FOREIGN KEY ( codigo_empresa )
+        REFERENCES tbl_empresas_de_envio ( codigo_empresa_envio );
+
 ALTER TABLE departamentos_x_articulos
     ADD CONSTRAINT articulos_fk FOREIGN KEY ( codigo_articulo )
         REFERENCES tbl_articulos ( codigo_articulo );
@@ -616,8 +636,8 @@ ALTER TABLE tbl_opiniones
         REFERENCES tbl_cantidad_de_estrellas ( codigo_cantidad );
 
 ALTER TABLE categorias_x_departamentos
-    ADD CONSTRAINT tbl_categorias_fk FOREIGN KEY ( "CODIGO_CATEGORIA " )
-        REFERENCES tbl_categorias ( "CODIGO_CATEGORIA " );
+    ADD CONSTRAINT tbl_categorias_fk FOREIGN KEY ( codigo_categoria )
+        REFERENCES tbl_categorias ( codigo_categoria );
 
 ALTER TABLE tbl_comentarios
     ADD CONSTRAINT tbl_comentarios_fk FOREIGN KEY ( codigo_comentario_padre )
@@ -732,8 +752,8 @@ ALTER TABLE tbl_articulos_x_plataforma
         REFERENCES tbl_plataformas_de_difusion ( codigo_paltaforma );
 
 ALTER TABLE tbl_proveedores_x_articulos
-    ADD CONSTRAINT tbl_porveedores_fk FOREIGN KEY ( codigo_proveedor )
-        REFERENCES tbl_porveedores ( codigo_proveedor );
+    ADD CONSTRAINT tbl_proveedores_fk FOREIGN KEY ( codigo_proveedor )
+        REFERENCES tbl_proveedores ( codigo_proveedor );
 
 ALTER TABLE tbl_respuestas
     ADD CONSTRAINT tbl_preguntas_fk FOREIGN KEY ( codigo_pregunta )
@@ -775,7 +795,7 @@ ALTER TABLE tbl_ofertas
     ADD CONSTRAINT tbl_tipos_de_ofertas_fk FOREIGN KEY ( codigo_tipo_oferta )
         REFERENCES tbl_tipos_de_ofertas ( codigo_tipo_oferta );
 
-ALTER TABLE tbl_porveedores
+ALTER TABLE tbl_proveedores
     ADD CONSTRAINT tbl_tipos_de_proveedores_fk FOREIGN KEY ( codigo_tipo )
         REFERENCES tbl_tipos_de_proveedores ( codigo_tipo );
 
@@ -906,3 +926,16 @@ ALTER TABLE tbl_metodos_pago_usuarios
 -- 
 -- ERRORS                                   2
 -- WARNINGS                                 0
+ create sequence SQ_CODIGO_USUARIO
+  start with 11
+  increment by 1
+  maxvalue 99999
+  minvalue 11;
+  
+  create sequence SQ_CODIGO_ARTICULO
+  start with 11
+  increment by 1
+  maxvalue 99999
+  minvalue 11; 
+
+  commit;

@@ -11,3 +11,4 @@ GRANT create any trigger TO AMAZON;
 GRANT create any procedure TO AMAZON;
 GRANT create sequence TO AMAZON;
 GRANT create synonym TO AMAZON;
+COMMIT;

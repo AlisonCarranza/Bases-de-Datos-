@@ -36,7 +36,7 @@
 <colAssociation fkAssociation="51F65C76-0E5F-3AB0-523F-D1FDC05A70AB" referredColumn="5A5CDC4C-680F-B7B3-6F1A-71225572DA93"/>
 </associations>
 </Column>
-<Column name="CODIGO_EMPRESA_ENVIO" id="5883CC09-851E-FA2C-D7BA-68D275BC9116">
+<Column name="CODIGO_EMPRESA" id="5883CC09-851E-FA2C-D7BA-68D275BC9116">
 <createdBy>USR</createdBy>
 <createdTime>2018-07-11 03:13:56 UTC</createdTime>
 <ownerDesignName>amazon</ownerDesignName>
