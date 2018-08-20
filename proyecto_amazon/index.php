@@ -52,10 +52,10 @@
             <span class="navbar2">Ayuda</span>
             <span>
                 <select  id="navbar2-lenguajes">
-                    <option selected>ES</option>
+                    <!--<option selected>ES</option>
                     <option value="1">RU</option>
                     <option value="2">FI</option>
-                    <option value="3">US</option>
+                    <option value="3">US</option>-->
                 </select>
             </span>
             <span id="navbar2-cuenta" style="cursor: default;"><a id="navbar2-ancle-cuenta" href="form1.php" style="color: #D8D8D8;"><?php echo $_SESSION['nombre'];?></a>
@@ -167,23 +167,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5" id="todas-las-imagenes">
-                        <div> 
+                        <!--<div> 
                             <img onclick="vistaPrevia();" id="imagen1" class="carrito-contenedor-imagen" data-toggle="modal" data-target="#modal-imagen" src="recursos/hello.png">
                         </div>
                         <span><img onclick="vistaPrevia();" data-toggle="modal" data-target="#modal-imagen" class="imagen-p" id="imagen-p1" src="recursos/intel.jpg"></span>
                         <span><img onclick="vistaPrevia();" data-toggle="modal" data-target="#modal-imagen" class="imagen-p" id="imagen-p2" src="recursos/pedidos.png"></span>
                         <span><img onclick="vistaPrevia();" data-toggle="modal" data-target="#modal-imagen" class="imagen-p" id="imagen-p3" src="recursos/prime.png"></span>
-                        <span><img onclick="vistaPrevia();" data-toggle="modal" data-target="#modal-imagen" class="imagen-p" id="imagen-p4" src="recursos/intel.jpg"></span>                        
+                        <span><img onclick="vistaPrevia();" data-toggle="modal" data-target="#modal-imagen" class="imagen-p" id="imagen-p4" src="recursos/intel.jpg"></span>-->                        
                     </div>
                     <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                         <div id="detalles-de-articulo-marca">Marca del articulo</div>
                         <h3 id="detalles-de-articulo-nombre">Nombre del articulo</h3>
-                        <span id="detalles-de-articulo-valoracion"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span id="detalles-de-articulo-valoracion"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
                         <span id="detalles-de-articulo-cantidad-opiniones">xyz opiniones de usuarios</span>
                         <div id="detalles-de-articulo-cantidad-preguntas-respondidas">xyz preguntas respondidas</div><br>
-                        <div id="debtalles-de-articulo-caracteristicas">* asdfasdf<br>* asdfggasdf<br>* asdfgqref</div>
-                        <div id="detalles-de-articulos-estados"> Usado Nuevo<br>asdfas<br>sdfs<br>asdf<br></div>
-                        <div id="detalles-de-articulos-opcion-de-reporte"><i class="far fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;Reportar informacion de producto incorrecta</div>
+                        <div id="detalles-de-articulo-caracteristicas">* asdfasdf<br>* asdfggasdf<br>* asdfgqref</div>
+                        <div id="detalles-de-articulos-estados"><br>Nuevo<br></div>
+                        <div id="detalles-de-articulos-opcion-de-reporte"><br><i class="far fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;Reportar informacion de producto incorrecta</div>
                         <div id=""></div>
                         <div id=""></div>
                     </div>
@@ -191,12 +191,13 @@
                         <div id="detalles-de-articulo-redes-sociales">&nbsp;&nbsp;Compartir:&nbsp;&nbsp;&nbsp;&nbsp;<img style="margin-bottom: 5px;" src="recursos/redes-sociales.png"></div>
                         <div id="cajaPresentacionArticulo"><button style="width: 100%">Agregar a lista</button></div>
                         <div id="cajaPresentacionArticulo">
-                            <span id="detalles-de-articulo-estados">Usado:  </span><span id="detalles-de-articulo-precio">$ 4009.00</span><br>
+                            <!--<span id="detalles-de-articulo-estados">Usado:  </span><span id="detalles-de-articulo-precio">$ 4009.00</span><br>-->
                             <span id="detalles-de-articulo-estados">Nuevo:  </span><span id="detalles-de-articulo-precio">$ 5000.00</span><br>
                             <div id="detalles-de-artculos-envios-disponibles">El envio gratis esta disponible para este producto</div>
-                            <div>De segunda mano: Como nuevo</div>
+                            <!--<div>De segunda mano: Como nuevo</div>-->
                             <div id="detalles-articulo-vendedor">vendido por: persona X</div>
                             <div id="detalles-de-articulo-empresa-de-envio">envio por: Empresa X</div>
+                            <div id="detalles-de-articulo-fecha"></div>
                             <div>Enviar a Honduras</div>
                             <span><button style="background-color: #EFBE44; width:100%;" class="btn btn-warning"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Agregar al carrito</button></span></div>
                         </div>

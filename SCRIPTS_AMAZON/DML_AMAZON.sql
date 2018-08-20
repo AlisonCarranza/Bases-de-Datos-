@@ -175,7 +175,6 @@ VALUES(4,'Lista de nacimiento');
 INSERT INTO TBL_TIPO_ENVIOS
 VALUES (1,'Nacional');
 
-
 INSERT INTO TBL_TIPO_ENVIOS
 VALUES (2,'Internacional');
 
@@ -241,39 +240,108 @@ VALUES (4,'Color');
 
 -------------------------------------------Articulos---------------------------------
 INSERT INTO TBL_ARTICULOS
-VALUES (1,4,2,3,2,4,'Tennis Converse color negro talla 8',2,TO_DATE('12-03-2017','DD-MM-YYYY'),'Zapato',70.00);
+VALUES (1,4,2,3,2,4,'Tennis Converse',2,TO_DATE('12-03-2017','DD-MM-YYYY'),'Zapato',70.00);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Color Negro',1);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Talla 8',1);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (2,1,2,4,2,4,'Tennis Nike color blanco talla 6',37,TO_DATE('12-03-2017','DD-MM-YYYY'),'zapato deportivo',100.00);
+VALUES (2,1,2,4,2,4,'Tenis Nike',37,TO_DATE('12-03-2017','DD-MM-YYYY'),'zapato deportivo', 100.00);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Color Blanco',2);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Talla 6',2);
 
 INSERT INTO TBL_ARTICULOS 
-VALUES (3,2,1,6,4,3,'Color rosado,Pantalla LCD 150-235CC,Placas con revestimiento de ceramica',6,
+VALUES (3,2,1,6,4,3,'Plancha ceramica',6,
 TO_DATE('02-04-2018','DD-MM-YYYY'),'Plancha para el cabello',40.00);
 
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Color Rosado',3);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Pantalla LCD 150-235CC',3);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Placas con revestimiento de ceramica',3);
+
 INSERT INTO TBL_ARTICULOS
-VALUES (4,2,1,6,4,3,'Cuenta con ajuste de temperatura ThermoProtect,Chorro de aire frio que fija el peinado',5,
+VALUES (4,2,1,6,4,3,'Secadora XYZ',5,
 TO_DATE('11-04-2017','DD-MM-YYYY'),'Secadora de Cabello',60.00);
 
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Cuenta con ajuste de temperatura ThermoProtect',4);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Chorro de aire frio que fija el peinado',4);
+
 INSERT INTO TBL_ARTICULOS
-VALUES (5,8,2,1,3,3,'Procesador de 1.9 GHz Octa-Core;
-memoria RAM 3 GB,Pantalla Super AMOLED tactil capacitiva de 5.2 pulgadas con una resolucion de 1920 x 1080 pixeles',10,
+VALUES (5,8,2,1,3,3,'Galaxy XYZ',10,
 TO_DATE('7-08-2018','DD-MM-YYYY'),'Telefono Movil',600.00);
 
-INSERT INTO TBL_ARTICULOS
-VALUES (6,3,1,2,3,1,'Velocidades de transferencia de hasta 98 MB/s,tamanio 32 gb',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD',600.00);
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Procesador de 1.9 GHz Octa-Core',5);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('memoria RAM 3 GB',5);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Pantalla Super AMOLED tactil capacitiva de 5.2 pulgadas',5);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Resolucion de 1920 x 1080 pixeles',5);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (7,9,2,1,3,3,'3 GB de RAM y con almacenamiento de 32 GB + ranura MicroSD (hasta 256 GB)
-,Dimensiones 149,3x70,2x8,2 mm ,Bateria de 3.000 mAh',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil',600.00);
+VALUES (6,3,1,2,3,1,'Adata 9000',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD',600.00);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Velocidades de transferencia de hasta 98 MB/s',6);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('32 GB de espacio de almacenamiento',6);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (8,2,1,5,4,2,'La Palette Gold consta de una seleccion de 10 tonos Shimmer, de rosa sutil a oro brillante y purpura,Peso:9 g',
+VALUES (7,9,2,1,3,3,'Sx-8000',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil',600.00);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('3 GB de RAM',7);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Amacenamiento de 32 GB',7);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Ranura MicroSD (hasta 256 GB)',7);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Dimensiones 149,3x70,2x8,2 mm',7);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Bateria de 3.000 mAh',7);
+
+INSERT INTO TBL_ARTICULOS
+VALUES (8,2,1,5,4,2,'La Palette Gold',
 12,TO_DATE('24-12-2017','DD-MM-YYYY'),'Sombra de Ojos',10.00);
 
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Consta de una seleccion de 10 tonos Shimmer',8);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Sutil a oro brillante y purpura',8);
+
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Peso: 9g',8);
+
 INSERT INTO TBL_ARTICULOS
-VALUES (9,10,2,5,2,2,'Labial mate fijo tinta liquida, sella el mate con el color ink mas saturado',12,
+VALUES (9,10,2,5,2,2,'Labial mate fijo',12,
 TO_DATE('24-12-2017','DD-MM-YYYY'),'Labial',10.00);
 
+INSERT INTO TBL_CARACTERISTICAS
+VALUES ('Sella el mate con el color ink mas saturado',9);
 ------------------------------------Articulos DE Carrito(Deberia tener un funcionamiento similar al de las listas)---------------------------------------------------------------------
 ----------------------------------- CONCLUSION=> Articulos DE Carrito = ARTICULOS_X_USUARIOS
 INSERT INTO TBL_ARTICULOS_DE_CARRITOS
@@ -363,7 +431,7 @@ INSERT INTO TBL_ARTICULOS_X_PLATAFORMA
 VALUES (8,2);
 --------------------------------------Idiomas-------------------------------------------------
 INSERT INTO TBL_IDIOMAS
-VALUES (1,'Latino');
+VALUES (1,'Esp. latino');
 
 INSERT INTO TBL_IDIOMAS
 VALUES (2,'Polaco');
@@ -420,7 +488,7 @@ INSERT INTO TBL_TELEFONOS
 VALUES (1,'+31 880 183 300','Asistencia solo desde fuera de Belgica',1);
 
 INSERT INTO TBL_TELEFONOS
-VALUES (2,'+44 845w 266 8778','Gratis unicamente en Polonia',3);
+VALUES (2,'+44 845 266 8778','Gratis unicamente en Polonia',3);
 
 INSERT INTO TBL_TELEFONOS
 VALUES (3,'+33 969 391 391','Asistencia en ingles y holandes',3);
@@ -685,15 +753,5 @@ VALUES (9,1,'Envio Prioritario');
 
 INSERT INTO TBL_SERVICIOS_PRIME
 VALUES (4,1,'Amazon Music unlimited');
-
--------------------------------Metodo de Envio---------------------------------------------
-INSERT INTO TBL_METODO_DE_ENVIO
-VALUES (1,'aereo','3 dias');
-
-INSERT INTO TBL_METODO_DE_ENVIO
-VALUES (2,'terrestre','3 horas');
-
-
-
-
+COMMIT;
 

@@ -15,15 +15,9 @@
 				break;
 			}
 		}
-
 		if($bandera == 0){
 			header('location: ../Form1.php');
 		}
-		/*if($_POST['login_email']!=''){
-			header('location: ../Form2.php');
-		}else{
-			header('location: ../Form1.php');
-		}*/
 	}else if(isset($_POST["Continuar2"])){
 		$sql = "SELECT CONTRASENA FROM TBL_USUARIOS";
 		$resultado = $conexion->ejecutarConsulta($sql);
@@ -47,37 +41,34 @@
 		if($bandera == 0){
 			header('location: ../Form2.php');
 		}
-		/*if($_POST['contrasena']!=''){
-			header('location: ../index.php');
-		}else{
-			header('location: ../Form2.php');
-		}*/
 	}else if(isset($_POST["Continuar3"])){
-		if($_POST['nombre']=='' || $_POST['correo']=='' || $_POST['contrasena1']=='' || $_POST['contrasena2']==''){
+		if($_POST['nombre']=='' || $_POST['correo']=='' || 
+		   $_POST['contrasena1']=='' || $_POST['contrasena2']=='' ||
+		   $_POST['telefono'] == '' || $_POST['fechaN'] == ''){
 			header('location: ../Form3.php');
 		}else{
+			$pais = $_POST['slc-pais'];
+			$genero = (integer)$_POST['rbt-genero'];
+			$correo = $_POST['correo'];
+			$contrasena = $_POST['contrasena1'];
+			$nombre = $_POST['nombre'];
+			$telefono = (integer)$_POST['telefono'];
+			$fechaN = $_POST['fechaN'];
 			//INSERT INTO TBL_USUARIOS 
             //VALUES(1,1,2,'josue03@hotmail.com','josue01','J0S777','33223723',TO_DATE('14-05-2017','DD/MM/YYYY'),TO_DATE('02-03-1996','DD/MM/YYYY'));
-			//$sql = "INSERT INTO TBL_USUARIOS
-			//		VALUES(1,1,2,'josue03@hotmail.com','josue01','J0S777','33223723',TO_DATE('14-05-2017','DD/MM/YYYY'),TO_DATE('02-03-1996','DD/MM/YYYY'));";
-			//$resultado = $conexion->ejecutarConsulta($sql);
-			$bandera = 0;
-			/*while ( $row = $conexion->obtenerFila($resultado) ) {
-				if($_POST['login_email'] == $row["CORREO"]){
-					header('location: ../Form2.php');
-					$bandera = 1;
-					break;
-				}
-			}*/
-			if($bandera == 0){
+			$sql = "INSERT INTO TBL_USUARIOS
+					VALUES(SQ_CODIGO_USUARIO.NEXTVAL,".
+					$pais.",".$genero.",'".$correo."','".$contrasena.
+					"','".$nombre."',".$telefono.",TO_DATE(SYSDATE, 'DD/MM/YYYY'),TO_DATE('".$fechaN."','YYYY/MM/DD'))";
+			$resultado = $conexion->ejecutarConsulta($sql);
+			if($resultado){
 				header('location: ../index.php');
+				$_SESSION['nombre'] = $nombre;
+				//echo $sql;
+				//echo $_POST['slc-pais'];
+			}else{
+				echo oci_error($conexion->obtenerConexion());
 			}
 		}
-		
-		/*if($_POST['nombre']!='' && $_POST['correo']!=''){
-			header('location: ../index.php');
-		}else{
-			header('location: ../Form3.php');
-        }*/
     }
 ?>

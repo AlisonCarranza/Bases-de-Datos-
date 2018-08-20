@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="036945A8-9CC7-B21F-0DA0-A48193485988" name="TBL_TELEFONOS">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:18:34 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<ordsAlias>table_66</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_TELEFONO" id="6BE59952-D340-941A-675B-592D6260E065">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:12 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO" id="FB0DC2C8-7665-F55B-7C19-5B1BA43A69BE">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:12 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="C690FBA6-3DDC-903E-5CC2-674FE26AE3D4">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:12 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_EMPRESA" id="534831F1-F085-8390-3068-8E2BC8341F83">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:26 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D48A88F9-00CC-BD4B-063C-A1D1F315C64E" referredColumn="1AE99ACE-5E9C-C6ED-3C49-08C93994526C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BB94F1C8-F44D-6F6A-B171-A1455E73F9E5" name="TBL_TELEFONOS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:12 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE59952-D340-941A-675B-592D6260E065"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03F9712A-25F7-28DC-68DE-3B713F3FC28D" name="TBL_EMPRESAS_DE_ENVIO_FK">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 23:20:26 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="534831F1-F085-8390-3068-8E2BC8341F83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

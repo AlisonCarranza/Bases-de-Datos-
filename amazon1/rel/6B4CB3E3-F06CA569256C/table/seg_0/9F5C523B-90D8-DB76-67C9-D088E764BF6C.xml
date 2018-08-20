@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9F5C523B-90D8-DB76-67C9-D088E764BF6C" name="TBL_IDIOMAS">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 17:39:38 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<ordsAlias>table_65</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_IDIOMA" id="3CA302A1-9B74-59E2-4A2A-0DBD47B1CD22">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 17:42:01 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_IDIOMA" id="356EA475-E305-8C6C-50FF-E05C24DD44D2">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 17:42:01 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD195F9E-055E-83E3-1555-A96D23A0E1C6" name="TBL_IDIOMAS_PK">
+<createdBy>USR</createdBy>
+<createdTime>2018-08-18 17:42:01 UTC</createdTime>
+<ownerDesignName>amazon1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CA302A1-9B74-59E2-4A2A-0DBD47B1CD22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

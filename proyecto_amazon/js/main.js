@@ -124,14 +124,14 @@ $(document).ready(function(){
             alert("Falta respuesta del servidor");
         }
     });
-    $.ajax({
+    /*$.ajax({
         url:"ajax/api.php?accion=cargarVariasImagenes",
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
             console.log(respuesta);
-            for(var i=2; i<respuesta.length; i++){
-                prepararImagen('inicio1-imagen'+i, respuesta[i]);
+            for(var i=1; i<=respuesta.length; i++){
+                prepararImagen('inicio1-imagen'+i, respuesta[0]);
             }
             //prepararImagen('inicio1-imagen1', respuesta[0]);
             //prepararImagen('inicio1-imagen2', respuesta[1]);
@@ -141,25 +141,49 @@ $(document).ready(function(){
             console.log(error);
             alert("Falta respuesta del servidor");
         }
-    });
+    });*/
+    var s = 0;
     $.ajax({
         url:"ajax/api.php?accion=cargar4Ofertas",
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
             console.log(respuesta);
-            for(var i=0; i<respuesta.length; i++ ){
+            //console.log(respuesta.length);
+            for(var i=0; i<respuesta.length/2; i++ ){
+                if(i==0){
+                    s = 1;
+                }else{
+                    s = (((i+1)*2)-1);
+                }
                 $('#row-ofertas').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
-                '    <div id="presentacionArticulo4Ofertas'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo();">'+
+                '    <div id="presentacionArticulo4Ofertas'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo('+respuesta[i*2].CODIGO_ARTICULO+');">'+
                 '        <div id="presentacionArticulo4Ofertas-imagen'+i+'" class="presentacionArticulo-imagen"></div>'+
-                '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i].NOMBRE_ARTICULO+'</div><br>'+
+                '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                 '        <span id="valoracion-articulo4Ofertas'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                 '        <span id="cantidad-usuarios-calificadores4Ofertas'+i+'">(5)</span>'+
-                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">'+respuesta[i].PRECIO+'</div>'+
+                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
                 '        <span><button>Mas como esto</button></span>'+
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
                 '</div>');
+                prepararImagen('presentacionArticulo4Ofertas-imagen'+i, respuesta[s]);
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+    $.ajax({
+        url:"ajax/api.php?accion=cargarIdiomas",
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            for(var i=0; i<respuesta.length; i++){
+                var str = respuesta[i].NOMBRE_IDIOMA;
+                $('#navbar2-lenguajes').append('<option value="'+primeraMayuscula(str)+'">'+primeraMayuscula(str)+'</option>');
             }
         },
         error: function(error){
@@ -179,6 +203,14 @@ function primeraMayuscula(string){
 function prepararImagen(idEtiqueta, respuestaHashMapJSON){
     var image = new Image($('#'+idEtiqueta).height());
     image.src = 'data:image/png;base64,'+respuestaHashMapJSON;
+    $('#'+idEtiqueta).append(image);
+}
+
+
+function prepararImagenVistaPrevia(idEtiqueta, respuestaHashMapJSON, idImagen){
+    var image = new Image($('#'+idEtiqueta).height());
+    image.src = 'data:image/png;base64,'+respuestaHashMapJSON;
+    image.id = idImagen;
     $('#'+idEtiqueta).append(image);
 }
 
@@ -283,7 +315,7 @@ function verTodasLasOfertas(){
     verOfertas();
     $('#verMas').css('display','none');
     $('#row-ofertas').html('');
-    $.ajax({
+    /*$.ajax({
         url:"ajax/api.php?accion=cargarOfertas",
         method: 'GET',
         dataType: "json",
@@ -301,6 +333,39 @@ function verTodasLasOfertas(){
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
                 '</div>');
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });*/
+    var s = 0;
+    $.ajax({
+        url:"ajax/api.php?accion=cargarOfertas",
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            //console.log(respuesta.length);
+            for(var i=0; i<respuesta.length/2; i++ ){
+                if(i==0){
+                    s = 1;
+                }else{
+                    s = (((i+1)*2)-1);
+                }
+                $('#row-ofertas').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
+                '    <div id="presentacionArticulo4Ofertas'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo('+respuesta[i*2].CODIGO_ARTICULO+');">'+
+                '        <div id="presentacionArticulo4Ofertas-imagen'+i+'" class="presentacionArticulo-imagen"></div>'+
+                '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
+                '        <span id="valoracion-articulo4Ofertas'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
+                '        <span id="cantidad-usuarios-calificadores4Ofertas'+i+'">(5)</span>'+
+                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
+                '        <span><button>Mas como esto</button></span>'+
+                '        <span><button>Eliminar</button></span></div>'+
+                '    </div>'+
+                '</div>');
+                prepararImagen('presentacionArticulo4Ofertas-imagen'+i, respuesta[s]);
             }
         },
         error: function(error){
@@ -342,13 +407,73 @@ function verTodasLasOfertas(){
 }
 
 
-function verDetallesDeArticulo(){
+function verDetallesDeArticulo(id){
     borrarTodo();
     $('#detalles-de-articulo').css('display','block');
     $('#realizar-pregunta').css('display','block');
     $("#realizar-pregunta").css('padding','25px 25px 25px 25px');
     $('#preguntas-realizadas').css('display','block');
     $("#preguntas-realizadas").css('padding','25px 25px 25px 25px');
+    $.ajax({
+        url:"ajax/api.php?accion=imagenesDeArticulo",
+        data: 'codigo='+id,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            console.log(respuesta.length);
+            for(var i=0; i<respuesta.length; i++ ){
+                if(i==0){
+                    $('#todas-las-imagenes').append('<div id="div-imagen-principal"></div>');
+                    prepararImagenVistaPrevia('div-imagen-principal', respuesta[i],'imagen'+i);
+                    $('#imagen'+i).attr('onclick','vistaPrevia();');
+                    $('#imagen'+i).attr('class','carrito-contenedor-imagen');
+                    $('#imagen'+i).attr('data-toggle','modal');
+                    $('#imagen'+i).attr('data-target','#modal-imagen');
+                }else{
+                    $('#todas-las-imagenes').append('<span id="span-imagenes-secundarias'+i+'"></span>');
+                    prepararImagenVistaPrevia('span-imagenes-secundarias'+i, respuesta[i],'imagen-p'+i);
+                    $('#imagen-p'+i).attr('onclick','vistaPrevia();');
+                    $('#imagen-p'+i).attr('class','imagen-p');
+                    $('#imagen-p'+i).attr('data-toggle','modal');
+                    $('#imagen-p'+i).attr('data-target','#modal-imagen');
+                }
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+    $('#detalles-de-articulo-caracteristicas').html('');
+    $('#detalles-de-articulo-empresa-de-envio').html('Envio por: <br>');
+    $.ajax({
+        url:"ajax/api.php?accion=informacionDeArticulo",
+        data: 'codigo='+id,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            console.log(Object.keys(respuesta).length);
+            console.log(Object.keys(respuesta.caracteristica).length);
+            $('#detalles-de-articulo-marca').html(respuesta.marca);
+            $('#detalles-de-articulo-nombre').html(respuesta.nombre);
+            $('#detalles-de-articulo-precio').html("$ "+respuesta.precio+".00");
+            $('#detalles-de-artculos-envios-disponibles').html('Envios a nivel '+respuesta.tipoEnvio);
+            $('#detalles-articulo-vendedor').html('Vendido por: '+respuesta.usuario);
+            $('#detalles-de-articulo-fecha').html('Fecha de publicacion: '+respuesta.fechaPublicacion);
+            for(var i=0; i<Object.keys(respuesta.caracteristica).length; i++){
+                $('#detalles-de-articulo-caracteristicas').append("* "+respuesta.caracteristica[i].CARACTERISTICA+'<br>');
+            }
+            for(var i=0; i<Object.keys(respuesta.empresas).length; i++){
+                $('#detalles-de-articulo-empresa-de-envio').append("        -"+respuesta.empresas[i].NOMBRE_EMPRESA_ENVIO+'<br>');
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
 }
 
 
@@ -409,8 +534,8 @@ function verDepartamento(tipo){
         dataType: "json",
         success: function(respuesta){
             console.log(respuesta);
-            for(var i=2; i<respuesta.length; i++){
-                prepararImagen('presentacionArticuloDepartamento-imagen'+i, respuesta[i]);
+            for(var i=0; i<respuesta.length; i++){
+                prepararImagen('presentacionArticuloDepartamento-imagen'+i, respuesta[0]);
             }
             //prepararImagen('inicio1-imagen1', respuesta[0]);
             //prepararImagen('inicio1-imagen2', respuesta[1]);
