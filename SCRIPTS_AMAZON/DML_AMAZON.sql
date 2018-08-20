@@ -175,6 +175,7 @@ VALUES(4,'Lista de nacimiento');
 INSERT INTO TBL_TIPO_ENVIOS
 VALUES (1,'Nacional');
 
+
 INSERT INTO TBL_TIPO_ENVIOS
 VALUES (2,'Internacional');
 
@@ -753,5 +754,19 @@ VALUES (9,1,'Envio Prioritario');
 
 INSERT INTO TBL_SERVICIOS_PRIME
 VALUES (4,1,'Amazon Music unlimited');
+<<<<<<< HEAD
 COMMIT;
+=======
+
+-------------------------------Metodo de Envio---------------------------------------------
+INSERT INTO TBL_METODO_DE_ENVIO
+VALUES (1,'aereo','3 dias');
+
+INSERT INTO TBL_METODO_DE_ENVIO
+VALUES (2,'terrestre','3 horas');
+
+
+
+
+>>>>>>> d5f8b094e224af829f7575b3d45142308caa7841
 

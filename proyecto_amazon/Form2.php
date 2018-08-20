@@ -23,7 +23,11 @@
 	<div class="Contenedor">
 		<div class="encabezado">
 			<a class="Icono_link" tabindex="-1" href="https://www.amazon.es/ref=ap_frn_logo">
+<<<<<<< HEAD:proyecto_amazon/Formulario/Form2.html
+				 <img class="img" src="image/amazon1.jpg" alt="Logo Amazon">
+=======
 				 <img src="recursos/amazon1.jpg" alt="Logo Amazon">
+>>>>>>> 9a0930735eba6ff0db469cac1e15d8835c527c0c:proyecto_amazon/Form2.php
                  
             </a>
 
