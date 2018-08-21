@@ -1,0 +1,43 @@
+PASOS:
+
+1. Descargar el programa Instant client Version 11.2.0.4.0 para windows x64 .
+
+2. Descromprimir el archivo (la carpeta resultante se llamara instantclient_11_2) y moverlo a 'C:/windows/SysWOW64' .
+
+3. Tener WAMP server instalado .
+
+4. WAMP debe usar obligatotiamente el puerto 80,
+ luego se deben desactivar las extensiones de oracle, se llaman oci para ello nos vamos al icono oculto de WAMP, click en php y luego en extensiones php y desmarcar las extensiones siguientes que lleven la cadena "_oci".
+
+5. Desactivar el WAMP y buscar en la carpeta bin de php: "php.ini", modificar todos los archivos (son muchos, pero con modificar los primeros 6 es suficiente) agregando las siguientes lineas:
+	extension=php_oci8_11g.dll
+	extension=php_oci8.dll
+	extension=php_pdo_oci.dll 
+De existir alguna de estas lineas solo se descomentan borrando el punto y coma, se debe verificar que la version de php sea la 5.6.31(click en WAMP de iconos ocultos y aparecera la version de PHP) sino en los siguientes pasos se debera modificar las rutas a las carpetas de php correspondientes.
+
+
+6. Copiar los archivos de la carpeta 'extensionesPHP' en la siguiente ruta: 	"C:\wamp64\bin\php\php5.6.31\ext"
+
+7. Modificar la variable de entorno Path del sistema agregando la siguiente cadena dentro de comillas: ";C:\wamp64\bin\php\php5.6.31\ext;C:\Windows\SysWOW64\instantclient_11_2" (tener cuidado de no borrar nada solo concatenar).
+
+8. Activar WAMP y ahora marcar todas las extensiones que lleven la cadena "_oci" siguiendo los pasos de la parte numero 4.
+
+9. Desactivar WAMP y activarlo de nuevo.
+
+10. Mover la carpeta "proyecto_amazon" a C:/wamp64/www/
+
+11. Probar la conexion a oracle con con el achivo test.php desde el navegador dentro de proyecto_amazon/class_php/test.php cabe de aclarar que se debe tener habilitado el usuario HR en oracle.
+
+12. Mover la carpeta "imagenes_para_oracle" a C:/wamp64/www/
+
+13.ejecutar el script de USER.sql en sqldeveloper y crear una conexion al usuario AMAZON, luego dentro de la conexion AMAZON ejecutar el script DDL.sql y por ultimo DML.sql 
+
+14.ejecutar el siguiente programa desde el navegador: localhost/imagenes_para_oracle/subir.php este aparecera con un boton llamado seleccionar archivo, dirigirse a la carpeta C:/wamp64/www/imagenes_para_oracle/imagenes a cargar con el cursor seleccionar todos las imagenes y luego click en aceptar.
+debera aparecer varios mensajes en color azul que dira "imagen subida con exito!"
+
+15. ejecutar en el navegador:localhost/proyecto_amazon/index.php
+
+16. Probar.
+
+
+

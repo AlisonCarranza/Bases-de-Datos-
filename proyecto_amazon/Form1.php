@@ -21,7 +21,7 @@
 	<div class="Contenedor">
 		<div class="encabezado">
 			<a class="Icono_link" tabindex="-1" href="https://www.amazon.es/ref=ap_frn_logo">
-				<img class="img" src="recursos/amazon1.jpg" alt="Logo Amazon">
+				<img src="recursos/amazon1.jpg" alt="Logo Amazon">
             </a>
 		</div>
 

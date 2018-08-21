@@ -113,10 +113,8 @@
             
             $sql3 = 'SELECT NOMBRE_EMPRESA_ENVIO FROM TBL_EMPRESAS_DE_ENVIO';
             $r3 = $conexion->ejecutarConsulta($sql3);
-			//$i = 0;
 			while($fila = $conexion->obtenerFila($r3)){
 				$salida['empresas'][] = $fila;
-				//$i++;
 			}
 
     echo var_dump($salida);
