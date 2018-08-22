@@ -85,7 +85,7 @@ function borrarTodosLosDepartamentos(){
 
 $(document).ready(function(){
     localStorage.setItem('nombre', $('#navbar2-ancle-cuenta').text());
-    console.log(localStorage.getItem('nombre'));
+    //console.log(localStorage.getItem('nombre'));
     borrarDetallesDeArticulo();
     borrarHistorial();
     borrarRealizarPregunta();
@@ -112,7 +112,7 @@ $(document).ready(function(){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
             for(var i=0; i<respuesta.length; i++){
                 var str = respuesta[i].DESCRIPCION;
                 $('#navbar2-departamentos').append('<option value="'+primeraMayuscula(str)+'">'+primeraMayuscula(str)+'</option>');
@@ -148,7 +148,7 @@ $(document).ready(function(){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
             //console.log(respuesta.length);
             for(var i=0; i<respuesta.length/2; i++ ){
                 if(i==0){
@@ -180,7 +180,7 @@ $(document).ready(function(){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
             for(var i=0; i<respuesta.length; i++){
                 var str = respuesta[i].NOMBRE_IDIOMA;
                 $('#navbar2-lenguajes').append('<option value="'+primeraMayuscula(str)+'">'+primeraMayuscula(str)+'</option>');
@@ -191,6 +191,28 @@ $(document).ready(function(){
             alert("Falta respuesta del servidor");
         }
     });
+    //if($('#pie-pagina-1-titulo').html() == ''){
+        $.ajax({
+            url:"ajax/api.php?accion=cargarPiePagina",
+            method: 'GET',
+            dataType: "json",
+            success: function(respuesta){
+                //console.log(respuesta);
+                //console.log(Object.keys(respuesta.parte1));
+                //console.log(Object.keys(respuesta.parte2));
+                for(var i=0; i<Object.keys(respuesta.parte1).length; i++){
+                    $('#pie-pagina-1-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;">'+respuesta.parte1[i].CODIGO_SUBTEMA+'</div>');
+                }
+                for(var i=0; i<Object.keys(respuesta.parte2).length; i++){
+                    $('#pie-pagina-2-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;">'+respuesta.parte2[i].CODIGO_TEMA+'<br>'+respuesta.parte2[i].DESCRIPCION+'</div>');
+                }
+            },
+            error: function(error){
+                console.log(error);
+                alert("Falta respuesta del servidor");
+            }
+        });
+    //}
 });
 
 
@@ -500,34 +522,43 @@ function verDepartamento(tipo){
         //alert(nombreDepartamento);
     }
     //alert(nombreDepartamento);
+    var s = 0;
     $('#h4-nombre-depto').html('Departamento de '+nombreDepartamento);
     $('#departamento').css('display','block');
     $('#row-departamento').html('');
+    console.log(nombreDepartamento);
     $.ajax({
-        url:"ajax/api.php?accion=cargarHistorial",
+        url:"ajax/api.php?accion=cargarPorDepartamento",
+        data: 'codigo='+nombreDepartamento,
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
             console.log(respuesta);
-            for(var i=0; i<respuesta.length; i++ ){
+            for(var i=0; i<respuesta.length/2; i++ ){
+                if(i==0){
+                    s = 1;
+                }else{
+                    s = (((i+1)*2)-1);
+                }
                 $('#row-departamento').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
-                '    <div id="presentacionArticulo'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo();">'+
+                '    <div id="presentacionArticulo'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo('+respuesta[i*2].CODIGO_ARTICULO+');">'+
                 '        <div id="presentacionArticuloDepartamento-imagen'+i+'" class="presentacionArticulo-imagen"></div>'+
-                '        <div id="presentacionArticuloDepartamento-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articuloDepartamento'+i+'" class="nombre-articulo">'+respuesta[i].NOMBRE_ARTICULO+'</div><br>'+
+                '        <div id="presentacionArticuloDepartamento-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articuloDepartamento'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                 '        <span id="valoracion-articulodepatamento'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                 '        <span id="cantidad-usuarios-calificadoresDepartamento'+i+'">(5)</span>'+
-                '        <div id="precio-articuloDepartamento'+i+'" class="precio-articulo">'+respuesta[i].PRECIO+'</div>'+
+                '        <div id="precio-articuloDepartamento'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
                 '        <span><button>Mas como esto</button></span>'+
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
                 '</div>');
+                prepararImagen('presentacionArticuloDepartamento-imagen'+i, respuesta[s]);
             }
         },
         error: function(error){
             console.log(error);
             alert("Falta respuesta del servidor");
         }
-    });
+    });/*
     $.ajax({
         url:"ajax/api.php?accion=cargarVariasImagenes",
         method: 'GET',
@@ -545,7 +576,7 @@ function verDepartamento(tipo){
             console.log(error);
             alert("Falta respuesta del servidor");
         }
-    });
+    });*/
 }
 
 
@@ -591,4 +622,12 @@ function verTodosLosDepartamentos(){
             alert("Falta respuesta del servidor");
         }
     });
+}
+
+function validarCantidad(){
+    if($('#input-cantidad-de-articulo').val() == '' ){
+        alert('Cantidad invalida');
+    }else{
+        document.location.href = 'formCompra.php';
+    }
 }

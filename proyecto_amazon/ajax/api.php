@@ -155,6 +155,39 @@
 				$salida['empresas'][] = $fila;
 			}
 		break;	
+		case 'cargarPiePagina':
+			$sql = 'SELECT * FROM TBL_OPCIONES_1';
+			$resultado = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($resultado)){
+				$salida['parte1'][] = $fila;
+			}
+			$sql2 = 'SELECT * FROM TBL_OPCIONES_2';
+			$r2 = $conexion->ejecutarConsulta($sql2);
+			while($fila = $conexion->obtenerFila($r2)){
+				$salida['parte2'][] = $fila;
+			}
+		break;
+		case 'cargarPorDepartamento':
+			$a = (string)$_GET['codigo'];
+			$sql = "SELECT A.NOMBRE_ARTICULO, A.PRECIO ,A.CODIGO_ARTICULO ". 
+			"FROM ".
+			"TBL_ARTICULOS A ".
+			"INNER JOIN ".
+			"DEPARTAMENTOS_X_ARTICULOS B ".
+			"ON B.CODIGO_ARTICULO = A.CODIGO_ARTICULO AND B.CODIGO_DEPARTAMENTO = ".
+			"( ".
+			" SELECT CODIGO_DEPARTAMENTO FROM TBL_DEPARTAMENTOS WHERE DESCRIPCION = '".$_GET['codigo'] ."' ) ";			
+			$resultado =$conexion->ejecutarConsulta($sql);
+			$i = 0;
+			while($fila = $conexion->obtenerFila($resultado)){
+				$sql2 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$f2 = $conexion->obtenerFila2($r2);
+				$blob = $f2[0]->load();
+				$salida[] = $fila;
+				$salida[] = base64_encode($blob);
+			}
+		break;
 	}
 	//}
 

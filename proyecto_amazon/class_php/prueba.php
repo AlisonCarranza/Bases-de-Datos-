@@ -79,7 +79,7 @@
             break;
         }
         $i++;
-    }*/
+    }
 
     $a = (integer)1;
 			$sql = 'SELECT CARACTERISTICA FROM TBL_CARACTERISTICAS WHERE CODIGO_ARTICULO='.$a;
@@ -115,6 +115,32 @@
             $r3 = $conexion->ejecutarConsulta($sql3);
 			while($fila = $conexion->obtenerFila($r3)){
 				$salida['empresas'][] = $fila;
+            }
+            
+
+
+*/
+            //case 'cargarPorDepartamento':
+			$a = (string)'Moda';
+			//$a = (string)$_GET['codigo'];
+			$sql = "SELECT A.NOMBRE_ARTICULO, A.PRECIO ,A.CODIGO_ARTICULO ". 
+			"FROM ".
+			"TBL_ARTICULOS A ".
+			"INNER JOIN ".
+			"DEPARTAMENTOS_X_ARTICULOS B ".
+			"ON B.CODIGO_ARTICULO = A.CODIGO_ARTICULO AND B.CODIGO_DEPARTAMENTO = ".
+			"( ".
+			"SELECT CODIGO_DEPARTAMENTO FROM TBL_DEPARTAMENTOS WHERE DESCRIPCION = '".$a."')";			
+			$resultado =$conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($resultado)){
+				$sql2 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$f2 = $conexion->obtenerFila2($r2);
+				$blob = $f2[0]->load();
+				$salida[] = $fila;
+				$salida[/*'imagen'.$i*/] = base64_encode($blob);
+				//$salida['nombre'.$i] = $fila['NOMBRE_ARTICULO']; 
+				//$salida['precio'.$i] = $fila['PRECIO'];
 			}
 
     echo var_dump($salida);

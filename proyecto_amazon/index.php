@@ -483,7 +483,8 @@
                     $ 9999.99
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3" id="carrito-contendor-cantidad" class="carrito-contendor-cantidad">
-                    <input type="text" id="input-cantidad-de-articulo" placeholder="Cantidad">
+                    <input type="number" min="0" step="1" id="input-cantidad-de-articulo" placeholder="Cantidad">
+                    <button type="button" class="btn btn-success" style="margin-top: 20px;" onclick="validarCantidad();">Comprar</button>
                 </div>
             </div>
         </div>
@@ -537,31 +538,13 @@
     <div id="pie-de-pagina">
         <div id="pie-de-pagina-1">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
+                <div class="row" id="pie-pagina-1-titulo">
                 </div>
             </div>
         </div>
         <div id="pie-de-pagina-2">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
-                    One of three columns
-                    </div>
+                <div class="row" id="pie-pagina-2-titulo">
                 </div>
             </div>
         </div>
