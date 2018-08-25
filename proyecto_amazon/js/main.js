@@ -86,6 +86,7 @@ function borrarTodosLosDepartamentos(){
 $(document).ready(function(){
     localStorage.setItem('nombre', $('#navbar2-ancle-cuenta').text());
     //console.log(localStorage.getItem('nombre'));
+    jQuery('html,body').animate({scrollTop:0},0);
     borrarDetallesDeArticulo();
     borrarHistorial();
     borrarRealizarPregunta();
@@ -99,8 +100,10 @@ $(document).ready(function(){
     borrarTodosLosDepartamentos();
     if(localStorage.getItem('nombre') == 'Ingresar'){
         borrarInicio1();
+        redirigir();
     }else{
         $('#navbar2-ancle-cuenta').removeAttr('href');
+        $('#btn-carrito').removeAttr('href');
         $('#perfil-saludo').append('<i class="fas fa-user-circle"></i>&nbsp;&nbsp;&nbsp;Amazon de&nbsp;'+
         localStorage.getItem('nombre')+
         '<br><br>'+
@@ -115,8 +118,8 @@ $(document).ready(function(){
             //console.log(respuesta);
             for(var i=0; i<respuesta.length; i++){
                 var str = respuesta[i].DESCRIPCION;
-                $('#navbar2-departamentos').append('<option value="'+primeraMayuscula(str)+'">'+primeraMayuscula(str)+'</option>');
-                $('#navbar-departamentos').append('<option value="'+primeraMayuscula(str)+'">'+primeraMayuscula(str)+'</option>');
+                $('#navbar2-departamentos').append('<option value="'+str+'">'+str+'</option>');
+                $('#navbar-departamentos').append('<option value="'+str+'">'+str+'</option>');
             }
         },
         error: function(error){
@@ -124,24 +127,6 @@ $(document).ready(function(){
             alert("Falta respuesta del servidor");
         }
     });
-    /*$.ajax({
-        url:"ajax/api.php?accion=cargarVariasImagenes",
-        method: 'GET',
-        dataType: "json",
-        success: function(respuesta){
-            console.log(respuesta);
-            for(var i=1; i<=respuesta.length; i++){
-                prepararImagen('inicio1-imagen'+i, respuesta[0]);
-            }
-            //prepararImagen('inicio1-imagen1', respuesta[0]);
-            //prepararImagen('inicio1-imagen2', respuesta[1]);
-            //prepararImagen('inicio1-imagen3', respuesta[2]);
-        },
-        error: function(error){
-            console.log(error);
-            alert("Falta respuesta del servidor");
-        }
-    });*/
     var s = 0;
     $.ajax({
         url:"ajax/api.php?accion=cargar4Ofertas",
@@ -162,7 +147,7 @@ $(document).ready(function(){
                 '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                 '        <span id="valoracion-articulo4Ofertas'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                 '        <span id="cantidad-usuarios-calificadores4Ofertas'+i+'">(5)</span>'+
-                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
+                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">$ '+respuesta[i*2].PRECIO+'.00</div>'+
                 '        <span><button>Mas como esto</button></span>'+
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
@@ -191,28 +176,41 @@ $(document).ready(function(){
             alert("Falta respuesta del servidor");
         }
     });
-    //if($('#pie-pagina-1-titulo').html() == ''){
-        $.ajax({
-            url:"ajax/api.php?accion=cargarPiePagina",
-            method: 'GET',
-            dataType: "json",
-            success: function(respuesta){
-                //console.log(respuesta);
-                //console.log(Object.keys(respuesta.parte1));
-                //console.log(Object.keys(respuesta.parte2));
-                for(var i=0; i<Object.keys(respuesta.parte1).length; i++){
-                    $('#pie-pagina-1-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;">'+respuesta.parte1[i].CODIGO_SUBTEMA+'</div>');
-                }
-                for(var i=0; i<Object.keys(respuesta.parte2).length; i++){
-                    $('#pie-pagina-2-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;">'+respuesta.parte2[i].CODIGO_TEMA+'<br>'+respuesta.parte2[i].DESCRIPCION+'</div>');
-                }
-            },
-            error: function(error){
-                console.log(error);
-                alert("Falta respuesta del servidor");
+    $.ajax({
+        url:"ajax/api.php?accion=cargarPiePagina",
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            //console.log(respuesta);
+            //console.log(Object.keys(respuesta.parte1));
+            //console.log(Object.keys(respuesta.parte2));
+            for(var i=0; i<Object.keys(respuesta.parte1).length; i++){
+                $('#pie-pagina-1-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;">'+respuesta.parte1[i].CODIGO_SUBTEMA+'</div>');
             }
-        });
-    //}
+            for(var i=0; i<Object.keys(respuesta.parte2).length; i++){
+                $('#pie-pagina-2-titulo').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " style="margin-top: 20px;"><h6>'+respuesta.parte2[i].CODIGO_TEMA+'</h6>'+respuesta.parte2[i].DESCRIPCION+'</div>');
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+    $.ajax({
+        url:"ajax/api.php?accion=cargarVariasImagenes",
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            //console.log(respuesta);
+            prepararImagen('inicio1-imagen2', respuesta.imagen0);
+            $('#inicio1-imagen3').attr('onclick','verDetallesDeArticulo('+respuesta.codigo1+');');
+            prepararImagen('inicio1-imagen3', respuesta.imagen1);
+        },
+        error: function(error){
+            //console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
 });
 
 
@@ -253,6 +251,7 @@ function borrarTodo(){
     borrarCarritoGasto();
     borrarDepartamento();
     borrarTodosLosDepartamentos();
+    jQuery('html,body').animate({scrollTop:0},0);
 }
 
 
@@ -264,24 +263,31 @@ function verHistorial(){
         verPerfil();
         return false;
     }else{
+        var s = 0;
         $.ajax({
-            url:"ajax/api.php?accion=cargarHistorial",
+            url:"ajax/api.php?accion=cargarOfertas",
             method: 'GET',
             dataType: "json",
             success: function(respuesta){
-                console.log(respuesta);
+                //console.log(respuesta);
                 for(var i=0; i<respuesta.length; i++ ){
+                    if(i==0){
+                        s = 1;
+                    }else{
+                        s = (((i+1)*2)-1);
+                    }
                     $('#row-historial').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
-                    '    <div id="presentacionArticuloHistorial'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo();">'+
+                    '    <div id="presentacionArticuloHistorial'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo('+respuesta[i*2].CODIGO_ARTICULO+');">'+
                     '        <div id="presentacionArticuloHistorial-imagen'+i+'" class="presentacionArticulo-imagen"></div>'+
-                    '        <div id="presentacionArticuloHistorial-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articuloHistorial'+i+'" class="nombre-articulo">'+respuesta[i].NOMBRE_ARTICULO+'</div><br>'+
+                    '        <div id="presentacionArticuloHistorial-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articuloHistorial'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                     '        <span id="valoracion-articuloHistorial'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                     '        <span id="cantidad-usuarios-calificadoresHistorial'+i+'">(5)</span>'+
-                    '        <div id="precio-articuloHistorial'+i+'" class="precio-articulo">'+respuesta[i].PRECIO+'</div>'+
+                    '        <div id="precio-articuloHistorial'+i+'" class="precio-articulo">$ '+respuesta[i*2].PRECIO+'.00</div>'+
                     '        <span><button>Mas como esto</button></span>'+
                     '        <span><button>Eliminar</button></span></div>'+
                     '    </div>'+
                     '</div>');
+                    prepararImagen('presentacionArticuloHistorial-imagen'+i, respuesta[s]);
                 }
             },
             error: function(error){
@@ -368,7 +374,7 @@ function verTodasLasOfertas(){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
             //console.log(respuesta.length);
             for(var i=0; i<respuesta.length/2; i++ ){
                 if(i==0){
@@ -382,7 +388,7 @@ function verTodasLasOfertas(){
                 '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                 '        <span id="valoracion-articulo4Ofertas'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                 '        <span id="cantidad-usuarios-calificadores4Ofertas'+i+'">(5)</span>'+
-                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
+                '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">$ '+respuesta[i*2].PRECIO+'.00</div>'+
                 '        <span><button>Mas como esto</button></span>'+
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
@@ -395,7 +401,7 @@ function verTodasLasOfertas(){
             alert("Falta respuesta del servidor");
         }
     });
-    $.ajax({
+    /*$.ajax({
         url:"ajax/api.php?accion=cargarVariasImagenes",
         method: 'GET',
         dataType: "json",
@@ -413,7 +419,7 @@ function verTodasLasOfertas(){
             alert("Falta respuesta del servidor");
         }
     });
-    /*for(var i=0; i<10; i++){
+    for(var i=0; i<10; i++){
         $('#row-ofertas').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
         '<div id="presentacionArticulo" class="presentacionArticulo">'+
         '    <div id="presentacionArticulo-imagen"><img src="recursos/intel.jpg"></div>'+
@@ -431,19 +437,25 @@ function verTodasLasOfertas(){
 
 function verDetallesDeArticulo(id){
     borrarTodo();
+    jQuery('html,body').animate({scrollTop:0},0);
     $('#detalles-de-articulo').css('display','block');
     $('#realizar-pregunta').css('display','block');
     $("#realizar-pregunta").css('padding','25px 25px 25px 25px');
     $('#preguntas-realizadas').css('display','block');
     $("#preguntas-realizadas").css('padding','25px 25px 25px 25px');
+    $('#todas-las-imagenes').html('');
+    $('#preguntas-realizadas-detalles').html('');
+    $('#opiniones-usuario').html('');
+    $('#opiniones').css('display','block');
+    $("#opiniones").css('padding','25px 25px 25px 25px');
     $.ajax({
         url:"ajax/api.php?accion=imagenesDeArticulo",
         data: 'codigo='+id,
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
-            console.log(respuesta.length);
+            //console.log(respuesta);
+            //console.log(respuesta.length);
             for(var i=0; i<respuesta.length; i++ ){
                 if(i==0){
                     $('#todas-las-imagenes').append('<div id="div-imagen-principal"></div>');
@@ -475,15 +487,22 @@ function verDetallesDeArticulo(id){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
-            console.log(Object.keys(respuesta).length);
-            console.log(Object.keys(respuesta.caracteristica).length);
+            //console.log(respuesta);
+            //console.log(Object.keys(respuesta).length);
+            //console.log(Object.keys(respuesta.caracteristica).length);
             $('#detalles-de-articulo-marca').html(respuesta.marca);
             $('#detalles-de-articulo-nombre').html(respuesta.nombre);
             $('#detalles-de-articulo-precio').html("$ "+respuesta.precio+".00");
             $('#detalles-de-artculos-envios-disponibles').html('Envios a nivel '+respuesta.tipoEnvio);
             $('#detalles-articulo-vendedor').html('Vendido por: '+respuesta.usuario);
             $('#detalles-de-articulo-fecha').html('Fecha de publicacion: '+respuesta.fechaPublicacion);
+            $('#detalles-de-articulo-cantidad-opiniones').html(respuesta.cantidadOpiniones+' opinion(es) de usuario(s)');
+            $('#detalles-de-articulo-cantidad-preguntas-respondidas').html(respuesta.cantidadPreguntas+' pregunta(s) respondida(s)');
+            $('#detalles-de-articulo-valoracion').html('');
+            for(var i=0;i<respuesta.cantidadEstrellas;i++){
+                $('#detalles-de-articulo-valoracion').append('<i class="fas fa-star"></i>');
+            }
+            $('#detalles-de-articulos-cantidad').html('Cantidad: '+respuesta.cantidad+'<br>');
             for(var i=0; i<Object.keys(respuesta.caracteristica).length; i++){
                 $('#detalles-de-articulo-caracteristicas').append("* "+respuesta.caracteristica[i].CARACTERISTICA+'<br>');
             }
@@ -496,6 +515,51 @@ function verDetallesDeArticulo(id){
             alert("Falta respuesta del servidor");
         }
     });
+    /* */ 
+    $.ajax({
+        url:"ajax/api.php?accion=cargarPreguntas",
+        data: 'codigo='+id,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            //console.log(respuesta);
+            //console.log(Object.keys(respuesta.Departamentos).length);
+            if(Object.keys(respuesta).length == 0 ){
+                $('#preguntas-realizadas-detalles').html('<br><br><br>Sin Preguntas <br><br><br>');
+                $('#preguntas-realizadas-detalles').css('margin-left','30%');
+            }else{
+                $('#opiniones-usuario').css('margin-left','8%');
+                for(var i=0; i<Object.keys(respuesta.preguntas).length; i++ ){
+                    $('#preguntas-realizadas-detalles').append('<div class="container contenedor" id="contenedor'+i+'">'+
+                        '<div class="row">'+
+                        '    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">'+
+                        '        <div class="preguntas-realizadas-votos" id="preguntas-realizadas-votos'+i+'">'+
+                        '            <i class="fas fa-sort-up" id="up"></i>'+
+                        '            <div id="preguntas-realizadas-cantidad-votos'+i+'">32</div>'+
+                        '            <i class="fas fa-caret-down" id="down"></i>'+
+                        '        </div>'+
+                        '    </div>'+
+                        '    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">'+
+                        '        Pregunta:<br><br>'+
+                        '        Respuesta(s):'+
+                        '    </div>'+
+                        '    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 " id="grilla'+respuesta.preguntas[i].CODIGO_PREGUNTA+'">'+
+                        '        <div id="preguntas-realizadas-pregunta'+respuesta.preguntas[i].CODIGO_PREGUNTA+'" class="pregunta">'+respuesta.preguntas[i].CONTENIDO+'</div><br>');
+                    $('#preguntas-realizadas-detalles').append('</div></div></div>');
+                }
+                for(var j=0; j<Object.keys(respuesta.respuestas).length; j++){
+                    $('#grilla'+respuesta.respuestas[j].CODIGO_PREGUNTA).append('<div id="preguntas-realizadas-respuesta'
+                    +respuesta.respuestas[j].CODIGO_RESPUESTA+'" class="respuesta">'+respuesta.respuestas[j].CONTENIDO+'</div><div id="preguntas-realizadas-fecha-respuesta" class="fecha">El '
+                    +respuesta.respuestas[j].FECHA_PUBLICACION+' por '+respuesta.respuestas[j].NOMBRE_USUARIO+'</div>');
+                }
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+    cargarOpiniones(id);
 }
 
 
@@ -526,14 +590,17 @@ function verDepartamento(tipo){
     $('#h4-nombre-depto').html('Departamento de '+nombreDepartamento);
     $('#departamento').css('display','block');
     $('#row-departamento').html('');
-    console.log(nombreDepartamento);
+    //console.log('a||'+nombreDepartamento+'||');
     $.ajax({
         url:"ajax/api.php?accion=cargarPorDepartamento",
         data: 'codigo='+nombreDepartamento,
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
+            if(respuesta.length == 0){
+                $('#row-departamento').html('<br><br><br><br>Articulos agotados<br><br><br><br><br>');
+            }
             for(var i=0; i<respuesta.length/2; i++ ){
                 if(i==0){
                     s = 1;
@@ -546,7 +613,7 @@ function verDepartamento(tipo){
                 '        <div id="presentacionArticuloDepartamento-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articuloDepartamento'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
                 '        <span id="valoracion-articulodepatamento'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
                 '        <span id="cantidad-usuarios-calificadoresDepartamento'+i+'">(5)</span>'+
-                '        <div id="precio-articuloDepartamento'+i+'" class="precio-articulo">'+respuesta[i*2].PRECIO+'</div>'+
+                '        <div id="precio-articuloDepartamento'+i+'" class="precio-articulo">$ '+respuesta[i*2].PRECIO+'.00</div>'+
                 '        <span><button>Mas como esto</button></span>'+
                 '        <span><button>Eliminar</button></span></div>'+
                 '    </div>'+
@@ -558,63 +625,33 @@ function verDepartamento(tipo){
             console.log(error);
             alert("Falta respuesta del servidor");
         }
-    });/*
-    $.ajax({
-        url:"ajax/api.php?accion=cargarVariasImagenes",
-        method: 'GET',
-        dataType: "json",
-        success: function(respuesta){
-            console.log(respuesta);
-            for(var i=0; i<respuesta.length; i++){
-                prepararImagen('presentacionArticuloDepartamento-imagen'+i, respuesta[0]);
-            }
-            //prepararImagen('inicio1-imagen1', respuesta[0]);
-            //prepararImagen('inicio1-imagen2', respuesta[1]);
-            //prepararImagen('inicio1-imagen3', respuesta[2]);
-        },
-        error: function(error){
-            console.log(error);
-            alert("Falta respuesta del servidor");
-        }
-    });*/
+    });
 }
-
 
 function verTodosLosDepartamentos(){
     borrarTodo();
     $('#todos-los-departamentos').css('display','block');
     $('#row-todos-los-departamentos').html('');
     $.ajax({
-        url:"ajax/api.php?accion=cargarDepartamentos",
+        url:"ajax/api.php?accion=cargarDepartamentos2",
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            console.log(respuesta);
-            for(var i=0; i<respuesta.length; i++ ){
+            //console.log(respuesta);
+            for(var i=0; i<Object.keys(respuesta.Departamentos).length; i++ ){
                 $('#row-todos-los-departamentos').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">'+
                 '    <div class="presentacionDepartamento" id="presentacionDepartamento'+i+'" onclick="verDepartamento(\''+'presentacionDepartamento-nombre'+i+'\');">'+
                 '        <div class="presentacionArticulo-imagen" id="presentacionArticulo-imagen-departamento'+i+'"></div>'+
                 '        <br>'+
-                '        <div id="presentacionDepartamento-nombre'+i+'" value="'+primeraMayuscula(respuesta[i].DESCRIPCION)+'"><h6>'+primeraMayuscula(respuesta[i].DESCRIPCION)+'</h6></div><br>'+
+                '        <div id="presentacionDepartamento-nombre'+i+'" value="'+respuesta.Departamentos[i]+'"><h6>'+respuesta.Departamentos[i]+'</h6></div><br>'+
                 '    </div>'+
                 '</div>');
-            }
-        },
-        error: function(error){
-            console.log(error);
-            alert("Falta respuesta del servidor");
-        }
-    });
-    $.ajax({
-        url:"ajax/api.php?accion=cargarVariasImagenes",
-        method: 'GET',
-        dataType: "json",
-        success: function(respuesta){
-            console.log(respuesta);
-            prepararImagen('presentacionArticulo-imagen-departamento1', respuesta[0]);
-            for(var i=0; i<respuesta.length; i++){
-                prepararImagen('presentacionArticulo-imagen-departamento'+i, respuesta[i]);
-                //prepararImagen('presentacionArticulo-imagen1', respuesta[2]);
+                if(respuesta.imagen[i] != 0){
+                    prepararImagen('presentacionArticulo-imagen-departamento'+i, respuesta.imagen[i]);
+                }
+                else{
+                    $('#presentacionArticulo-imagen-departamento'+i).html("<br><br><br>Articulos agotados");
+                }
             }
         },
         error: function(error){
@@ -630,4 +667,46 @@ function validarCantidad(){
     }else{
         document.location.href = 'formCompra.php';
     }
+}
+
+function redirigir(){
+    $('#btn-carrito').attr('href','Form1');
+}
+
+function cargarOpiniones(id){
+    $('#opiniones-usuario-valoracion').html('');
+    $.ajax({
+        url:"ajax/api.php?accion=cargarOpiniones",
+        data: 'codigo='+id,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            //console.log(respuesta);
+            //console.log(Object.keys(respuesta.Departamentos).length);
+            if(Object.keys(respuesta).length == 0 ){
+                $('#opiniones-usuario').html('<br><br><br>Sin opiniones <br><br><br>');
+                $('#opiniones-usuario').css('margin-left','30%');
+            }else{
+                $('#opiniones-usuario').css('margin-left','8%');
+                for(var i=0; i<respuesta.length; i++ ){
+                    $('#opiniones-usuario').append('&nbsp;&nbsp;&nbsp;&nbsp;<span>'+
+                    '<i class="fas fa-user-circle"></i></span>'+
+                    '&nbsp;&nbsp;<span id="opiniones-usuario-nombre'+i+'">'+respuesta[i].NOMBRE_USUARIO+'</span><br>'+
+                    '&nbsp;&nbsp;&nbsp;&nbsp;<span id="opiniones-usuario-valoracion'+i+'" class="estrella">');
+                    for(var j=0; j<respuesta[i].CODIGO_CANTIDAD_ESTRELLAS;j++){
+                        $('#opiniones-usuario-valoracion'+i).append('<i class="fas fa-star"></i>');
+                    }
+                    $('#opiniones-usuario').append('</span>'+
+                    '&nbsp;&nbsp;<span id="opiniones-usuario-descripcion'+i+'">Es un producto muy bueno</span>'+
+                    '<div class="fecha" id="opiniones-usuario-fecha'+i+'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+respuesta[i].FECHA+'</div>'+
+                    '<div id="opiniones-usuario-mensaje'+i+'">&nbsp;&nbsp;&nbsp;&nbsp;'+respuesta[i].CONTENIDO+'</div>'+
+                    '<br><br>');
+                }
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
 }

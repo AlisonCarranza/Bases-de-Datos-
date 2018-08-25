@@ -67,7 +67,7 @@
 
 
     <div id="barra-de-navegacion2">
-        <span><button id="btn-historial" onclick="verHistorial();">Mi historial de navegacion</button></span>
+        <span><button id="btn-historial" onclick="verTodasLasOfertas();">Mi historial de navegacion</button></span>
         <span><button id="btn-perfil" onclick="verPerfil();">Mi perfil</button></span>
         <span><button id="btn-informacion">Mas informacion</button></span>
     </div>
@@ -130,11 +130,11 @@
                         <div class="inicio1-descripcion">Articulos vistos recientemente</div>
                     </div>
                 </div>
-                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " onclick="verDetallesDeArticulo();">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >
                     <div id="inicio1-contenedor3" class="inicio1-contenedor">
                         <div class="inicio1-titulo">Oferta del dia</div>
-                        <div id="inicio1-imagen3" class="inicio1-imagen"><!--<img src="recursos/intel.jpg">--></div>
-                        <div class="inicio1-descripcion">$400.00</div>
+                        <div id="inicio1-imagen3" class="inicio1-imagen" onclick="verDetallesDeArticulo();"><!--<img src="recursos/intel.jpg">--></div>
+                        <div class="inicio1-descripcion"></div>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
@@ -178,11 +178,12 @@
                     <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                         <div id="detalles-de-articulo-marca">Marca del articulo</div>
                         <h3 id="detalles-de-articulo-nombre">Nombre del articulo</h3>
-                        <span id="detalles-de-articulo-valoracion"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span id="detalles-de-articulo-valoracion"></span>
                         <span id="detalles-de-articulo-cantidad-opiniones">xyz opiniones de usuarios</span>
                         <div id="detalles-de-articulo-cantidad-preguntas-respondidas">xyz preguntas respondidas</div><br>
                         <div id="detalles-de-articulo-caracteristicas">* asdfasdf<br>* asdfggasdf<br>* asdfgqref</div>
                         <div id="detalles-de-articulos-estados"><br>Nuevo<br></div>
+                        <div id="detalles-de-articulos-cantidad"></div>
                         <div id="detalles-de-articulos-opcion-de-reporte"><br><i class="far fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;Reportar informacion de producto incorrecta</div>
                         <div id=""></div>
                         <div id=""></div>
@@ -199,7 +200,7 @@
                             <div id="detalles-de-articulo-empresa-de-envio">envio por: Empresa X</div>
                             <div id="detalles-de-articulo-fecha"></div>
                             <div>Enviar a Honduras</div>
-                            <span><button style="background-color: #EFBE44; width:100%;" class="btn btn-warning"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Agregar al carrito</button></span></div>
+                            <span><a id="btn-carrito"><button style="background-color: #EFBE44; width:100%;" class="btn btn-warning"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Agregar al carrito</button></a></span></div>
                         </div>
                     </div>
                 </div>
@@ -236,8 +237,8 @@
     <div id="preguntas-realizadas">
         <h3>Preguntas y respuestas de los clientes</h3>
         <div id="preguntas-realizadas-mensaje" style="margin-bottom: 10px; width: 40%;">
-            <i class="fas fa-check" style="color:green;"></i>
-            &nbsp;Pregunta realizada con exito
+            <!--<i class="fas fa-check" style="color:green;"></i>
+            &nbsp;Pregunta realizada con exito-->
         </div>
         <span><button id="preguntas-realizadas-icono"><i class="fas fa-search"></i></button></span>
             <input type="text" id="preguntas-realizadas-input" placeholder="Realiza una pregunta">
@@ -263,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container contenedor">
+            <!--<div class="container contenedor">
                 <div class="row">
                     <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
                         <div id="preguntas-realizadas-votos">
@@ -281,31 +282,31 @@
                         <div id="preguntas-realizadas-respuesta" class="respuesta">Es cero</div><div id="preguntas-realizadas-fecha-respuesta" class="fecha">112/122/122 por persona X</div>
                     </div>
                 </div>
-            </div>              
+            </div>-->              
         </div>
     </div>
 
 
     <div id="opiniones">
-        <h3>Opiniones de clientes</h3>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span id="detalles-de-articulo-valoracion"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+        <h3>Opiniones de clientes</h3><br><br>
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;<span id="detalles-de-articulo-valoracion"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
         <span id="detalles-de-articulo-cantidad-opiniones">5555555555</span>
         <div>5 estrellas: 500%</div>
         <div>4 estrellas: 500%</div>
         <div>3 estrellas: 500%</div>
         <div>2 estrellas: 500%</div>
         <div>1 estrella: 500%</div>
-        <br><br><br>
+        <br><br><br>-->
         <div id="opiniones-usuario">
             &nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-user-circle"></i></span>
             &nbsp;&nbsp;<span id="opiniones-usuario-nombre">Persona X</span>
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span id="opiniones-usuario-valoracion" class="estrella"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id="opiniones-usuario-valoracion" class="estrella"><!--<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>--></span>
             &nbsp;&nbsp;<span id="opiniones-usuario-descripcion">Es un producto muy bueno</span>
             <div class="fecha" id="opiniones-usuario-fecha">&nbsp;&nbsp;&nbsp;&nbsp;112/122/112</div>
             <div id="opiniones-usuario-mensaje">&nbsp;&nbsp;&nbsp;&nbsp;Desde que lo compre, mi trabajo se ha tornado mas entretenido.</div>
             <br><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-user-circle"></i></span>
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-user-circle"></i></span>
             &nbsp;&nbsp;<span id="opiniones-usuario-nombre">Persona X</span>
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp;<span id="opiniones-usuario-valoracion" class="estrella">estrellas</span>
@@ -320,7 +321,7 @@
             &nbsp;&nbsp;<span id="opiniones-usuario-descripcion">Es un producto muy bueno</span>
             <div class="fecha" id="opiniones-usuario-fecha">&nbsp;&nbsp;&nbsp;&nbsp;112/122/112</div>
             <div id="opiniones-usuario-mensaje">&nbsp;&nbsp;&nbsp;&nbsp;Desde que lo compre, mi trabajo se ha tornado mas entretenido.</div>
-            <br><br>
+            <br><br>-->
         </div>
     </div>
 

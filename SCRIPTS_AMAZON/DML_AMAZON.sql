@@ -131,6 +131,9 @@ VALUES(7,2,'San Disk');
 INSERT INTO TBL_PROVEEDORES
 VALUES(8,2,'Samsung');
 
+INSERT INTO TBL_PROVEEDORES
+VALUES(9,2,'LG');
+
 ------------------------------------------------Plataforma de Difusion----------------------------------
 
 INSERT INTO TBL_PLATAFORMAS_DE_DIFUSION
@@ -225,6 +228,10 @@ VALUES (5,'Covergirl');
 INSERT INTO TBL_MARCAS
 VALUES (6,'Remington');
 
+
+INSERT INTO TBL_MARCAS
+VALUES (7,'LG');
+
 ------------------------------------------Tabla Agrupaciones---------------------------------------------------
 INSERT INTO TBL_AGRUPACIONES
 VALUES (1,'Por Fecha');
@@ -271,7 +278,7 @@ INSERT INTO TBL_CARACTERISTICAS
 VALUES ('Placas con revestimiento de ceramica',3);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (4,2,1,6,4,3,'Secadora XYZ',5,
+VALUES (4,2,1,6,4,3,'Secadora X',5,
 TO_DATE('11-04-2017','DD-MM-YYYY'),'Secadora de Cabello',60.00);
 
 INSERT INTO TBL_CARACTERISTICAS
@@ -297,7 +304,7 @@ INSERT INTO TBL_CARACTERISTICAS
 VALUES ('Resolucion de 1920 x 1080 pixeles',5);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (6,3,1,2,3,1,'Adata 9000',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD',600.00);
+VALUES (6,3,1,2,3,1,'A9000',20,TO_DATE('15-07-2018','DD-MM-YYYY'),'Memoria Micro SD',600.00);
 
 INSERT INTO TBL_CARACTERISTICAS
 VALUES ('Velocidades de transferencia de hasta 98 MB/s',6);
@@ -306,7 +313,7 @@ INSERT INTO TBL_CARACTERISTICAS
 VALUES ('32 GB de espacio de almacenamiento',6);
 
 INSERT INTO TBL_ARTICULOS
-VALUES (7,9,2,1,3,3,'Sx-8000',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil',600.00);
+VALUES (7,9,2,7,3,3,'Sx-8000',12,TO_DATE('01-07-2018','DD-MM-YYYY'),'Telefono movil',600.00);
 
 INSERT INTO TBL_CARACTERISTICAS
 VALUES ('3 GB de RAM',7);
@@ -532,7 +539,7 @@ INSERT INTO TBL_DEPARTAMENTOS
 VALUES (4,'Amazon dash bottom');
 
 INSERT INTO TBL_DEPARTAMENTOS
-VALUES (5,'Electronica ');
+VALUES (5,'Electronica');
 
 INSERT INTO TBL_DEPARTAMENTOS
 VALUES (6,'Informatica y Oficina');
@@ -625,6 +632,12 @@ VALUES (8,7);
 INSERT INTO DEPARTAMENTOS_X_ARTICULOS
 VALUES (9,7);
 
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (7,5);
+
+INSERT INTO DEPARTAMENTOS_X_ARTICULOS
+VALUES (7,6);
+
 ---------------------------------Cantidad de estrellas ---------------------------------------------
 INSERT INTO TBL_CANTIDAD_DE_ESTRELLAS
 VALUES (1,1);
@@ -715,10 +728,10 @@ VALUES (4,7,3,NULL,'Si pero aun asi funciona');
 
 ----------------------------------Preguntas-----------------------------------------------------
 INSERT INTO TBL_PREGUNTAS
-VALUES (1,8,NULL,'Tienen memorias usb de 32Gb');
+VALUES (1,8,NULL,'Tienen memorias usb de 32Gb?');
 
 INSERT INTO TBL_PREGUNTAS
-VALUES (2,16,1,'Cuanto tarda el envio hacia espania sevilla');
+VALUES (2,16,1,'Cuanto tarda el envio hacia espania sevilla?');
 
 
 ---------------------------------Reportes------------------------------------------------------
@@ -753,5 +766,50 @@ VALUES (9,1,'Envio Prioritario');
 
 INSERT INTO TBL_SERVICIOS_PRIME
 VALUES (4,1,'Amazon Music unlimited');
+
+
+
+------------------------------ Pies de pagina -------------------------------------------------
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Conocenos');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Gana dinero con nosotros');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Productos de pago Amazon');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Podemos ayudarte');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon music');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon Drive');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon Business');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Alexa');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('IMDb');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Woot!');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Souq.com');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Junglee.com');
+
+INSERT INTO TBL_OPCIONES_1 VALUES('Trabaja en Amazon','Conocenos');
+INSERT INTO TBL_OPCIONES_1 VALUES('Blog','Conocenos');
+INSERT INTO TBL_OPCIONES_1 VALUES('Acerca de Amazon','Conocenos');
+INSERT INTO TBL_OPCIONES_1 VALUES('Dispositivos Amazon','Conocenos');
+
+INSERT INTO TBL_OPCIONES_1 VALUES('Vende en Amazon','Gana dinero con nosotros');
+INSERT INTO TBL_OPCIONES_1 VALUES('Anuncia tus productos','Gana dinero con nosotros');
+INSERT INTO TBL_OPCIONES_1 VALUES('vende tus servicios en Amazon','Gana dinero con nosotros');
+
+
+INSERT INTO TBL_OPCIONES_1 VALUES('Amazon Rewards Visa Signature Cards','Productos de pago Amazon');
+INSERT INTO TBL_OPCIONES_1 VALUES('Compra con puntos','Productos de pago Amazon');
+INSERT INTO TBL_OPCIONES_1 VALUES('Recarga tu tarjeta de regalo','Productos de pago Amazon');
+INSERT INTO TBL_OPCIONES_1 VALUES('Convertidor de Moneda de Amazon','Productos de pago Amazon');
+
+
+INSERT INTO TBL_OPCIONES_1 VALUES('Tu cuenta','Podemos ayudarte');
+INSERT INTO TBL_OPCIONES_1 VALUES('tus pedidos','Podemos ayudarte');
+INSERT INTO TBL_OPCIONES_1 VALUES('Ayuda','Podemos ayudarte');
+
+INSERT INTO TBL_OPCIONES_2 VALUES('Amazon Music','Reproduce millones de canciones');
+INSERT INTO TBL_OPCIONES_2 VALUES('Amazon Drive','Almacenamiento en la nube desde Amazon');
+INSERT INTO TBL_OPCIONES_2 VALUES('Amazon Business','Todo para tu negocio');
+INSERT INTO TBL_OPCIONES_2 VALUES('Alexa','Analisis accionables para la Web');
+INSERT INTO TBL_OPCIONES_2 VALUES('IMDb','Peliculas, TV y celebridades');
+INSERT INTO TBL_OPCIONES_2 VALUES('Woot!','Descuentos y travesuras');
+INSERT INTO TBL_OPCIONES_2 VALUES('Souq.com','tienda online en el medio oriente');
+INSERT INTO TBL_OPCIONES_2 VALUES('Junglee.com','Compra en linea en India');
 COMMIT;
 

@@ -48,7 +48,7 @@
         }
 
         public function obtenerImagenPorFila($sql){
-            $archivo= oci_fetch_array($sql, OCI_ASSOC + OCI_NUM + OCI_RETURN_NULLS);
+            $archivo = oci_fetch_array($sql, OCI_ASSOC + OCI_NUM + OCI_RETURN_NULLS);
             if(!$archivo){
                 return false;
             }else{

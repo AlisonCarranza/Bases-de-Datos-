@@ -1,6 +1,6 @@
 <?php
     // Create connection to Oracle
-    $conn = oci_connect("AMAZON", "oracle");
+    $conn = oci_connect("HR", "oracle");
     if (!$conn) {
     $m = oci_error();
     echo $m['message'], "\n";

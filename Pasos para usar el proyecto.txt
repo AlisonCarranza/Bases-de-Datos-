@@ -30,14 +30,16 @@ De existir alguna de estas lineas solo se descomentan borrando el punto y coma, 
 
 12. Mover la carpeta "imagenes_para_oracle" a C:/wamp64/www/
 
-13.ejecutar el script de USER.sql en sqldeveloper y crear una conexion al usuario AMAZON, luego dentro de la conexion AMAZON ejecutar el script DDL.sql y por ultimo DML.sql 
+13.Ejecutar el script de USER.sql en sqldeveloper y crear una conexion al usuario AMAZON, luego dentro de la conexion AMAZON ejecutar el script DDL.sql y por ultimo DML.sql
 
-14.ejecutar el siguiente programa desde el navegador: localhost/imagenes_para_oracle/subir.php este aparecera con un boton llamado seleccionar archivo, dirigirse a la carpeta C:/wamp64/www/imagenes_para_oracle/imagenes a cargar con el cursor seleccionar todos las imagenes y luego click en aceptar.
+14. Editar el archivo php.ini que aparece dando click en el icono oculto WAMP->php->php.ini, buscar lo siguiente: "max_file_uploads" por defecto el valor es 20, es necesario darle un valor de 30, luego reiniciar WAMP.
+
+15. ejecutar el siguiente programa desde el navegador: localhost/imagenes_para_oracle/subir.php este aparecera con un boton llamado seleccionar archivo, dirigirse a la carpeta C:/wamp64/www/imagenes_para_oracle/imagenes a cargar con el cursor seleccionar todos las imagenes y luego click en aceptar.
 debera aparecer varios mensajes en color azul que dira "imagen subida con exito!"
 
-15. ejecutar en el navegador:localhost/proyecto_amazon/index.php
+16. Ejecutar en el navegador:localhost/proyecto_amazon/index.php
 
-16. Probar.
+17. Probar.
 
 
 

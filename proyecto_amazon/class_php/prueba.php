@@ -119,9 +119,9 @@
             
 
 
-*/
+
             //case 'cargarPorDepartamento':
-			$a = (string)'Moda';
+			$a = (string)'Belleza y Salud';
 			//$a = (string)$_GET['codigo'];
 			$sql = "SELECT A.NOMBRE_ARTICULO, A.PRECIO ,A.CODIGO_ARTICULO ". 
 			"FROM ".
@@ -133,17 +133,225 @@
 			"SELECT CODIGO_DEPARTAMENTO FROM TBL_DEPARTAMENTOS WHERE DESCRIPCION = '".$a."')";			
 			$resultado =$conexion->ejecutarConsulta($sql);
 			while($fila = $conexion->obtenerFila($resultado)){
+                var_dump($fila);
 				$sql2 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.(integer)$fila['CODIGO_ARTICULO'];
 				$r2 = $conexion->ejecutarConsulta($sql2);
 				$f2 = $conexion->obtenerFila2($r2);
-				$blob = $f2[0]->load();
+                var_dump($f2);
+                echo 'a';
+                if($f2){
+                    $blob = $f2[0]->load();
+                }
 				$salida[] = $fila;
-				$salida[/*'imagen'.$i*/] = base64_encode($blob);
+				$salida[/*'imagen'.$i] = base64_encode($blob);
 				//$salida['nombre'.$i] = $fila['NOMBRE_ARTICULO']; 
 				//$salida['precio'.$i] = $fila['PRECIO'];
+            }
+
+            $sql = "SELECT CODIGO_DEPARTAMENTO FROM TBL_DEPARTAMENTOS";
+			$r1 =$conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r1)){
+				$nombreDepto = (integer)$fila["CODIGO_DEPARTAMENTO"];
+                $salida['Departamentos'][] = $fila;
+                $sql2 =  "	SELECT IMAGEN ".
+						"	FROM( ".
+						"		SELECT CODIGO_ARTICULO, CODIGO_DEPARTAMENTO ".
+						"		FROM ( ".
+						"				SELECT A.CODIGO_ARTICULO, B.CODIGO_DEPARTAMENTO ".
+						"				FROM ".
+						"				TBL_ARTICULOS A ".
+						"				INNER JOIN DEPARTAMENTOS_X_ARTICULOS B ".
+						"				ON A.CODIGO_ARTICULO = B.CODIGO_ARTICULO ".
+						"				ORDER BY DBMS_RANDOM.VALUE ".
+						"		)WHERE ROWNUM = 1 ".
+						"	) A ".
+						"	INNER JOIN TBL_DEPARTAMENTOS B ".
+						"	ON B.CODIGO_DEPARTAMENTO = A.CODIGO_DEPARTAMENTO ".
+						"	INNER JOIN TBL_IMAGENES_DE_ARTICULOS C ". 
+						"	ON A.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+						"	WHERE ROWNUM = 1 AND B.CODIGO_DEPARTAMENTO = ".$nombreDepto;
+                $r2 = $conexion->ejecutarConsulta($sql2);
+                //echo $r2.'////<BR>';
+				$f2 = $conexion->obtenerFila2($r2);
+                //var_dump($f2);
+                if($f2){
+                    $blob = $f2[0]->load();
+                    echo 'imagen'.base64_encode($blob);
+                }
+                else{
+                    $blob = 0;
+                }
+                $salida['imagen'][] = base64_encode($blob);
 			}
+            
+
+
+
+            $sql = "SELECT CODIGO_DEPARTAMENTO, DESCRIPCION FROM TBL_DEPARTAMENTOS";
+			$r1 =$conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r1)){
+				$nombreDepto = (integer)$fila["CODIGO_DEPARTAMENTO"];
+                $salida['Departamentos'][] = $fila['DESCRIPCION'];
+                $sql2 = "SELECT IMAGEN, A.CODIGO_DEPARTAMENTO ".
+                        "FROM(SELECT CODIGO_ARTICULO, CODIGO_DEPARTAMENTO ".
+                        "FROM ( ".
+                        "        SELECT B.CODIGO_ARTICULO AS CODIGO_ARTICULO, A.CODIGO_DEPARTAMENTO AS CODIGO_DEPARTAMENTO ".
+                        "        FROM ".
+                        "        TBL_DEPARTAMENTOS A ".
+                        "        LEFT JOIN DEPARTAMENTOS_X_ARTICULOS B ".
+                        "        ON A.CODIGO_DEPARTAMENTO = B.CODIGO_DEPARTAMENTO ".
+                        "        ORDER BY DBMS_RANDOM.VALUE ".
+                        "    ) ".
+                        "WHERE ROWNUM = 1 AND CODIGO_DEPARTAMENTO = ".$nombreDepto." ".
+                        ") A ".
+                        "LEFT JOIN TBL_IMAGENES_DE_ARTICULOS C  ".
+                        "ON A.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+                        "WHERE ROWNUM = 1";
+                $r2 = $conexion->ejecutarConsulta($sql2);
+                //echo $r2.'////<BR>';
+				$f2 = $conexion->obtenerFila2($r2);
+                //var_dump($f2);
+                if($f2[0]!=NULL){
+                    $blob = $f2[0]->load();
+                    echo 'imagen'.base64_encode($blob);
+                    $salida['imagen'][] = base64_encode($blob);
+                }
+                else{
+                    $blob = 0;
+                    $salida['imagen'][] = 0;
+                }
+			}
+            $cod = 6;
+			$sql = 	"SELECT A.CODIGO_CONTENIDO, C.CONTENIDO, C.CODIGO_PREGUNTA , TO_CHAR(A.FECHA_PUBLICACION,'DD/MM/YYYY') AS FECHA, ".
+					"		D.NOMBRE_USUARIO ".
+					"FROM TBL_CONTENIDOS_DE_TEXTO A ". 
+					"INNER JOIN TBL_ARTICULOS B ".
+					"ON A.CODIGO_ARTICULO = B.CODIGO_ARTICULO ".
+					"INNER JOIN TBL_PREGUNTAS C ".
+					"ON A.CODIGO_CONTENIDO = C.CODIGO_CONTENIDO ".
+					"INNER JOIN TBL_USUARIOS D ".
+					"ON A.CODIGO_USUARIO = D.CODIGO_USUARIO ".
+					"AND A.CODIGO_ARTICULO = ".$cod; 
+			$resultado = $conexion->ejecutarConsulta($sql);
+			while($row = $conexion->obtenerFila($resultado)){
+                $salida['preguntas'][] = $row;
+                $cod2 = $row["CODIGO_PREGUNTA"];
+                $sql2 = "SELECT A.CODIGO_PREGUNTA, A.CODIGO_RESPUESTA, A.CONTENIDO,  C.NOMBRE_USUARIO ".
+                        "FROM TBL_RESPUESTAS A ".
+                        "INNER JOIN TBL_CONTENIDOS_DE_TEXTO B ".
+                        "ON A.CODIGO_CONTENIDO = B.CODIGO_CONTENIDO ".
+                        "INNER JOIN TBL_USUARIOS C ".
+                        "ON B.CODIGO_USUARIO = C.CODIGO_USUARIO ".
+                        "AND A.CODIGO_PREGUNTA = ".$cod2;
+                $r2 = $conexion->ejecutarConsulta($sql2);
+                while($f2 = $conexion->obtenerFila($r2)){
+                    $salida["respuestas"][] = $f2;
+                }
+            }
+            
+SELECT A.CODIGO_ARTICULO, COUNT(*) AS CANTIDAD_OPINIONES
+FROM TBL_CONTENIDOS_DE_TEXTO A 
+INNER JOIN TBL_ARTICULOS B
+ON A.CODIGO_ARTICULO = B.CODIGO_ARTICULO
+INNER JOIN TBL_OPINIONES C
+ON A.CODIGO_CONTENIDO = C.CODIGO_CONTENIDO
+INNER JOIN TBL_USUARIOS D
+ON A.CODIGO_USUARIO = D.CODIGO_USUARIO
+GROUP BY A.CODIGO_ARTICULO;
+
+
+
+
+$a = (integer)1;
+$sql4 = "SELECT A.CODIGO_ARTICULO, COUNT(*) AS CANTIDAD_OPINIONES ".
+					"FROM TBL_CONTENIDOS_DE_TEXTO A ".
+					"INNER JOIN TBL_ARTICULOS B ".
+					"ON A.CODIGO_ARTICULO = B.CODIGO_ARTICULO ".
+					"INNER JOIN TBL_OPINIONES C ".
+					"ON A.CODIGO_CONTENIDO = C.CODIGO_CONTENIDO ".
+					"INNER JOIN TBL_USUARIOS D ".
+					"ON A.CODIGO_USUARIO = D.CODIGO_USUARIO ".
+                    "AND A.CODIGO_ARTICULO = ".$a.
+                    "GROUP BY A.CODIGO_ARTICULO ";
+			$r4 = $conexion->ejecutarConsulta($sql4);
+			while($fila = $conexion->obtenerFila($r4)){
+				if($fila['CANTIDAD_OPINIONES'] != NULL){
+					$salida['cantidadOpiniones'] = $fila;
+				}
+            }
+            if(!$conexion->obtenerFila($r4)){
+                $salida['cantidadOpiniones'] = 0;
+            }
+
+
+$sql =  "SELECT D.CODIGO_ARTICULO, COUNT(*) AS CANTIDAD_PREGUNTAS ".
+        "FROM TBL_PREGUNTAS A ".
+        "INNER JOIN TBL_CONTENIDOS_DE_TEXTO B ".
+        "ON A.CODIGO_CONTENIDO = B.CODIGO_CONTENIDO ".
+        "INNER JOIN TBL_ARTICULOS D ".
+        "ON B.CODIGO_ARTICULO = D.CODIGO_ARTICULO ".
+        "AND D.CODIGO_ARTICULO = 6 ".
+        "GROUP BY D.CODIGO_ARTICULO";
+        $r4 =$conexion->ejecutarConsulta($sql);
+        while($fila = $conexion->obtenerFila($r4)){
+//            if($fila['CANTIDAD_PREGUNTAS'] != NULL){
+                $salida['cantidadPreguntas'] = $fila;
+ //            }
+        }
+        if(!$conexion->obtenerFila($r4)){
+            $salida['cantidadPreguntas'] = 0;
+        }
+
+$sql =  "SELECT D.CODIGO_ARTICULO, COUNT(*) AS CANTIDAD_PREGUNTAS ".
+        "FROM TBL_PREGUNTAS A ".
+        "INNER JOIN TBL_CONTENIDOS_DE_TEXTO B ".
+        "ON A.CODIGO_CONTENIDO = B.CODIGO_CONTENIDO ".
+        "INNER JOIN TBL_ARTICULOS D ".
+        "ON B.CODIGO_ARTICULO = D.CODIGO_ARTICULO ".
+        "AND D.CODIGO_ARTICULO = 6 ".
+        "GROUP BY D.CODIGO_ARTICULO";
+        $r4 =$conexion->ejecutarConsulta($sql);
+        if($r4){
+            $salida['cantidadPreguntas'] = 0;
+        }
+        while($fila = $conexion->obtenerFila($r4)){
+            if($fila['CANTIDAD_PREGUNTAS'] != NULL){
+                $salida['cantidadPreguntas'] = $fila['CANTIDAD_PREGUNTAS'];
+            }
+        }
+*/
+$a = 3;
+$b = '';
+			$sql6 = "SELECT D.CODIGO_ARTICULO, AVG(A.CODIGO_CANTIDAD_ESTRELLAS) AS PROMEDIO ".
+					"FROM TBL_OPINIONES A ".
+					"INNER JOIN TBL_CONTENIDOS_DE_TEXTO B ".
+					"ON A.CODIGO_CONTENIDO = B.CODIGO_CONTENIDO ".
+					"INNER JOIN TBL_ARTICULOS D ".
+					"ON B.CODIGO_ARTICULO = D.CODIGO_ARTICULO AND D.CODIGO_ARTICULO = ".$a.
+					"GROUP BY D.CODIGO_ARTICULO";
+			$r6 =$conexion->ejecutarConsulta($sql6);
+			if($r6){
+				$salida['cantidadEstrellas'] = 5;
+			}
+			while($fila = $conexion->obtenerFila($r6)){
+				if($fila['PROMEDIO'] != NULL){
+					$salida['cantidadEstrellas'] = $fila['PROMEDIO'];
+				}
+			}        
+
+            
+
+
+
+
+
+
+
+
+
 
     echo var_dump($salida);
     echo json_encode($salida);
+    //ECHO '<BR>ASDF';
     $conexion->cerrarConexion();
 ?>
