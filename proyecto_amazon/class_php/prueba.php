@@ -319,7 +319,7 @@ $sql =  "SELECT D.CODIGO_ARTICULO, COUNT(*) AS CANTIDAD_PREGUNTAS ".
                 $salida['cantidadPreguntas'] = $fila['CANTIDAD_PREGUNTAS'];
             }
         }
-*/
+
 $a = 3;
 $b = '';
 			$sql6 = "SELECT D.CODIGO_ARTICULO, AVG(A.CODIGO_CANTIDAD_ESTRELLAS) AS PROMEDIO ".
@@ -339,8 +339,129 @@ $b = '';
 				}
 			}        
 
-            
+$nom = 'AnaLop03';
+			$sql =  "SELECT A.CODIGO_USUARIO, COUNT(B.CODIGO_ARTICULO) AS CANTIDAD_CARRITO ".
+					"FROM TBL_USUARIOS A ".
+					"LEFT JOIN TBL_ARTICULOS_DE_CARRITOS B ".
+					"ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+					"WHERE A.CODIGO_USUARIO = ( ".
+					"	SELECT CODIGO_USUARIO ".
+					"	FROM TBL_USUARIOS ".
+					"	WHERE NOMBRE_USUARIO = '".$nom."' ".
+					") ".
+					" GROUP BY A.CODIGO_USUARIO ";
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
+				$salida['cantidadCarrito'] = $fila["CANTIDAD_CARRITO"];
+			}
+   
+  $i = 0;
+			$nom = (string)'Ale21';
+			$sql = "SELECT C.CODIGO_ARTICULO ". 
+				   "FROM TBL_USUARIOS A ".
+				   "RIGHT JOIN TBL_ARTICULOS_DE_CARRITOS B ".
+				   "ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+				   "INNER JOIN TBL_ARTICULOS C ".
+				   "ON B.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+				   "WHERE A.CODIGO_USUARIO = ( ".
+				   "	SELECT CODIGO_USUARIO ".
+				   "	FROM TBL_USUARIOS ".
+				   "	WHERE NOMBRE_USUARIO = '".$nom."' ".
+                   ")";
+                   echo $sql;
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
 
+                $salida['fila'.$i] = $fila;
+				$sql2 = "SELECT NOMBRE_ARTICULO, CODIGO_ARTICULO, ".
+ 						"	PRECIO ".
+						"FROM TBL_ARTICULOS ".
+						"WHERE CODIGO_ARTICULO = ".(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$fila2 = $conexion->obtenerFila($r2);
+				$salida['nombre'.$i] = $fila2['NOMBRE_ARTICULO'];
+				$salida['precio'.$i] = $fila2['PRECIO'];
+				
+				$a = (integer)$fila['CODIGO_ARTICULO'];
+				$sql3 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.$a;
+				$r3 = $conexion->ejecutarConsulta($sql3);
+				$fila3 = $conexion->obtenerImagenPorFila($r3);
+                $salida['imagen'.$i] = $fila3;
+				$i++;
+            }
+            SELECT A.CODIGO_USUARIO, NVL(C.NOMBRE_ARTICULO,0) AS NOMBRE_ARTICULO, NVL(C.PRECIO,0) AS PRECIO, 
+    NVL(D.DESCRIPCION,0) AS DESCRIPCION, NVL(TO_CHAR(B.FECHA_DE_COMPRA,'DD/MM/YYYY'),'0') AS FECHA_DE_COMPRA
+FROM TBL_USUARIOS A
+LEFT JOIN TBL_PEDIDOS B
+ON A.CODIGO_USUARIO = B.CODIGO_USUARIO
+LEFT JOIN TBL_ARTICULOS C
+ON B.CODIGO_ARTICULO = C.CODIGO_ARTICULO
+LEFT JOIN TBL_METODO_DE_ENVIO D
+ON B.CODIGO_METODO_ENVIO = D.CODIGO_METODO
+WHERE A.CODIGO_USUARIO = (
+SELECT CODIGO_USUARIO
+FROM TBL_USUARIOS
+WHERE NOMBRE_USUARIO = 'Ale21'
+);
+    
+
+    
+
+            $i = 0;
+			//$nom = (string)$_GET['nombre'];
+			$sql =  "SELECT A.CODIGO_USUARIO, NVL(C.NOMBRE_ARTICULO,0) AS NOMBRE_ARTICULO, NVL(C.PRECIO,0) AS PRECIO, ".
+                    "    NVL(D.DESCRIPCION,0) AS DESCRIPCION, NVL(TO_CHAR(B.FECHA_DE_COMPRA,'DD/MM/YYYY'),'0') AS FECHA_DE_COMPRA, ".
+                    "NVL(B.CODIGO_ARTICULO,0) AS CODIGO_ARTICULO ".
+                    "FROM TBL_USUARIOS A ".
+                    "INNER JOIN TBL_PEDIDOS B ".
+                    "ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+                    "LEFT JOIN TBL_ARTICULOS C ".
+                    "ON B.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+                    "LEFT JOIN TBL_METODO_DE_ENVIO D ".
+                    "ON B.CODIGO_METODO_ENVIO = D.CODIGO_METODO ".
+                    "WHERE A.CODIGO_USUARIO = ( ".
+                    "SELECT CODIGO_USUARIO ".
+                    "FROM TBL_USUARIOS ".
+                    "WHERE NOMBRE_USUARIO = 'Ale21')";
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
+				$salida['codigoArticulo'][$i] = $fila['CODIGO_ARTICULO'];
+				$salida['nombre'][$i] = $fila['NOMBRE_ARTICULO'];
+				$salida['precio'][$i] = $fila['PRECIO'];
+				$salida['envio'][$i] = $fila['DESCRIPCION'];
+				$salida['fecha'][$i] = $fila['FECHA_DE_COMPRA'];
+				$salida['codigoUsuario'][$i] = $fila['CODIGO_USUARIO'];
+				$a = (integer)$fila['CODIGO_ARTICULO'];
+				$sql3 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.$a;
+				$r3 = $conexion->ejecutarConsulta($sql3);
+				$fila3 = $conexion->obtenerImagenPorFila($r3);
+                $salida['imagen'][$i] = $fila3;
+				$i++;
+			}
+   
+*/
+
+
+$palabra = (string)'a';
+			$sql =  "SELECT NOMBRE_ARTICULO, PRECIO, CODIGO_ARTICULO ".
+					"FROM TBL_ARTICULOS ".
+                    "WHERE NOMBRE_ARTICULO LIKE '%bue%'";
+            echo $sql;
+            $r1 = $conexion->ejecutarConsulta($sql);
+            //echo $r1;
+            if($r1){
+                echo 'no ';
+            }
+            var_dump($conexion->obtenerFila($r1));
+			while($fila = $conexion->obtenerFila($r1)){
+                var_dump($fila);
+                /*$sql2 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$f2 = $conexion->obtenerFila2($r2);
+				$blob = $f2[0]->load();
+				$salida[] = $fila;
+                $salida[] = base64_encode($blob);*/
+            }
 
 
 

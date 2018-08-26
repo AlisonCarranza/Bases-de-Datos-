@@ -232,6 +232,8 @@ VALUES (6,'Remington');
 INSERT INTO TBL_MARCAS
 VALUES (7,'LG');
 
+INSERT INTO TBL_MARCAS
+VALUES (8,'Marca ACME');
 ------------------------------------------Tabla Agrupaciones---------------------------------------------------
 INSERT INTO TBL_AGRUPACIONES
 VALUES (1,'Por Fecha');
@@ -774,7 +776,7 @@ INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Conocenos');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Gana dinero con nosotros');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Productos de pago Amazon');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Podemos ayudarte');
-INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon music');
+INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon Music');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon Drive');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Amazon Business');
 INSERT INTO TBL_PIES_DE_PAGINAS VALUES('Alexa');
@@ -811,5 +813,9 @@ INSERT INTO TBL_OPCIONES_2 VALUES('IMDb','Peliculas, TV y celebridades');
 INSERT INTO TBL_OPCIONES_2 VALUES('Woot!','Descuentos y travesuras');
 INSERT INTO TBL_OPCIONES_2 VALUES('Souq.com','tienda online en el medio oriente');
 INSERT INTO TBL_OPCIONES_2 VALUES('Junglee.com','Compra en linea en India');
+
+INSERT INTO "TBL_METODO_DE_ENVIO" (CODIGO_METODO, DESCRIPCION, DURACION_PROMEDIO) VALUES ('1', 'Envio normal', '20-30 dias');
+INSERT INTO "TBL_METODO_DE_ENVIO" (CODIGO_METODO, DESCRIPCION, DURACION_PROMEDIO) VALUES ('2', 'Envio Express', '2-7 dias');
+
 COMMIT;
 

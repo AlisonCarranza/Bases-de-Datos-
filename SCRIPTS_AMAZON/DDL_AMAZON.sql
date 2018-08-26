@@ -676,7 +676,7 @@ ALTER TABLE tbl_ofertas
         REFERENCES tbl_descuentos ( codigo_descuento );
 
 ALTER TABLE tbl_localizacion_de_productos
-    ADD CONSTRAINT tbl_empresas_de_envio_fk FOREIGN KEY ( codigo_empresa_envio )
+    ADD CONSTRAINT tbl_empresas_de_envio_fkv2 FOREIGN KEY ( codigo_empresa_envio )
         REFERENCES tbl_empresas_de_envio ( codigo_empresa_envio );
 
 ALTER TABLE tbl_reembolsos
@@ -936,6 +936,12 @@ ALTER TABLE tbl_metodos_pago_usuarios
   start with 11
   increment by 1
   maxvalue 99999
-  minvalue 11; 
+  minvalue 11;
+
+  create sequence SQ_CODIGO_PEDIDO
+  start with 1
+  increment by 1
+  maxvalue 99999
+  minvalue 0; 
 
   commit;

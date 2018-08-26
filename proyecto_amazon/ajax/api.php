@@ -10,8 +10,24 @@
 				$salida[] = $row;
 			}
 		break;
+		case 'cargarEmpresas':
+			$sql =  "SELECT NOMBRE_EMPRESA_ENVIO,CODIGO_EMPRESA_ENVIO ".
+					"FROM TBL_EMPRESAS_DE_ENVIO	ORDER BY CODIGO_EMPRESA_ENVIO ASC";
+			$resultado = $conexion->ejecutarConsulta($sql);
+			while($row = $conexion->obtenerFila($resultado)){
+				$salida[] = $row;
+			}
+		break;
+		case 'cargarMarcas':
+			$sql =  "SELECT NOMBRE_MARCA, CODIGO_MARCA ".
+					"FROM TBL_MARCAS ORDER BY CODIGO_MARCA ASC";
+			$resultado = $conexion->ejecutarConsulta($sql);
+			while($row = $conexion->obtenerFila($resultado)){
+				$salida[] = $row;
+			}
+		break;
 		case 'cargarDepartamentos':
-			$sql = "SELECT DESCRIPCION FROM TBL_DEPARTAMENTOS";
+			$sql = "SELECT CODIGO_DEPARTAMENTO, DESCRIPCION FROM TBL_DEPARTAMENTOS";
 			$resultado = $conexion->ejecutarConsulta($sql);
 			while($row = $conexion->obtenerFila($resultado)){
 				$salida[] = $row;
@@ -180,6 +196,7 @@
 			$salida['descripcion'] = $fila['DESCRIPCION'];
 			$salida['precio'] = $fila['PRECIO'];
 			$salida['cantidad'] = $fila['CANTIDAD'];
+			$salida['codigoArticulo'] = $fila['CODIGO_ARTICULO'];
             $sql3 = 'SELECT NOMBRE_EMPRESA_ENVIO FROM TBL_EMPRESAS_DE_ENVIO';
             $r3 = $conexion->ejecutarConsulta($sql3);
 			while($fila = $conexion->obtenerFila($r3)){
@@ -318,6 +335,119 @@
 			$r = $conexion->ejecutarConsulta($sql);
 			while($fila = $conexion->obtenerFila($r)){
 				$salida[] = $fila;
+			}
+		break;
+		case 'cantidadCarrito':
+			$nom = (string)$_GET['nombre'];
+			$sql =  "SELECT A.CODIGO_USUARIO, COUNT(B.CODIGO_ARTICULO) AS CANTIDAD_CARRITO ".
+					"FROM TBL_USUARIOS A ".
+					"LEFT JOIN TBL_ARTICULOS_DE_CARRITOS B ".
+					"ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+					"WHERE A.CODIGO_USUARIO = ( ".
+					"	SELECT CODIGO_USUARIO ".
+					"	FROM TBL_USUARIOS ".
+					"	WHERE NOMBRE_USUARIO = '".$nom."') ".
+					" GROUP BY A.CODIGO_USUARIO";
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
+				$salida['cantidadCarrito'] = $fila["CANTIDAD_CARRITO"];
+			}
+		break;
+		case 'articulosCarrito':
+			$i = 0;
+			$nom = (string)$_GET['nombre'];
+			$sql = "SELECT C.CODIGO_ARTICULO ". 
+				   "FROM TBL_USUARIOS A ".
+				   "RIGHT JOIN TBL_ARTICULOS_DE_CARRITOS B ".
+				   "ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+				   "INNER JOIN TBL_ARTICULOS C ".
+				   "ON B.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+				   "WHERE A.CODIGO_USUARIO = ( ".
+				   "	SELECT CODIGO_USUARIO ".
+				   "	FROM TBL_USUARIOS ".
+				   "	WHERE NOMBRE_USUARIO = '".$nom."' ".
+				   ")";
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
+				$salida['codigo'][$i] = $fila['CODIGO_ARTICULO'];
+				$sql2 = "SELECT NOMBRE_ARTICULO, CODIGO_ARTICULO, ".
+ 						"	PRECIO ".
+						"FROM TBL_ARTICULOS ".
+						"WHERE CODIGO_ARTICULO = ".(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$fila2 = $conexion->obtenerFila($r2);
+				$salida['nombre'][$i] = $fila2['NOMBRE_ARTICULO'];
+				$salida['precio'][$i] = $fila2['PRECIO'];
+				
+				$a = (integer)$fila['CODIGO_ARTICULO'];
+				$sql3 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.$a;
+				$r3 = $conexion->ejecutarConsulta($sql3);
+				$fila3 = $conexion->obtenerImagenPorFila($r3);
+                $salida['imagen'][$i] = $fila3;
+				$i++;
+			}
+		break;
+		case 'articulosPedidos':
+			$i = 0;
+			$nom = (string)$_GET['nombre'];
+			$sql =  "SELECT A.CODIGO_USUARIO, NVL(C.NOMBRE_ARTICULO,0) AS NOMBRE_ARTICULO, NVL(C.PRECIO,0) AS PRECIO, ".
+					"    NVL(D.DESCRIPCION,0) AS DESCRIPCION, NVL(TO_CHAR(B.FECHA_DE_COMPRA,'DD/MM/YYYY'),'0') AS FECHA_DE_COMPRA, ".
+					"NVL(B.CODIGO_ARTICULO,0) AS CODIGO_ARTICULO ".
+					"FROM TBL_USUARIOS A ".
+					"INNER JOIN TBL_PEDIDOS B ".
+					"ON A.CODIGO_USUARIO = B.CODIGO_USUARIO ".
+					"LEFT JOIN TBL_ARTICULOS C ".
+					"ON B.CODIGO_ARTICULO = C.CODIGO_ARTICULO ".
+					"LEFT JOIN TBL_METODO_DE_ENVIO D ".
+					"ON B.CODIGO_METODO_ENVIO = D.CODIGO_METODO ".
+					"WHERE A.CODIGO_USUARIO = ( ".
+					"SELECT CODIGO_USUARIO ".
+					"FROM TBL_USUARIOS ".
+					"WHERE NOMBRE_USUARIO = '".$nom."')";
+			$r = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r)){
+				$salida['codigoArticulo'][$i] = $fila['CODIGO_ARTICULO'];
+				$salida['nombre'][$i] = $fila['NOMBRE_ARTICULO'];
+				$salida['precio'][$i] = $fila['PRECIO'];
+				$salida['envio'][$i] = $fila['DESCRIPCION'];
+				$salida['fecha'][$i] = $fila['FECHA_DE_COMPRA'];
+				$salida['codigoUsuario'][$i] = $fila['CODIGO_USUARIO'];
+				$a = (integer)$fila['CODIGO_ARTICULO'];
+				$sql3 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.$a;
+				$r3 = $conexion->ejecutarConsulta($sql3);
+				$fila3 = $conexion->obtenerImagenPorFila($r3);
+				$salida['imagen'][$i] = $fila3;
+				$i++;
+			}
+		break;
+		case 'agregarACarrito':
+			$nom = (string)$_GET['usuario'];
+			$cod = (integer)$_GET['codigo'];
+			$sql =  "INSERT INTO TBL_ARTICULOS_DE_CARRITOS ".
+					"VALUES (".$cod.",(SELECT CODIGO_USUARIO FROM TBL_USUARIOS  ".
+					"WHERE NOMBRE_USUARIO = '".$nom."'),TO_DATE(SYSDATE,'DD-MM-YYYY'),1)";
+			$resultado = $conexion->ejecutarConsulta($sql);
+			if($resultado){
+				$salida[] = 1;
+			}else{
+				$salida[] = 0;
+			}
+		break;
+		case 'buscar':
+			$palabra = (string)$_GET['palabra'];
+			$sql =  "SELECT ". 
+					"NOMBRE_ARTICULO, PRECIO, CODIGO_ARTICULO ".
+					"FROM ".
+					"TBL_ARTICULOS ".
+					"WHERE NOMBRE_ARTICULO LIKE '%".$palabra."%' OR DESCRIPCION LIKE '%".$palabra."%'";
+			$r1 = $conexion->ejecutarConsulta($sql);
+			while($fila = $conexion->obtenerFila($r1)){
+				$sql2 = 'SELECT IMAGEN FROM TBL_IMAGENES_DE_ARTICULOS WHERE CODIGO_ARTICULO = '.(integer)$fila['CODIGO_ARTICULO'];
+				$r2 = $conexion->ejecutarConsulta($sql2);
+				$f2 = $conexion->obtenerFila2($r2);
+				$blob = $f2[0]->load();
+				$salida[] = $fila;
+				$salida[] = base64_encode($blob);
 			}
 		break;
 	}

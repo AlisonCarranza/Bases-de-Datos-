@@ -100,14 +100,32 @@ $(document).ready(function(){
     borrarTodosLosDepartamentos();
     if(localStorage.getItem('nombre') == 'Ingresar'){
         borrarInicio1();
+        $('#navbar2-carrito').removeAttr('onclick');
         redirigir();
+        $('#navbar2-carrito').html('<i class="fas fa-cart-plus"></i>&nbsp;&nbsp;0');
     }else{
         $('#navbar2-ancle-cuenta').removeAttr('href');
         $('#btn-carrito').removeAttr('href');
         $('#perfil-saludo').append('<i class="fas fa-user-circle"></i>&nbsp;&nbsp;&nbsp;Amazon de&nbsp;'+
         localStorage.getItem('nombre')+
         '<br><br>'+
-        '<a href="logout.php"><h5>Salir</h5></a>');
+        '<a href="logout.php"><h5>Salir</h5></a><a href="formVenta.php?usuario='+localStorage.getItem('nombre')+'"><h5>Vender en Amazon</h5></a>');
+        var parametro = "nombre="+localStorage.getItem('nombre');
+        //console.log(parametro);
+        $.ajax({
+            url:"ajax/api.php?accion=cantidadCarrito",
+            data: parametro,
+            method: 'GET',
+            dataType: "json",
+            success: function(respuesta){
+                console.log(respuesta);
+                $('#navbar2-carrito').html('<i class="fas fa-cart-plus"></i>&nbsp;&nbsp;'+respuesta.cantidadCarrito);
+            },
+            error: function(error){
+                console.log(error);
+                alert("Falta respuesta del servidor");
+            }
+        });
     }
     $('#row-ofertas').html('');
     $.ajax({
@@ -307,9 +325,12 @@ function verPerfil(){
         '<a href="Form3.php"><h5>Nueva cuenta en amazon</h5></a><br><a href="Form1.php"><h5>Iniciar sesion</h5></a>');
     }else{
         //$('#pedidos').css('display','block');
+        /*verPedidos();
         var pedidos = $('#pedidos > div').detach();
         pedidos.appendTo('#perfil-pedidos');
-        //$('#pedidos').css('display','none');
+        $('#perfil').css('display', 'block');
+        $('#pedidos-boton-activado').html('<h4>Pedidos</h4>');
+        //$('#pedidos').css('display','none');*/
     }
 }
 
@@ -329,14 +350,59 @@ function verPedidos(){
     if(localStorage.getItem('nombre')=='Ingresar'){
         verPerfil();
     }else{
+        /*var pedidos = $('#pedidos > div').detach();
+        pedidos.appendTo('#pedidos');*/
         $('#pedidos').css('display','block');
+        $('#row-pedidos').html('');
+        $('#pedidos-boton-activado').html('');
+        var parametro = "nombre="+localStorage.getItem('nombre');
+        $('#carrito-contenedor').html('');
+        //console.log(parametro+'//');
+        var costoEnvio = 10;
+        $.ajax({
+            url:"ajax/api.php?accion=articulosPedidos",
+            data: parametro,
+            method: 'GET',
+            dataType: "json",
+            success: function(respuesta){
+                console.log(respuesta);
+                console.log(Object.keys(respuesta).length);
+                if(Object.keys(respuesta.imagen).length == 0 ){
+                    $('#row-pedidos').html('<br><br><br>Sin contenido <br><br><br>');
+                    $('#row-pedidos').css('margin-left','30%');
+                }else{
+                    for(var i=0; i<Object.keys(respuesta.imagen).length;i++){
+                        $('#row-pedidos').append('<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 "> '+
+                            '<div id="perfil-pedidos'+i+'" class="articulo" onclick="verDetallesDeArticulo('+respuesta.codigoArticulo[i]+');"> '+
+                            '    <div class="container"> '+
+                            '        <div class="row"> '+
+                            '            <div id="pedidos-contenedor-imagen'+i+'" class="col-sm-6 col-md-6 col-lg-6 col-xl-6" class="carrito-contenedor-imagen" style="padding-top: 15px;"></div> '+
+                            '                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" style="padding-bottom:20px;"> '+
+                            '                <div id="perfil-pedido-articulo'+i+'" style="margin-top: 30px;">'+respuesta.nombre[i]+'</div> '+
+                            '                <div id="perfil-pedido-precio-articulo'+i+'">precio: $ '+respuesta.precio[i]+'.00</div> '+
+                            '                <div id="perfil-pedido-precio-envio'+i+'">Costo de envio: $ '+costoEnvio+'.00</div> '+
+                            '                <div id="perfil-pedido-precio-total'+i+'">Costo total: $'+(parseInt(costoEnvio)+parseInt(respuesta.precio[i]))+'.00</div> '+
+                            '                <div id="perfil-pedido-empresa-transporte'+i+'">'+respuesta.envio[i]+'</div> '+
+                            '                <div id="perfil-pedido-fecha-comprado'+i+'">'+respuesta.fecha[i]+'</div> '+
+                            '            </div></div></div></div></div>');
+                        prepararImagen('pedidos-contenedor-imagen'+i,respuesta.imagen[i]);
+                    }
+                }
+            },
+            error: function(error){
+                console.log(error);
+                alert("Falta respuesta del servidor");
+            }
+        });
     }
+    
 }
 
 
 function verOfertas(){
     borrarTodo();
     $('#ofertas').css('display','block');
+    $('#mensaje-ofertas').html('Ofertas');
 }
 
 function verTodasLasOfertas(){
@@ -401,37 +467,6 @@ function verTodasLasOfertas(){
             alert("Falta respuesta del servidor");
         }
     });
-    /*$.ajax({
-        url:"ajax/api.php?accion=cargarVariasImagenes",
-        method: 'GET',
-        dataType: "json",
-        success: function(respuesta){
-            console.log(respuesta);
-            for(var i=0; i<respuesta.length; i++){
-                prepararImagen('presentacionArticulo-imagen-oferta'+i, respuesta[i]);
-            }
-            prepararImagen('presentacionArticulo-imagen-oferta3', respuesta[0]);
-            //prepararImagen('inicio1-imagen2', respuesta[1]);
-            //prepararImagen('inicio1-imagen3', respuesta[2]);
-        },
-        error: function(error){
-            console.log(error);
-            alert("Falta respuesta del servidor");
-        }
-    });
-    for(var i=0; i<10; i++){
-        $('#row-ofertas').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
-        '<div id="presentacionArticulo" class="presentacionArticulo">'+
-        '    <div id="presentacionArticulo-imagen"><img src="recursos/intel.jpg"></div>'+
-        '    <div id="presentacionArticulo-descripcion"><div id="nombre-articulo">Intel Corp. BX80660E51620V4 Xeon…</div><br>'+
-        '    <span id="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
-        '    <span id="cantidad-usuarios-calificadores">(5)</span>'+
-        '    <div id="precio-articulo">$400.00</div>'+
-        '    <span><button>Mas como esto</button></span>'+
-        '    <span><button>Eliminar</button></span></div>'+
-        '</div>'+
-        '</div>');
-    }*/
 }
 
 
@@ -487,7 +522,7 @@ function verDetallesDeArticulo(id){
         method: 'GET',
         dataType: "json",
         success: function(respuesta){
-            //console.log(respuesta);
+            console.log(respuesta);
             //console.log(Object.keys(respuesta).length);
             //console.log(Object.keys(respuesta.caracteristica).length);
             $('#detalles-de-articulo-marca').html(respuesta.marca);
@@ -499,6 +534,8 @@ function verDetallesDeArticulo(id){
             $('#detalles-de-articulo-cantidad-opiniones').html(respuesta.cantidadOpiniones+' opinion(es) de usuario(s)');
             $('#detalles-de-articulo-cantidad-preguntas-respondidas').html(respuesta.cantidadPreguntas+' pregunta(s) respondida(s)');
             $('#detalles-de-articulo-valoracion').html('');
+            $('#detalles-de-articulos-descripcion').html('descripcion: '+respuesta.descripcion);
+            localStorage.setItem('codigo-articulo',respuesta.codigoArticulo);
             for(var i=0;i<respuesta.cantidadEstrellas;i++){
                 $('#detalles-de-articulo-valoracion').append('<i class="fas fa-star"></i>');
             }
@@ -525,7 +562,7 @@ function verDetallesDeArticulo(id){
             //console.log(respuesta);
             //console.log(Object.keys(respuesta.Departamentos).length);
             if(Object.keys(respuesta).length == 0 ){
-                $('#preguntas-realizadas-detalles').html('<br><br><br>Sin Preguntas <br><br><br>');
+                $('#preguntas-realizadas-detalles').html('<br><br><br>Sin contenido <br><br><br>');
                 $('#preguntas-realizadas-detalles').css('margin-left','30%');
             }else{
                 $('#opiniones-usuario').css('margin-left','8%');
@@ -661,16 +698,17 @@ function verTodosLosDepartamentos(){
     });
 }
 
-function validarCantidad(){
+function validarCantidad(K){
     if($('#input-cantidad-de-articulo').val() == '' ){
         alert('Cantidad invalida');
     }else{
-        document.location.href = 'formCompra.php';
+        document.location.href = 'formCompra.php?usuario='+localStorage.getItem('nombre')+
+        '&articulo='+K;
     }
 }
 
 function redirigir(){
-    $('#btn-carrito').attr('href','Form1');
+    $('#btn-carrito').attr('href','Form1.php');
 }
 
 function cargarOpiniones(id){
@@ -710,3 +748,113 @@ function cargarOpiniones(id){
         }
     });
 }
+
+function verCarrito(){
+    var parametro = "nombre="+localStorage.getItem('nombre');
+    $('#carrito-contenedor').html('');
+    //console.log(parametro+'//');
+    $.ajax({
+        url:"ajax/api.php?accion=articulosCarrito",
+        data: parametro,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            console.log(Object.keys(respuesta).length);
+            if(Object.keys(respuesta).length == 0 ){
+                $('#carrito-contenedor').html('<br><br><br>Sin contenido<br><br><br>');
+                $('#carrito-contenedor').css('margin-left','30%');
+            }else{
+                for(var i=0; i<Object.keys(respuesta.nombre).length;i++){
+                    $('#carrito-contenedor').append('<div class="row" id="row-carrito'+i+'" style="margin-bottom:50px;"><div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" id="carrito-contenedor-detalles'+i+'" class="carrito-contenedor-detalles">'+
+                    '    <div class="container"><div class="row"><div class="col-sm-4 col-md-4 col-lg-4 col-xl-4" '+
+                    'onclick="verDetallesDeArticulo();" id="carrito-contenedor-imagen'+i+'" class="carrito-contenedor-imagen"></div>'+
+                    '            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4" id="carrito-contenedor-descripcion'+i+'" class="carrito-contenedor-descripcion">'+
+                    '                <h5 id="carrito-contenedor-nombre'+i+'">'+respuesta.nombre[i]+'</h5>'+
+                    '                <div style="color: green; margin-top: 10px; margin-bottom: 10px;">Disponible</div>'+
+                    '                <div><span><button id="btn-eliminar-de-carrito">Eliminar</button></span></div></div></div></div></div>'+
+                    '<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3" id="carrito-contenedor-precio'+i+'" class="carrito-contenedor-precio">$ '+respuesta.precio[i]+'.00</div>'+
+                    '<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3" id="carrito-contendor-cantidad" class="carrito-contendor-cantidad">'+
+                    '    <input type="number" min="0" step="1" id="input-cantidad-de-articulo" placeholder="Cantidad">'+
+                    '    <button type="button" class="btn btn-success" style="margin-top: 20px;" onclick="validarCantidad('+respuesta.codigo[i]+');">Comprar</button></div></div>');
+                    prepararImagen('carrito-contenedor-imagen'+i,respuesta.imagen[i]);
+                }
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+}
+
+
+function agregarACarrito(){
+    var parametro = 'codigo='+localStorage.getItem('codigo-articulo')+'&usuario='+localStorage.getItem('nombre');
+    $.ajax({
+        url:"ajax/api.php?accion=agregarACarrito",
+        data: parametro,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            alert('Adherido al carrito!');
+            location.reload();
+        },
+        error: function(error){
+           console.log(error);
+            //alert("Falta respuesta del servidor");
+        }
+    });
+}
+
+function buscar(){
+    verOfertas();
+    $('#mensaje-ofertas').html('Resultados de busqueda');
+    $('#verMas').css('display','none');
+    $('#row-ofertas').html('');
+    var s = 0;
+    var parametros = 'palabra='+$('#navbar-input').val();
+    $.ajax({
+        url:"ajax/api.php?accion=buscar",
+        data: parametros,
+        method: 'GET',
+        dataType: "json",
+        success: function(respuesta){
+            console.log(respuesta);
+            //console.log(respuesta.length);
+            if(respuesta.length ==0 ){
+                $('#row-ofertas').html('Sin resultados');
+                $('#row-ofertas').css('margin-bottom','400px');
+            }else{
+                for(var i=0; i<respuesta.length/2; i++ ){
+                    if(i==0){
+                        s = 1;
+                    }else{
+                        s = (((i+1)*2)-1);
+                    }
+                    $('#row-ofertas').append('<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 " >'+
+                    '    <div id="presentacionArticulo4Ofertas'+i+'" class="presentacionArticulo" onclick="verDetallesDeArticulo('+respuesta[i*2].CODIGO_ARTICULO+');">'+
+                    '        <div id="presentacionArticulo4Ofertas-imagen'+i+'" class="presentacionArticulo-imagen"></div>'+
+                    '        <div id="presentacionArticulo4Ofertas-descripcion'+i+'" class="presentacionArticulo-descripcion"><div id="nombre-articulo4Ofertas'+i+'" class="nombre-articulo">'+respuesta[i*2].NOMBRE_ARTICULO+'</div><br>'+
+                    '        <span id="valoracion-articulo4Ofertas'+i+'" class="valoracion-articulo"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>'+
+                    '        <span id="cantidad-usuarios-calificadores4Ofertas'+i+'">(5)</span>'+
+                    '        <div id="precio-articulo4Ofertas'+i+'" class="precio-articulo">$ '+respuesta[i*2].PRECIO+'.00</div>'+
+                    '        <span><button>Mas como esto</button></span>'+
+                    '        <span><button>Eliminar</button></span></div>'+
+                    '    </div>'+
+                    '</div>');
+                    prepararImagen('presentacionArticulo4Ofertas-imagen'+i, respuesta[s]);
+                }
+            }
+        },
+        error: function(error){
+            console.log(error);
+            alert("Falta respuesta del servidor");
+        }
+    });
+}
+
+
+
+

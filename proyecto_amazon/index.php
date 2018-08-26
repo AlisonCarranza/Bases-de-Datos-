@@ -15,7 +15,6 @@
     <link rel="icon" type="image/png" href="recursos/header.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />-->
 </head>
 
 
@@ -31,7 +30,7 @@
             <option value="3">Three</option>-->
         </select></span>
         <span><input  type="text"  id="navbar-input"></span>
-        <span><button id="navbar-icono">&nbsp;<i class="fas fa-search"></i>&nbsp;</button></span>
+        <span onclick="buscar();"><button id="navbar-icono">&nbsp;<i class="fas fa-search"></i>&nbsp;</button></span>
         <span id="navbar-mensaje" onclick="verTodasLasOfertas();">Ver todas las ofertas</span>
 
         <div id="navbar2">
@@ -61,7 +60,7 @@
             <span id="navbar2-cuenta" style="cursor: default;"><a id="navbar2-ancle-cuenta" href="form1.php" style="color: #D8D8D8;"><?php echo $_SESSION['nombre'];?></a>
             </span>
             <span id="navbar2-pedidos" onclick="verPedidos();">Pedidos</span>
-            <span id="navbar2-carrito"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;XYZ</span>
+            <span id="navbar2-carrito" onclick="verCarrito();"></span>
         </div>
     </div>
 
@@ -184,6 +183,7 @@
                         <div id="detalles-de-articulo-caracteristicas">* asdfasdf<br>* asdfggasdf<br>* asdfgqref</div>
                         <div id="detalles-de-articulos-estados"><br>Nuevo<br></div>
                         <div id="detalles-de-articulos-cantidad"></div>
+                        <div id="detalles-de-articulos-descripcion"></div>
                         <div id="detalles-de-articulos-opcion-de-reporte"><br><i class="far fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;Reportar informacion de producto incorrecta</div>
                         <div id=""></div>
                         <div id=""></div>
@@ -200,7 +200,7 @@
                             <div id="detalles-de-articulo-empresa-de-envio">envio por: Empresa X</div>
                             <div id="detalles-de-articulo-fecha"></div>
                             <div>Enviar a Honduras</div>
-                            <span><a id="btn-carrito"><button style="background-color: #EFBE44; width:100%;" class="btn btn-warning"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Agregar al carrito</button></a></span></div>
+                            <span ><a id="btn-carrito" onclick="agregarACarrito();"><button style="background-color: #EFBE44; width:100%;" class="btn btn-warning"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Agregar al carrito</button></a></span></div>
                         </div>
                     </div>
                 </div>
@@ -347,7 +347,7 @@
 
 
     <div id="ofertas">
-        <h4>Ofertas</h4>    
+        <h4 id="mensaje-ofertas">Ofertas</h4>    
         <span id="verMas" onclick="verTodasLasOfertas();">&nbsp;&nbsp;&nbsp;&nbsp;ver mas...</span><br><br> 
         <div class="container">
             <div class="row" id="row-ofertas">
@@ -435,7 +435,7 @@
         </div>
         <div id="pedidos-boton-activado"><h4>Pedidos</h4></div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="row-pedidos">
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 " >
                     <div id="perfil-pedidos-1" class="articulo" onclick="verDetallesDeArticulo();">
                         <div class="container">
@@ -454,7 +454,8 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div> 
+                               
             </div>
         </div>
     </div>
@@ -463,7 +464,7 @@
     <div id="carrito">
         <h3 style="">Carrito</h3>
         <div id="carrito-contenedor" class="container carrito-contenedor">
-            <div class="row">
+            <div class="row" id="row-carrito">
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" id="carrito-contenedor-detalles" class="carrito-contenedor-detalles">
                     <div class="container">
                         <div class="row">
